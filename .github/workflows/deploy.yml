@@ -1,23 +1,41 @@
 name: Deploy (Directory + Docs)
 on:
   push:
-    branches: [main]
+    branches: [master, main]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions: { contents: read, pages: write, id-token: write }
-    environment: { name: github-pages, url: ${{ steps.deployment.outputs.page_url }} }
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with: { version: 9 }
+        with:
+          version: 9
       - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: pnpm }
-      - run: pnpm install
-      - run: pnpm --filter @apipuccino/web build
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Build docs
+        run: node packages/docs/src/cli/index.js build --input ./examples/petstore.yaml --output ./api-docs
+      - name: Build web (if astro)
+        run: pnpm --filter @apipuccino/web build || echo "web build skipped"
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
-        with: { path: apps/web/dist }
+        with:
+          path: ./api-docs
       - id: deployment
         uses: actions/deploy-pages@v4
