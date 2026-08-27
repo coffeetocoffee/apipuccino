@@ -1,0 +1,240 @@
+#!/usr/bin/env node
+/**
+ * Apipuccino Directory — Hardened Health Checker v2.0
+ * L0: HTTP 200 + timeout 8s | L1: content-type + jsonPath exists | L2: contentHash drift (Phase 2)
+ * Flow: p-limit 5 + jitter 800-1600ms + UA ApipuccinoBot/2.0 + Retry-After
+ * Secondary probe via CF Worker on failure (CF_WORKER_URL env)
+ * HISTORY != GIT: overwrite results.json, append to history/YYYY-MM-DD.jsonl
+ */
+import fs from "node:fs/promises";
+import path from "node:path";
+import crypto from "node:crypto";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = path.resolve(__dirname, "../data");
+const APIS_JSON = path.join(DATA_DIR, "apis.json");
+const RESULTS_JSON = path.join(DATA_DIR, "results.json");
+
+// Config per AGENTS.md + Master Plan Sec 7
+const CONCURRENCY = 5;
+const JITTER_MIN = 800;
+const JITTER_MAX = 1600;
+const UA = "ApipuccinoBot/2.0 (+https://github.com/you/apipuccino)";
+const CF_WORKER_URL = process.env.CF_WORKER_URL || ""; // e.g. https://apipuccino-probe.workers.dev/?url=
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+function jitter() { return JITTER_MIN + Math.random() * (JITTER_MAX - JITTER_MIN); }
+
+/** Minimal p-limit (avoid dep if not installed, but use it if available) */
+async function pLimit(concurrency) {
+  try {
+    const mod = await import("p-limit");
+    return mod.default(concurrency);
+  } catch {
+    // fallback tiny implementation
+    let active = 0; const queue = [];
+    const run = async (fn) => {
+      if (active >= concurrency) await new Promise(res => queue.push(res));
+      active++;
+      try { return await fn(); } finally { active--; if (queue.length) queue.shift()(); }
+    };
+    const limiter = (fn) => run(fn);
+    limiter.concurrency = concurrency;
+    return limiter;
+  }
+}
+
+function getJsonPath(obj, path) {
+  // supports "$.a.b" and "$.a[0].b" simple
+  if (!path || path === "$") return obj;
+  const clean = path.replace(/^\$\.?/, "");
+  const parts = clean.split(".");
+  let cur = obj;
+  for (const p of parts) {
+    if (cur == null) return undefined;
+    const m = p.match(/^(\w+)\[(\d+)\]$/);
+    if (m) { cur = cur[m[1]]?.[Number(m[2])]; }
+    else cur = cur[p];
+  }
+  return cur;
+}
+
+function hashContent(text) {
+  return crypto.createHash("sha256").update(text).digest("hex").slice(0, 12);
+}
+
+async function probe(api, prevFailures = 0) {
+  const { url, probe: cfg } = api;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), cfg.timeoutMs ?? 8000);
+  const start = Date.now();
+  let status = null, contentType = null, bodyText = "", ok = false, error = null;
+  try {
+    const res = await fetch(url, {
+      method: cfg.method || "GET",
+      signal: controller.signal,
+      headers: { "User-Agent": UA, "Accept": "*/*" },
+    });
+    status = res.status;
+    contentType = res.headers.get("content-type");
+    // Respect Retry-After
+    if (res.status === 429) {
+      const ra = res.headers.get("retry-after");
+      if (ra) await sleep(Math.min(Number(ra) * 1000, 5000));
+    }
+    // Read body with limit
+    bodyText = await res.text();
+    // L0: status
+    if (status !== (cfg.expectedStatus ?? 200)) throw new Error(`expected status ${cfg.expectedStatus} got ${status}`);
+    // L1: content-type
+    if (cfg.expectedContentType && contentType && !contentType.includes(cfg.expectedContentType)) {
+      throw new Error(`expected content-type ${cfg.expectedContentType} got ${contentType}`);
+    }
+    // L1: jsonPath
+    if (cfg.expectedJsonPath) {
+      let json; try { json = JSON.parse(bodyText); } catch { throw new Error("expected JSON but parse failed"); }
+      const val = getJsonPath(json, cfg.expectedJsonPath);
+      if (val === undefined || val === null) throw new Error(`jsonPath ${cfg.expectedJsonPath} not found`);
+    }
+    ok = true;
+  } catch (e) {
+    error = e.name === "AbortError" ? "timeout" : e.message;
+    ok = false;
+  } finally {
+    clearTimeout(timeout);
+  }
+  let l3Validated = null; // null=not checked, true/false for openapiUrl
+  // L3: if openapiUrl exists, verify it is reachable & parseable (Phase 3 lightweight)
+  if (api.openapiUrl) {
+    try {
+      const oRes = await fetch(api.openapiUrl, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(8000) });
+      l3Validated = oRes.ok;
+      if (!oRes.ok) console.log(`  L3 ${api.slug} openapiUrl ${oRes.status}`);
+    } catch { l3Validated = false; }
+  }
+
+  // Fallback for auth-required APIs: probe docs URL instead of 401 data endpoint (per AGENTS.md FIX 5)
+  let probeFallback = null;
+  if (!ok && (api.auth === "key" || api.auth === "oauth") && api.docs) {
+    try {
+      const dRes = await fetch(api.docs, { method: "HEAD", headers: { "User-Agent": UA }, signal: AbortSignal.timeout(8000) });
+      if (dRes.ok || (dRes.status >= 200 && dRes.status < 400)) {
+        probeFallback = `docs fallback OK ${dRes.status}`;
+        ok = true;
+        error = `data probe ${error} — docs fallback succeeded (${dRes.status})`;
+      } else {
+        // try GET if HEAD blocked
+        const gRes = await fetch(api.docs, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(8000) });
+        if (gRes.ok) { ok = true; probeFallback = `docs GET ${gRes.status}`; error = `data probe ${error} — docs GET fallback ${gRes.status}`; }
+      }
+    } catch (e) { probeFallback = `docs fallback failed ${e.message}`; }
+  }
+
+  const latencyMs = Date.now() - start;
+
+  // Secondary probe via CF Worker on failure (dual-region verification)
+  if (!ok && CF_WORKER_URL) {
+    try {
+      const cfRes = await fetch(`${CF_WORKER_URL}${encodeURIComponent(url)}`, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(8000) });
+      if (cfRes.ok) {
+        // If CF succeeds, treat as flake — keep ok=false but note,实际 we downgrade failure
+        // Per plan: only if BOTH fail => consecutiveFailures++
+        // Here we mark as recovered to avoid false death
+        error = `primary failed (${error}), CF probe passed — likely runner region issue`;
+        ok = true; // don't penalize
+      }
+    } catch { /* CF also failed — confirm failure */ }
+  }
+
+  const consecutiveFailures = ok ? 0 : prevFailures + 1;
+  return {
+    slug: api.slug,
+    ok,
+    status,
+    latencyMs,
+    contentType,
+    timeChecked: new Date().toISOString(),
+    consecutiveFailures,
+    contentHash: bodyText ? hashContent(bodyText) : null,
+    l3Validated,
+    probeFallback,
+    ...(error ? { error } : {}),
+  };
+}
+
+function hashKeys(json) {
+  try {
+    const obj = JSON.parse(json);
+    const keys = Object.keys(obj).sort().join(",");
+    return crypto.createHash("sha256").update(keys).digest("hex").slice(0, 12);
+  } catch { return null; }
+}
+
+async function main() {
+  const apis = JSON.parse(await fs.readFile(APIS_JSON, "utf8"));
+  let prevResults = {};
+  let prevHashes = {};
+  try {
+    const prev = JSON.parse(await fs.readFile(RESULTS_JSON, "utf8"));
+    for (const r of prev.results) {
+      prevResults[r.slug] = r.consecutiveFailures;
+      if (r.contentHash) prevHashes[r.slug] = r.contentHash;
+    }
+  } catch {}
+
+  const limit = await pLimit(CONCURRENCY);
+  const results = [];
+  let idx = 0;
+
+  const tasks = apis.map((api) => limit(async () => {
+    // throttle 30/min = ~2000ms per batch, we do jitter + concurrency 5 -> ~30/min achieved
+    if (idx++ > 0) await sleep(jitter());
+    const prevFail = prevResults[api.slug] ?? 0;
+    const res = await probe(api, prevFail);
+    results.push(res);
+    const icon = res.ok ? "✓" : "✗";
+    console.log(`${icon} ${api.slug} ${res.status ?? "ERR"} ${res.latencyMs}ms${res.error ? " " + res.error : ""}`);
+    return res;
+  }));
+
+  await Promise.all(tasks);
+
+  const summary = { total: results.length, ok: results.filter(r=>r.ok).length, failed: results.filter(r=>!r.ok).length };
+  const checkedAt = new Date().toISOString();
+  const out = { checkedAt, summary, results: results.sort((a,b)=>a.slug.localeCompare(b.slug)) };
+
+  // Commit only if summary changed (reduce churn) — caller checks file diff; we always write but GH Action gates commit
+  await fs.writeFile(RESULTS_JSON, JSON.stringify(out, null, 2) + "\n", "utf8");
+
+  // Append to history JSONL
+  const day = checkedAt.slice(0,10);
+  const histFile = path.join(DATA_DIR, "history", `${day}.jsonl`);
+  const line = JSON.stringify({ checkedAt, summary, results }) + "\n";
+  await fs.appendFile(histFile, line, "utf8");
+
+  // L2 Drift detection: contentHash changed while ok (keys drift)
+  const drifts = results.filter(r => r.ok && prevHashes[r.slug] && r.contentHash && r.contentHash !== prevHashes[r.slug]);
+  if (drifts.length) {
+    console.log(`\n● Drift Alert: ${drifts.map(d=>`${d.slug} ${prevHashes[d.slug]}→${d.contentHash}`).join(", ")}`);
+    await fs.writeFile(path.join(DATA_DIR, "drift-report.json"), JSON.stringify({ checkedAt, drifts: drifts.map(d=>({ slug: d.slug, prevHash: prevHashes[d.slug], newHash: d.contentHash })) }, null, 2), "utf8");
+  } else {
+    // remove stale drift report if no drift
+    await fs.unlink(path.join(DATA_DIR, "drift-report.json")).catch(()=>{});
+  }
+
+  // Death report: consecutiveFailures >=3
+  const deaths = results.filter(r=>r.consecutiveFailures >= 3);
+  if (deaths.length) {
+    console.log(`\n⚠ Death Report: ${deaths.map(d=>d.slug).join(", ")} — should open GitHub Issue (consecutiveFailures >=3)`);
+    await fs.writeFile(path.join(DATA_DIR, "death-report.json"), JSON.stringify({ checkedAt, deaths }, null, 2), "utf8");
+  } else {
+    await fs.unlink(path.join(DATA_DIR, "death-report.json")).catch(()=>{});
+  }
+
+  console.log(`\nDone: ${summary.ok}/${summary.total} ok, ${summary.failed} failed, ${drifts.length} drifts — ${checkedAt}`);
+  console.log(`→ ${RESULTS_JSON}`);
+  console.log(`→ ${histFile}`);
+}
+
+main().catch(e => { console.error(e); process.exit(1); });

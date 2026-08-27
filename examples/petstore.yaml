@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: Petstore Example
+  version: 1.0.0
+  description: Minimal fixture for Vitest + Playwright E2E (Day 6)
+servers: [{ url: https://petstore.swagger.io/v2 }]
+paths:
+  /pet:
+    post:
+      operationId: addPet
+      summary: Add a new pet
+      tags: [pet]
+      responses: { "200": { description: ok } }
+  /pet/{petId}:
+    get:
+      operationId: getPetById
+      summary: Find pet by ID
+      tags: [pet]
+      parameters: [{ name: petId, in: path, required: true, schema: { type: integer } }]
+      responses: { "200": { description: ok } }
+components:
+  schemas:
+    Pet:
+      type: object
+      properties: { id: { type: integer }, name: { type: string } }

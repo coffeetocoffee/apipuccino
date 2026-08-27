@@ -1,0 +1,15 @@
+<article class="endpoint">
+<h2><span class="method-<%= method.toLowerCase() %>"><%= method %></span> <%= path %></h2>
+<p><%= operation.summary || "" %></p><p><%= operation.description || "" %></p>
+<h3>Code Samples</h3>
+<pre class="sample curl"><code><%= samples.curl %></code></pre>
+<pre class="sample js"><code><%= samples.js %></code></pre>
+<pre class="sample python"><code><%= samples.python %></code></pre>
+<section class="playground" data-try-it data-method="<%= method %>" data-url="<%= servers[0]?.url || '' %><%= path %>">
+<h3>Try It</h3>
+<label>Auth <input data-auth placeholder="Bearer …"></label>
+<button data-send>Send</button>
+<pre data-response></pre>
+<p class="cors-note no-print">If CORS blocks, copy curl above — static docs are offline-first.</p>
+</section>
+</article>

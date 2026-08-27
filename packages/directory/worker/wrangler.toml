@@ -1,0 +1,5 @@
+name = "apipuccino-probe"
+main = "index.js"
+compatibility_date = "2026-08-27"
+# Deploy: npx wrangler deploy
+# Free tier: 100k req/day — enough for 500 APIs *1 nightly

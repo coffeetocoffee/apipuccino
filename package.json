@@ -1,0 +1,23 @@
+{
+  "name": "apipuccino-platform",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Apipuccino Platform — Discover only live APIs. Document them beautifully. Both offline. (COMBINED v2.0 FREE)",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "check": "node packages/directory/scripts/check.mjs",
+    "verify": "node packages/directory/scripts/verify.mjs",
+    "build:docs": "pnpm --filter @apipuccino/docs build",
+    "dev:web": "pnpm --filter @apipuccino/web dev"
+  },
+  "keywords": ["api-directory", "openapi", "docs-generator", "offline", "free"]
+}

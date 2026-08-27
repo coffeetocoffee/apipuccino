@@ -1,0 +1,10 @@
+/* print.css — default PDF (no deps). Hide sidebar/search/toggle, show TOC */
+@media print {
+  nav, #search, #theme-toggle, #playground, .no-print { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  a { color: #000; text-decoration: none; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 8pt; color: #555; }
+  pre { white-space: pre-wrap; border: 1px solid #ccc; padding: 8px; }
+  h1, h2, h3 { break-after: avoid; }
+  @page { margin: 18mm 14mm; @bottom-center { content: counter(page); } }
+}

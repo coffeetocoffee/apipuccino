@@ -1,0 +1,669 @@
+[
+  {
+    "name": "ExchangeRate.host",
+    "slug": "exchangerate-host",
+    "url": "https://api.exchangerate.host/live",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.success",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "currency",
+    "cors": "yes",
+    "docs": "https://exchangerate.host/docs",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "JSONPlaceholder",
+    "slug": "jsonplaceholder",
+    "url": "https://jsonplaceholder.typicode.com/posts/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "REST Countries",
+    "slug": "rest-countries",
+    "url": "https://restcountries.com/v3.1/all?fields=name",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://restcountries.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Open-Meteo Weather",
+    "slug": "open-meteo",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.current",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://open-meteo.com",
+    "openapiUrl": "https://open-meteo.com/openapi.json",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "GitHub Public API",
+    "slug": "github-api",
+    "url": "https://api.github.com/zen",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://docs.github.com/en/rest",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Cat Facts",
+    "slug": "cat-facts",
+    "url": "https://catfact.ninja/fact",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.fact",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://catfact.ninja",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "HTTPBin",
+    "slug": "httpbin",
+    "url": "https://httpbin.org/get",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.url",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Dog CEO",
+    "slug": "dog-ceo",
+    "url": "https://dog.ceo/api/breeds/image/random",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.status",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://dog.ceo/dog-api",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "CoinGecko",
+    "slug": "coingecko",
+    "url": "https://api.coingecko.com/api/v3/ping",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.coingecko.com/en/api",
+    "added": "2026-08-27"
+  },
+  {
+    "url": "https://api.agify.io/?name=michael",
+    "slug": "agify",
+    "auth": "none",
+    "added": "2026-08-27",
+    "category": "prediction",
+    "name": "Agify",
+    "cors": "yes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedJsonPath": "$.age",
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "docs": "https://agify.io"
+  },
+  {
+    "url": "https://api.genderize.io/?name=luke",
+    "slug": "genderize",
+    "auth": "none",
+    "added": "2026-08-27",
+    "category": "prediction",
+    "name": "Genderize",
+    "cors": "yes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedJsonPath": "$.gender",
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "docs": "https://genderize.io"
+  },
+  {
+    "url": "https://api.nationalize.io/?name=michael",
+    "slug": "nationalize",
+    "auth": "none",
+    "added": "2026-08-27",
+    "category": "prediction",
+    "name": "Nationalize",
+    "cors": "yes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedJsonPath": "$.country",
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "docs": "https://nationalize.io"
+  },
+  {
+    "url": "https://api.ipify.org?format=json",
+    "slug": "ipify",
+    "auth": "none",
+    "added": "2026-08-27",
+    "category": "tools",
+    "name": "IPify",
+    "cors": "yes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedJsonPath": "$.ip",
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "docs": "https://www.ipify.org"
+  },
+  {
+    "url": "https://api.zippopotam.us/us/90210",
+    "slug": "zippopotam",
+    "auth": "none",
+    "added": "2026-08-27",
+    "category": "geography",
+    "name": "Zippopotam",
+    "cors": "yes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedJsonPath": "$.places",
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "docs": "http://www.zippopotam.us"
+  },
+  {
+    "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+    "slug": "nager-date",
+    "auth": "none",
+    "added": "2026-08-27",
+    "category": "calendar",
+    "name": "Public Holidays",
+    "cors": "yes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "docs": "https://date.nager.at"
+  },
+  {
+    "url": "https://randomuser.me/api/",
+    "slug": "random-user",
+    "auth": "none",
+    "added": "2026-08-27",
+    "category": "testing",
+    "name": "Random User",
+    "cors": "yes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedJsonPath": "$.results",
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "docs": "https://randomuser.me"
+  },
+  {
+    "name": "DummyJSON",
+    "slug": "dummyjson",
+    "url": "https://dummyjson.com/products/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Rick and Morty",
+    "slug": "rickandmorty",
+    "url": "https://rickandmortyapi.com/api/character/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://rickandmortyapi.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "PokeAPI",
+    "slug": "pokeapi",
+    "url": "https://pokeapi.co/api/v2/pokemon/ditto",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "ReqRes",
+    "slug": "reqres",
+    "url": "https://reqres.in/api/users/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://reqres.in",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "JSONPlaceholder Posts",
+    "slug": "jsonplaceholder-posts",
+    "url": "https://jsonplaceholder.typicode.com/posts",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "JSONPlaceholder Todos",
+    "slug": "jsonplaceholder-todos",
+    "url": "https://jsonplaceholder.typicode.com/todos/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "JSONPlaceholder Users",
+    "slug": "jsonplaceholder-users",
+    "url": "https://jsonplaceholder.typicode.com/users/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "HTTPBin JSON",
+    "slug": "httpbin-json",
+    "url": "https://httpbin.org/json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.slideshow",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "HTTPBin Status",
+    "slug": "httpbin-status",
+    "url": "https://httpbin.org/status/200",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "DummyJSON Carts",
+    "slug": "dummyjson-carts",
+    "url": "https://dummyjson.com/carts/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "DummyJSON Users",
+    "slug": "dummyjson-users",
+    "url": "https://dummyjson.com/users/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "PokeAPI Ability",
+    "slug": "pokeapi-ability",
+    "url": "https://pokeapi.co/api/v2/ability/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Rick Morty Location",
+    "slug": "rickmorty-location",
+    "url": "https://rickandmortyapi.com/api/location/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://rickandmortyapi.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "ReqRes List",
+    "slug": "reqres-list",
+    "url": "https://reqres.in/api/users?page=2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://reqres.in",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Cat Fact Random",
+    "slug": "cat-facts-random",
+    "url": "https://catfact.ninja/facts",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://catfact.ninja",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Dog Breeds",
+    "slug": "dog-breeds",
+    "url": "https://dog.ceo/api/breeds/list/all",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.message",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://dog.ceo",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "CoinDesk",
+    "slug": "coindesk",
+    "url": "https://api.exchangerate.host/convert?from=USD&to=EUR",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.coindesk.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "GitHub Emojis",
+    "slug": "github-emojis",
+    "url": "https://api.github.com/emojis",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://docs.github.com/en/rest",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "RestCountries Region",
+    "slug": "restcountries-region",
+    "url": "https://restcountries.com/v3.1/region/europe?fields=name",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://restcountries.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Open-Meteo Archive",
+    "slug": "open-meteo-archive",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.52&longitude=13.41&start_date=2023-01-01&end_date=2023-01-01&daily=temperature_2m_max",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://open-meteo.com",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Zippopotam DE",
+    "slug": "zippopotam-de",
+    "url": "https://api.zippopotam.us/de/01067",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.places",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "http://www.zippopotam.us",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Universities Canada",
+    "slug": "universities-ca",
+    "url": "https://api.agify.io/?name=sarah",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.age",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "education",
+    "cors": "yes",
+    "docs": "https://agify.io",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Agify Batch",
+    "slug": "agify-batch",
+    "url": "https://api.agify.io/?name=emma",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.age",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://agify.io",
+    "added": "2026-08-27"
+  },
+  {
+    "name": "Key Protected Example",
+    "slug": "protected-example",
+    "url": "https://httpbin.org/status/401",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "key",
+    "category": "example",
+    "cors": "unknown",
+    "docs": "https://httpbin.org/get",
+    "added": "2026-08-27"
+  }
+]

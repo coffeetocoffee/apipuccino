@@ -1,0 +1,5 @@
+<% for (const tag of Object.keys(navigation)) { %>
+<section class="tag"><h3><%= tag %></h3><ul>
+<% for (const pg of navigation[tag]) { %><li><span class="method-<%= pg.method.toLowerCase() %>"><%= pg.method %></span> <a href="<%= basePath %>endpoints/<%= tag %>/<%= pg.operation.operationId || pg.path.replace(/[^a-z0-9]/gi,'-') %>.html"><%= pg.operation.summary || pg.path %></a></li><% } %>
+</ul></section>
+<% } %>

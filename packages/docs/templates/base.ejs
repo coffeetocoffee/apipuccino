@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title><%= info.title %> — Apipuccino Docs</title>
+<link rel="stylesheet" href="<%= basePath %>themes/<%= theme %>.css">
+<link rel="stylesheet" href="<%= basePath %>print.css" media="print">
+<script><%- themeToggleInline %></script>
+</head>
+<body data-theme="<%= theme %>">
+<header class="no-print"><button id="theme-toggle">Toggle theme</button> <select id="version-switcher"><%- versionOptions %></select></header>
+<nav><%- sidebar %></nav>
+<main><%- content %></main>
+<footer>Verified by <a href="https://github.com/you/apipuccino">Apipuccino</a> — <span data-badge="<%= slug %>">loading badge…</span> <img data-shield alt="status badge" src="https://img.shields.io/badge/live-brightgreen"> — <a href="<%= basePath %>search-index.json">search</a></footer>
+<script src="<%= basePath %>badge.js"></script>
+<script src="<%= basePath %>playground.js"></script>
+<script src="<%= basePath %>search.js"></script>
+<script src="<%= basePath %>theme-toggle.js"></script>
+</body>
+</html>

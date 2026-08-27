@@ -1,0 +1,3 @@
+:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--border:#1e293b;--accent:#38bdf8;--code-bg:#1e293b;--sidebar-bg:#020617;--method-get:#22c55e;--method-post:#3b82f6;--method-put:#f59e0b;--method-delete:#ef4444;--method-patch:#8b5cf6;}
+body{background:var(--bg);color:var(--fg)}
+a{color:var(--accent)}

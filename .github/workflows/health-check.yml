@@ -1,0 +1,52 @@
+name: Health Check
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # 03:00 UTC per Master Plan Sec 7
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Validate apis.json
+        run: node packages/directory/scripts/verify.mjs
+      - name: Run health checks (p-limit 5 + jitter)
+        env:
+          CF_WORKER_URL: ${{ secrets.CF_WORKER_URL }}
+        run: node packages/directory/scripts/check.mjs
+      - name: Upload history artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: history-${{ github.run_id }}
+          path: packages/directory/data/history/*.jsonl
+      - name: Commit only if summary changed
+        run: |
+          git config user.name "ApipuccinoBot"
+          git config user.email "bot@apipuccino.dev"
+          git add packages/directory/data/results.json
+          if git diff --cached --quiet; then
+            echo "No summary change — skip commit"
+          else
+            git commit -m "chore: health check $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          fi
+      - name: Death Report — open issue if failures >=3 days
+        if: hashFiles('packages/directory/data/death-report.json') != ''
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Death Report: APIs failing 3+ days"
+          content-filepath: packages/directory/data/death-report.json
+          labels: death-report

@@ -1,0 +1,9 @@
+node_modules
+dist
+api-docs
+out
+.pnpm-store
+*.log
+.DS_Store
+packages/directory/data/history/*.jsonl
+!packages/directory/data/history/.gitkeep
