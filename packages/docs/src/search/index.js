@@ -4,7 +4,6 @@
  */
 import fs from "node:fs/promises";
 import path from "node:path";
-import { glob } from "node:fs/promises";
 
 async function buildLunrFallback(outDir, fallbackPath) {
   // Walk HTML files and build minimal search-index.json { title, url, excerpt }

@@ -5,7 +5,6 @@
 import SwaggerParser from "@apidevtools/swagger-parser";
 import { readFile } from "node:fs/promises";
 import yaml from "yaml";
-import { glob } from "node:fs";
 
 export async function parseSpec(input) {
   // input: string | string[] — glob support
