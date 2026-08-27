@@ -1,3 +1,12 @@
-:root{--bg:#fff;--fg:#111;--accent:#0ea5e9;--method-get:#16a34a;--method-post:#2563eb;--method-put:#d97706;--method-delete:#dc2626;}
-[data-theme="dark"]{--bg:#0f172a;--fg:#e2e8f0;--accent:#38bdf8;}
-.method-get{color:var(--method-get)} .method-post{color:var(--method-post)}
+:root{--bg:#fcfcf9;--fg:#0f172a;--muted:#64748b;--border:#e2e8f0;--card:#fff;--accent:#0ea5e9;--method-get:#16a34a;--method-post:#2563eb;--method-put:#d97706;--method-delete:#dc2626;--method-patch:#8b5cf6;--radius:12px;--shadow:0 8px 30px rgba(15,23,42,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:ui-sans-system,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--fg);background:var(--bg);line-height:1.6}
+a{color:var(--accent)}nav{position:sticky;top:0;height:100vh;overflow:auto;padding:18px;border-right:1px solid var(--border);background:var(--card)}
+nav h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+nav ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}nav li{font-size:13px}
+.method-get{color:var(--method-get);font-weight:700} .method-post{color:var(--method-post);font-weight:700} .method-put{color:var(--method-put);font-weight:700} .method-delete{color:var(--method-delete);font-weight:700}
+main{max-width:780px;margin:0 auto;padding:28px 20px}
+pre{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;overflow:auto;font-size:13px;box-shadow:var(--shadow)}
+.playground{border:1px solid var(--border);border-radius:12px;padding:14px;background:var(--card);box-shadow:var(--shadow);margin:18px 0}
+footer{padding:20px;color:var(--muted);text-align:center;font-size:13px;border-top:1px solid var(--border);margin-top:24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border);background:color-mix(in srgb, var(--bg) 85%, transparent);backdrop-filter:blur(8px);position:sticky;top:0}
+@media(min-width:900px){body{display:grid;grid-template-columns:280px 1fr} nav{height:100vh}}

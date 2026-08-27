@@ -29,11 +29,11 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Build docs
         run: node packages/docs/src/cli/index.js build --input ./examples/petstore.yaml --output ./api-docs
-      - name: Build web (if astro)
-        run: pnpm --filter @apipuccino/web build || echo "web build skipped"
+      - name: Build beautiful directory
+        run: node packages/directory/scripts/build-web.mjs
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./api-docs
+          path: ./dist
       - id: deployment
         uses: actions/deploy-pages@v4
