@@ -1,6 +1,6 @@
 ﻿---
-import apis from "../../../packages/directory/data/apis.json";
-import results from "../../../packages/directory/data/results.json";
+import apis from "../../../../packages/directory/data/apis.json";
+import results from "../../../../packages/directory/data/results.json";
 const bySlug = Object.fromEntries(results.results.map(r=>[r.slug,r]));
 const pct = Math.round(results.summary.ok/results.summary.total*100);
 ---
@@ -8,7 +8,7 @@ const pct = Math.round(results.summary.ok/results.summary.total*100);
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Apipuccino — Nobody lists dead APIs.</title>
-<meta name="description" content="Nobody lists dead APIs. Free, self-verifying directory (40/40 live) + offline OpenAPI docs. Nightly checks, Pagefind, playground.">
+<meta name="description" content={`Nobody lists dead APIs. Free, self-verifying directory (${results.summary.ok}/${results.summary.total} live) + offline OpenAPI docs. Nightly checks, Pagefind, playground.`}>
 <style>
 :root{--bg:#fcfcf9;--fg:#0f172a;--muted:#64748b;--border:#e2e8f0;--card:#ffffff;--accent:#0ea5e9;--accent-2:#8b5cf6;--ok:#16a34a;--bad:#dc2626;--radius:16px;--shadow:0 8px 30px rgba(15,23,42,.06)}
 @media(prefers-color-scheme:dark){:root{--bg:#020617;--fg:#f1f5f9;--muted:#94a3b8;--border:#1e293b;--card:#0f172a;--shadow:0 8px 30px rgba(0,0,0,.4)}}
@@ -48,7 +48,7 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 <main class="wrap">
 <section class="hero">
 <h1>Nobody lists <span>dead APIs.</span></h1>
-<p>Free, self-verifying directory (40/40 live, nightly L0-L3 checks + drift alerts) + offline OpenAPI docs generator. Pagefind search, Try-It playground, 4 themes. MIT+CC0, zero-cost.</p>
+<p>Free, self-verifying directory ({results.summary.ok}/{results.summary.total} live, nightly L0-L3 checks + drift alerts) + offline OpenAPI docs generator. Pagefind search, Try-It playground, 4 themes. MIT+CC0, zero-cost.</p>
 <div class="stats">
 <span class="pill"><span class="dot-ok">●</span> {results.summary.ok}/{results.summary.total} live — {pct}%</span>
 <span class="pill">Last checked {new Date(results.checkedAt).toLocaleString()}</span>

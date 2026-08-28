@@ -1,345 +1,230 @@
 {
-  "checkedAt": "2026-08-28T06:53:11.850Z",
+  "checkedAt": "2026-08-28T13:28:37.661Z",
   "drifts": [
     {
+      "slug": "24-pull-requests",
+      "prevHash": "c2f30da9c7a9",
+      "newHash": "edb3d1178f11"
+    },
+    {
       "slug": "advice-slip",
-      "prevHash": "63062de25d71",
-      "newHash": "3da9711c1206"
+      "prevHash": "b97b690d7fd7",
+      "newHash": "000dbbee3201"
     },
     {
-      "slug": "adviceslip-2",
-      "prevHash": "881c5cca043a",
-      "newHash": "e9ce78fa4f89"
+      "slug": "animenewsnetwork",
+      "prevHash": "91d3bfe1f4a7",
+      "newHash": "b02bec5dca31"
     },
     {
-      "slug": "ai21",
-      "prevHash": "0f2f1c634df2",
-      "newHash": "90ddefd69be4"
+      "slug": "astroworld",
+      "prevHash": "030ff7aaa756",
+      "newHash": "4181916c20ad"
     },
     {
-      "slug": "alchemy",
-      "prevHash": "a0f7c39736d5",
-      "newHash": "029652331208"
+      "slug": "btcglobe",
+      "prevHash": "722758a2e3bf",
+      "newHash": "39967dce5c27"
     },
     {
-      "slug": "amadeus",
-      "prevHash": "787ec3e96b06",
-      "newHash": "424d37d2f7fb"
-    },
-    {
-      "slug": "anthropic",
-      "prevHash": "e7d08c75fff8",
-      "newHash": "43484b87ea3e"
-    },
-    {
-      "slug": "arbeitnow",
-      "prevHash": "c364f9967f83",
-      "newHash": "718e193a9ea0"
-    },
-    {
-      "slug": "azure",
-      "prevHash": "9229c20ce51b",
-      "newHash": "aeb9aa7a5ad3"
-    },
-    {
-      "slug": "behance",
-      "prevHash": "22c3a3b3f8ca",
-      "newHash": "dd4531e9d38c"
-    },
-    {
-      "slug": "bigcommerce",
-      "prevHash": "01531060a13b",
-      "newHash": "4d3c9bcf5698"
-    },
-    {
-      "slug": "booking",
-      "prevHash": "90adb3774dc8",
-      "newHash": "0a32d6ad0ed9"
-    },
-    {
-      "slug": "bscscan",
-      "prevHash": "84a6f1d8bb5b",
-      "newHash": "6905e3c477b0"
+      "slug": "caldays",
+      "prevHash": "a998c6fdbd6f",
+      "newHash": "27d515162ecc"
     },
     {
       "slug": "cat-facts",
-      "prevHash": "7701b2e435a8",
-      "newHash": "0818692ee573"
+      "prevHash": "e4ef7bc2c77f",
+      "newHash": "76dc610ed71a"
     },
     {
-      "slug": "cat-facts-2-1114",
-      "prevHash": "5748753f1c8c",
-      "newHash": "727e336fcec2"
+      "slug": "cheapshark",
+      "prevHash": "8e69da74c6dd",
+      "newHash": "c435f1dc2a01"
     },
     {
       "slug": "chuck-norris",
-      "prevHash": "8d5ff6bece62",
-      "newHash": "25916a4bf2ee"
+      "prevHash": "bb7cd94ecbb0",
+      "newHash": "9e27746a173c"
     },
     {
       "slug": "coingecko-bitcoin",
-      "prevHash": "4a9fc60f7650",
-      "newHash": "a415b8a45219"
+      "prevHash": "dad2cb286d6a",
+      "newHash": "9d7affd2816d"
     },
     {
-      "slug": "currencyapi",
-      "prevHash": "1b3ea6579a68",
-      "newHash": "f721e9cde3aa"
-    },
-    {
-      "slug": "cuttly",
-      "prevHash": "167552f2e34b",
-      "newHash": "4abd4dc43c24"
-    },
-    {
-      "slug": "dailymotion",
-      "prevHash": "9915dbb830b9",
-      "newHash": "00e33ebbb5a4"
+      "slug": "coinlobster",
+      "prevHash": "2d6847c15a30",
+      "newHash": "d3f9cfe37356"
     },
     {
       "slug": "deckofcards",
-      "prevHash": "e62d73bad39d",
-      "newHash": "1c25082cdb03"
+      "prevHash": "8387ea95c89d",
+      "newHash": "8928c467d69b"
     },
     {
       "slug": "deckofcards-2",
-      "prevHash": "4feb7ba4c41d",
-      "newHash": "2f52d623f146"
+      "prevHash": "e01dbde9ecd8",
+      "newHash": "7c9fbd369f9b"
+    },
+    {
+      "slug": "disify",
+      "prevHash": "04af0bf54380",
+      "newHash": "638a1f9d10b6"
     },
     {
       "slug": "dog-ceo",
-      "prevHash": "3d97e28bec33",
-      "newHash": "ce65f7525f70"
+      "prevHash": "9a3dd198468d",
+      "newHash": "96a375d1374c"
     },
     {
-      "slug": "dog-random-2-1113",
-      "prevHash": "cca6ca5e33b2",
-      "newHash": "54d080206de3"
+      "slug": "emojihub",
+      "prevHash": "edf767afe601",
+      "newHash": "31a917737b4d"
     },
     {
-      "slug": "edx",
-      "prevHash": "465ee7c50dee",
-      "newHash": "3dcc399edf52"
+      "slug": "ffxiv-collect",
+      "prevHash": "7eb272223a0b",
+      "newHash": "1e88f2b84819"
     },
     {
-      "slug": "eodhd",
-      "prevHash": "60bfb396e6bb",
-      "newHash": "c815c71937a1"
-    },
-    {
-      "slug": "etherscan",
-      "prevHash": "1649246afd41",
-      "newHash": "ac9d094ed53a"
-    },
-    {
-      "slug": "fake-store-api",
-      "prevHash": "bedd4ec15c8d",
-      "newHash": "2755f61b6c2d"
-    },
-    {
-      "slug": "flickr",
-      "prevHash": "1acf222790c6",
-      "newHash": "ccc5207fe4de"
-    },
-    {
-      "slug": "genius",
-      "prevHash": "f40843aebb32",
-      "newHash": "d371e0bbbe7c"
-    },
-    {
-      "slug": "github",
-      "prevHash": "2d0abf1ee966",
-      "newHash": "ba3800127501"
+      "slug": "get-started-with-web3",
+      "prevHash": "e13dca5901de",
+      "newHash": "e43733dff085"
     },
     {
       "slug": "github-api",
-      "prevHash": "350b3f018173",
-      "newHash": "7232f138e050"
+      "prevHash": "f03c89fbc29f",
+      "newHash": "3e6f138a512b"
     },
     {
-      "slug": "goodreads",
-      "prevHash": "c8de0fce619b",
-      "newHash": "a81ba46b98ed"
+      "slug": "github-emojis",
+      "prevHash": "d4a8b7cd0ef5",
+      "newHash": "5b6bf0e5f9b3"
     },
     {
-      "slug": "google-books",
-      "prevHash": "2526e969af21",
-      "newHash": "b1f170ac8b67"
+      "slug": "github-repo",
+      "prevHash": "b02a4b0042da",
+      "newHash": "3adc392573ee"
     },
     {
-      "slug": "holidayapi",
-      "prevHash": "ff19533e8d41",
-      "newHash": "2d027c24ede3"
+      "slug": "helium",
+      "prevHash": "4d866f7f75db",
+      "newHash": "4ddc15638f07"
     },
     {
       "slug": "httpbin",
-      "prevHash": "239dfedfc89a",
-      "newHash": "044fcfb6a61b"
+      "prevHash": "d79eb8ffe6e8",
+      "newHash": "ba83123c60d4"
     },
     {
-      "slug": "httpbin-get-3-1115",
-      "prevHash": "95dda4627dc9",
-      "newHash": "2a271625c819"
+      "slug": "icon-horse",
+      "prevHash": "6d47027d8b07",
+      "newHash": "7b03c2e67d69"
     },
     {
-      "slug": "huggingface",
-      "prevHash": "8af45c9d056f",
-      "newHash": "37b11b58cde8"
+      "slug": "ip-fast-com",
+      "prevHash": "211d720b2c03",
+      "newHash": "d73d04f90a73"
     },
     {
       "slug": "jokeapi",
-      "prevHash": "32e896f058af",
-      "newHash": "c13d19ccd9a3"
+      "prevHash": "274d4b86c5bb",
+      "newHash": "6548ba1d9549"
     },
     {
       "slug": "jokeapi-prog",
-      "prevHash": "0009312fe7c7",
-      "newHash": "11818528215a"
+      "prevHash": "af08f1390ec8",
+      "newHash": "c1f0f39ef402"
     },
     {
-      "slug": "linkedin",
-      "prevHash": "8920008cea8c",
-      "newHash": "01607fd47ab4"
+      "slug": "kroki",
+      "prevHash": "eee620286f1c",
+      "newHash": "119d1a7a3803"
     },
     {
-      "slug": "loginradius",
-      "prevHash": "a4e2824b58ba",
-      "newHash": "45cc64732142"
+      "slug": "liquilens",
+      "prevHash": "0e74a42c6326",
+      "newHash": "80fe5bd4e6d7"
     },
     {
-      "slug": "mandrill",
-      "prevHash": "aa717ecfe10a",
-      "newHash": "ebf7b5f77784"
+      "slug": "movebank",
+      "prevHash": "10470fe09f9f",
+      "newHash": "014e317b0992"
     },
     {
-      "slug": "nasa-apod",
-      "prevHash": "834db0761f14",
-      "newHash": "4e7465f2891c"
-    },
-    {
-      "slug": "nasa-epic",
-      "prevHash": "6b0d801fd051",
-      "newHash": "9e15e7f8b28c"
+      "slug": "networkcalc",
+      "prevHash": "99c3fa62fc4d",
+      "newHash": "ffe60a22e4aa"
     },
     {
       "slug": "official-joke",
-      "prevHash": "92a0f30b9d36",
-      "newHash": "1f2917e6839f"
+      "prevHash": "f96746643823",
+      "newHash": "256cbda80f81"
     },
     {
       "slug": "official-joke-prog",
-      "prevHash": "9e3d30066c81",
-      "newHash": "6f39da7eb87e"
+      "prevHash": "1158a21c6aa2",
+      "newHash": "29b09a5569e7"
     },
     {
       "slug": "open-meteo",
-      "prevHash": "f6ef503658c7",
-      "newHash": "51daa2c7ace8"
+      "prevHash": "898087ce37b9",
+      "newHash": "dc98690a28fe"
     },
     {
       "slug": "open-meteo-2",
-      "prevHash": "43b954b3aaa6",
-      "newHash": "b09c1861a8aa"
+      "prevHash": "b6cd3dbf2015",
+      "newHash": "225ca033dea1"
     },
     {
       "slug": "open-meteo-archive",
-      "prevHash": "67dd527a86d2",
-      "newHash": "39de4230f658"
+      "prevHash": "064e9c2e9b85",
+      "newHash": "09e6cbb6b0cd"
     },
     {
-      "slug": "open-meteo-berlin-2",
-      "prevHash": "7e97cc71821e",
-      "newHash": "acb1a5c33772"
+      "slug": "paralelo-bo",
+      "prevHash": "d3f895c63d19",
+      "newHash": "31a0afcf43b1"
     },
     {
-      "slug": "open-notify",
-      "prevHash": "5dd6834dca38",
-      "newHash": "cffbf1dbfc08"
+      "slug": "poetrydb",
+      "prevHash": "dad3ae7d7aec",
+      "newHash": "f28871bfb78c"
     },
     {
-      "slug": "pinterest",
-      "prevHash": "3bfb9db63d97",
-      "newHash": "d1a49a3516f6"
-    },
-    {
-      "slug": "pulsedive",
-      "prevHash": "a00d1f8e13a4",
-      "newHash": "791cba7651ca"
+      "slug": "quickchart",
+      "prevHash": "db188c678403",
+      "newHash": "3e996468fca9"
     },
     {
       "slug": "random-user",
-      "prevHash": "6208b605b3a9",
-      "newHash": "96fa96a61b0d"
+      "prevHash": "9a7a27da7fd5",
+      "newHash": "a8cb40bfc34f"
     },
     {
       "slug": "random-user-alt",
-      "prevHash": "0acaf9b84f2c",
-      "newHash": "5a35587527ec"
+      "prevHash": "7872dd2bcc3e",
+      "newHash": "1ce6434e7417"
     },
     {
-      "slug": "randomuser-2x2",
-      "prevHash": "cfd68fcb8cdf",
-      "newHash": "1e2983042a13"
-    },
-    {
-      "slug": "reddit",
-      "prevHash": "4da30e3b7136",
-      "newHash": "91939209936f"
-    },
-    {
-      "slug": "reqres-list-2x",
-      "prevHash": "a7cdde9e2796",
-      "newHash": "07b41a5c816c"
-    },
-    {
-      "slug": "skypicker",
-      "prevHash": "6c8047fa721b",
-      "newHash": "5e77c7bc5daa"
-    },
-    {
-      "slug": "soundcloud",
-      "prevHash": "60ae0af51f82",
-      "newHash": "637da85a7827"
-    },
-    {
-      "slug": "stripe",
-      "prevHash": "2ebf3ddea775",
-      "newHash": "e76a29c2548c"
-    },
-    {
-      "slug": "stripe-1",
-      "prevHash": "29d843f5dccf",
-      "newHash": "e5b95335b354"
+      "slug": "randomdog",
+      "prevHash": "51310458845a",
+      "newHash": "4bb4ec0f5f7a"
     },
     {
       "slug": "thecatapi",
-      "prevHash": "652626359b7a",
-      "newHash": "42de69fd5e84"
+      "prevHash": "0ca79c95f30b",
+      "newHash": "1bdcd349b0be"
     },
     {
-      "slug": "twelve-data",
-      "prevHash": "ed777f49ac39",
-      "newHash": "f7f10cc9e622"
+      "slug": "thunder-client",
+      "prevHash": "129086e58551",
+      "newHash": "8a5e8c645e6a"
     },
     {
-      "slug": "twitch",
-      "prevHash": "6fe6b0000d97",
-      "newHash": "541047fda493"
-    },
-    {
-      "slug": "vercel",
-      "prevHash": "d8a35f98869e",
-      "newHash": "760b97038d16"
-    },
-    {
-      "slug": "weatherstack",
-      "prevHash": "78de1a40bc29",
-      "newHash": "5587bf20cb52"
-    },
-    {
-      "slug": "yahoo-finance",
-      "prevHash": "b5c02aaf3f13",
-      "newHash": "be6ed5809007"
+      "slug": "wiktionary",
+      "prevHash": "3607b5bb9d47",
+      "newHash": "72c3ded696a4"
     }
   ]
 }

@@ -5,5 +5,8 @@ out
 .pnpm-store
 *.log
 .DS_Store
+apps/web/.astro
+apps/web/src/env.d.ts
+test-results
 packages/directory/data/history/*.jsonl
 !packages/directory/data/history/.gitkeep
