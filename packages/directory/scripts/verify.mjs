@@ -49,3 +49,21 @@ const slugs = parsed.data.map(a=>a.slug);
 const dup = slugs.filter((s,i)=>slugs.indexOf(s)!==i);
 if (dup.length) { console.error(`✗ duplicate slugs: ${dup.join(", ")}`); process.exit(1); }
 console.log("✓ no duplicate slugs");
+// — ANTI-SPAM: prevent bulk same-host duplicates (DO NOT bulk-add DummyJSON Products 1-20 again) —
+const byHost = {};
+for (const a of parsed.data) { try { const h = new URL(a.url).hostname; byHost[h] = (byHost[h]||0)+1; } catch {} }
+const hostOver = Object.entries(byHost).filter(([,c])=>c>4);
+if (hostOver.length) {
+  console.error(`✗ host limit exceeded (max 4 per host, found): ${hostOver.map(([h,c])=>`${h}:${c}`).join(", ")}`);
+  console.error(`  → Fix: replace duplicates with diverse providers (see AGENTS.md TRUST>QUANTITY). DO NOT bulk-add same host.`);
+  process.exit(1);
+}
+console.log(`✓ host diversity ok — ${Object.keys(byHost).length} hosts (max ${Math.max(...Object.values(byHost))}/host)`);
+const byBase = {};
+for (const a of parsed.data) { const b = a.name.replace(/\s*\d+$/,'').toLowerCase(); byBase[b]=(byBase[b]||0)+1; }
+const baseOver = Object.entries(byBase).filter(([,c])=>c>3);
+if (baseOver.length) {
+  console.error(`✗ base-name bulk duplicate (max 3 per base, found): ${baseOver.map(([b,c])=>`${b}:${c}`).join(", ")}`);
+  process.exit(1);
+}
+console.log("✓ base-name diversity ok");

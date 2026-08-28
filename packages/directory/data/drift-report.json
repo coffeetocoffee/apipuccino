@@ -1,80 +1,60 @@
 {
-  "checkedAt": "2026-08-28T06:11:46.073Z",
+  "checkedAt": "2026-08-28T06:22:26.276Z",
   "drifts": [
     {
       "slug": "advice-slip",
-      "prevHash": "9cb35d1bf651",
-      "newHash": "7ff484a0d707"
+      "prevHash": "7ff484a0d707",
+      "newHash": "237ceaa75cd8"
     },
     {
       "slug": "cat-facts",
-      "prevHash": "2f5330e9a5ef",
-      "newHash": "5295c4f9d94e"
-    },
-    {
-      "slug": "coingecko-coins",
-      "prevHash": "893b87506c6e",
-      "newHash": "bc31137c3d28"
+      "prevHash": "5295c4f9d94e",
+      "newHash": "964be38c0328"
     },
     {
       "slug": "dog-ceo",
-      "prevHash": "2849d813e706",
-      "newHash": "5e4b31df7e86"
+      "prevHash": "5e4b31df7e86",
+      "newHash": "d54a628887ec"
     },
     {
       "slug": "github-api",
-      "prevHash": "350b3f018173",
-      "newHash": "a6567804b19d"
+      "prevHash": "a6567804b19d",
+      "newHash": "f03c89fbc29f"
     },
     {
       "slug": "httpbin",
-      "prevHash": "9afd86563c37",
-      "newHash": "53abb2d7fc72"
-    },
-    {
-      "slug": "httpbin-anything",
-      "prevHash": "493ad54750e0",
-      "newHash": "7b33824bba4d"
-    },
-    {
-      "slug": "httpbin-headers",
-      "prevHash": "e13a205bdad2",
-      "newHash": "a257f6f37cbc"
-    },
-    {
-      "slug": "httpbin-uuid",
-      "prevHash": "87b1fbc34b38",
-      "newHash": "c81f0c3f0673"
+      "prevHash": "53abb2d7fc72",
+      "newHash": "2187a95bdad2"
     },
     {
       "slug": "open-meteo",
-      "prevHash": "f52343b767bb",
-      "newHash": "b209b41c4d47"
+      "prevHash": "b209b41c4d47",
+      "newHash": "4c882dfdbcda"
     },
     {
       "slug": "open-meteo-2",
-      "prevHash": "fcd70d020199",
-      "newHash": "752469792f34"
+      "prevHash": "752469792f34",
+      "newHash": "f0c55832c599"
     },
     {
       "slug": "open-meteo-archive",
-      "prevHash": "1021a9351da2",
-      "newHash": "359c73091be8"
+      "prevHash": "359c73091be8",
+      "newHash": "e67d3b7e14d5"
     },
     {
       "slug": "random-user",
-      "prevHash": "2097f252c5d3",
-      "newHash": "d530f04fa81c"
+      "prevHash": "d530f04fa81c",
+      "newHash": "02bdfcfa36ab"
     },
     {
       "slug": "random-user-alt",
-      "prevHash": "f8346abde542",
-      "newHash": "89dc700256a7"
+      "prevHash": "89dc700256a7",
+      "newHash": "efc7dbad5947"
     },
     {
       "slug": "reqres-list",
-      "prevHash": "a7cdde9e2796",
-      "newHash": "07b41a5c816c"
+      "prevHash": "07b41a5c816c",
+      "newHash": "a7cdde9e2796"
     }
   ]
 }
