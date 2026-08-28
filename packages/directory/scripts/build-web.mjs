@@ -11,6 +11,10 @@ const results = JSON.parse(await fs.readFile(path.join(dataDir, "results.json"),
 const bySlug = Object.fromEntries(results.results.map(r=>[r.slug,r]));
 let historySummary = {};
 try { historySummary = JSON.parse(await fs.readFile(path.join(dataDir, "history-summary.json"), "utf8")); } catch {}
+let drift = null;
+try { drift = JSON.parse(await fs.readFile(path.join(dataDir, "drift-report.json"), "utf8")); } catch {}
+let death = null;
+try { death = JSON.parse(await fs.readFile(path.join(dataDir, "death-report.json"), "utf8")); } catch {}
 const pct = Math.round(results.summary.ok/results.summary.total*100);
 const checked = new Date(results.checkedAt).toLocaleString();
 
@@ -49,7 +53,9 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 <section class="hero"><h1>Nobody lists <span>dead APIs.</span></h1><p>Free, self-verifying directory (${results.summary.ok}/${results.summary.total} live, nightly L0-L3 checks + drift alerts) + offline OpenAPI docs generator. Pagefind search, Try-It playground, 4 themes. MIT+CC0, zero-cost.</p>
 <div class="stats"><span class="pill">● ${results.summary.ok}/${results.summary.total} live — ${pct}%</span><span class="pill">Last checked ${checked}</span><span class="pill">Pagefind + offline</span><span class="pill">MIT+CC0</span></div>
 <div class="cta"><a class="btn" href="#browse">Browse APIs</a><a class="btn sec" href="https://github.com/coffeetocoffee/apipuccino#quick-start">npx apidocs build</a></div></section>
-<section id="browse" class="card"><div class="toolbar"><label class="search">🔍 <input id="q" placeholder="Search APIs (name, category, slug)…"><span style="color:var(--muted);font-size:13px">${results.summary.total} APIs</span></label><span style="color:var(--muted);font-size:13px"><a href="https://github.com/coffeetocoffee/apipuccino/actions">Health Check</a> · <a href="./api-docs/">Demo</a></span></div>
+${drift?.drifts?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fffbeb;border-color:#f59e0b"><b>\u25B2 Drift Alert (${drift.drifts.length})</b> — schema hash changed: ${drift.drifts.map(d=>`<code>${d.slug}</code> ${d.prevHash.slice(0,6)}\u2192${d.newHash.slice(0,6)}`).join(", ")} <span style="color:var(--muted)">checked ${new Date(drift.checkedAt).toLocaleString()}</span></section>` : "" }
+${death?.deaths?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fef2f2;border-color:#dc2626"><b>\u25CF Death Report (${death.deaths.length})</b> — failing \u22653 days: ${death.deaths.map(d=>`<code>${d.slug}</code>`).join(", ")}</section>` : "" }
+<section id="browse" class="card"><div class="toolbar"><label class="search">\uD83D\uDD0D <input id="q" placeholder="Search APIs (name, category, slug)…"><span style="color:var(--muted);font-size:13px">${results.summary.total} APIs</span></label><span style="color:var(--muted);font-size:13px"><a href="https://github.com/coffeetocoffee/apipuccino/actions">Health Check</a> \u00B7 <a href="./api-docs/">Demo</a> \u00B7 <a href="./history-summary.json">History</a></span></div>
 <div style="overflow:auto"><table><thead><tr><th>API</th><th>Status</th><th>Latency</th><th>Sparkline</th><th>Docs</th><th>Try</th></tr></thead><tbody id="tbody">
 ${apis.map(api=>{
   const r=bySlug[api.slug]; const ok=r?.ok; const lat=r?.latencyMs?`${r.latencyMs}ms`:"—";

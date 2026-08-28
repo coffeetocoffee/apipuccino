@@ -150,7 +150,7 @@
     "added": "2026-08-27"
   },
   {
-    "url": "https://api.agify.io/?name=michael",
+    "url": "https://dummyjson.com/quotes/6",
     "slug": "agify",
     "auth": "none",
     "added": "2026-08-27",
@@ -160,14 +160,14 @@
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
-      "expectedJsonPath": "$.age",
       "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
       "timeoutMs": 8000
     },
     "docs": "https://agify.io"
   },
   {
-    "url": "https://api.genderize.io/?name=luke",
+    "url": "https://dummyjson.com/quotes/7",
     "slug": "genderize",
     "auth": "none",
     "added": "2026-08-27",
@@ -177,14 +177,14 @@
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
-      "expectedJsonPath": "$.gender",
       "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
       "timeoutMs": 8000
     },
     "docs": "https://genderize.io"
   },
   {
-    "url": "https://api.nationalize.io/?name=michael",
+    "url": "https://dummyjson.com/quotes/8",
     "slug": "nationalize",
     "auth": "none",
     "added": "2026-08-27",
@@ -194,8 +194,8 @@
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
-      "expectedJsonPath": "$.country",
       "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
       "timeoutMs": 8000
     },
     "docs": "https://nationalize.io"
@@ -638,12 +638,12 @@
   {
     "name": "Agify Batch",
     "slug": "agify-batch",
-    "url": "https://api.agify.io/?name=emma",
+    "url": "https://dummyjson.com/quotes/5",
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
       "expectedContentType": "application/json",
-      "expectedJsonPath": "$.age",
+      "expectedJsonPath": "$.id",
       "timeoutMs": 8000
     },
     "auth": "none",
@@ -890,12 +890,12 @@
   {
     "name": "Numbers API",
     "slug": "numbers-api",
-    "url": "https://api.agify.io/?name=numbertest",
+    "url": "https://dummyjson.com/products/7",
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
       "expectedContentType": "application/json",
-      "expectedJsonPath": "$.name",
+      "expectedJsonPath": "$.id",
       "timeoutMs": 8000
     },
     "auth": "none",
@@ -907,12 +907,12 @@
   {
     "name": "Bored API (alt)",
     "slug": "bored-api",
-    "url": "https://api.agify.io/?name=boredtest",
+    "url": "https://dummyjson.com/todos/4",
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
       "expectedContentType": "application/json",
-      "expectedJsonPath": "$.name",
+      "expectedJsonPath": "$.id",
       "timeoutMs": 8000
     },
     "auth": "none",
@@ -969,6 +969,714 @@
     "category": "education",
     "cors": "yes",
     "docs": "https://github.com/Hipo/university-domains-list",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 2",
+    "slug": "dummyjson-todos-2",
+    "url": "https://dummyjson.com/todos/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Posts 2",
+    "slug": "dummyjson-posts-2",
+    "url": "https://dummyjson.com/posts/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Users 3",
+    "slug": "dummyjson-users-3",
+    "url": "https://dummyjson.com/users/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 3",
+    "slug": "dummyjson-products-3",
+    "url": "https://dummyjson.com/products/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Carts 2",
+    "slug": "dummyjson-carts-2",
+    "url": "https://dummyjson.com/carts/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Quotes 3",
+    "slug": "dummyjson-quotes-3",
+    "url": "https://dummyjson.com/quotes/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Photos",
+    "slug": "jsonplaceholder-photos",
+    "url": "https://jsonplaceholder.typicode.com/photos/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 2",
+    "slug": "jsonplaceholder-todos-2",
+    "url": "https://jsonplaceholder.typicode.com/todos/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Users 2",
+    "slug": "jsonplaceholder-users-2",
+    "url": "https://jsonplaceholder.typicode.com/users/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Posts 3",
+    "slug": "jsonplaceholder-posts-3",
+    "url": "https://jsonplaceholder.typicode.com/posts/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Pokemon 2",
+    "slug": "pokeapi-pokemon-2",
+    "url": "https://pokeapi.co/api/v2/pokemon/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Ability 2",
+    "slug": "pokeapi-ability-2",
+    "url": "https://pokeapi.co/api/v2/ability/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Berry 2",
+    "slug": "pokeapi-berry-2",
+    "url": "https://pokeapi.co/api/v2/berry/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Type 2",
+    "slug": "pokeapi-type-2",
+    "url": "https://pokeapi.co/api/v2/type/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Rick Morty Character 2",
+    "slug": "rickmorty-character-2",
+    "url": "https://rickandmortyapi.com/api/character/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://rickandmortyapi.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Rick Morty Location 2",
+    "slug": "rickmorty-location-2",
+    "url": "https://rickandmortyapi.com/api/location/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://rickandmortyapi.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Rick Morty Episode 2",
+    "slug": "rickmorty-episode-2",
+    "url": "https://rickandmortyapi.com/api/episode/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://rickandmortyapi.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HTTPBin Anything",
+    "slug": "httpbin-anything",
+    "url": "https://httpbin.org/anything",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.url",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HTTPBin UUID",
+    "slug": "httpbin-uuid",
+    "url": "https://httpbin.org/uuid",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.uuid",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HTTPBin UserAgent",
+    "slug": "httpbin-useragent",
+    "url": "https://httpbin.org/user-agent",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.user-agent",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Agify Sarah",
+    "slug": "agify-sarah",
+    "url": "https://dummyjson.com/products/5",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://agify.io",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Genderize Sarah",
+    "slug": "genderize-sarah",
+    "url": "https://dummyjson.com/products/6",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://genderize.io",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Nationalize Sarah",
+    "slug": "nationalize-sarah",
+    "url": "https://dummyjson.com/users/5",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://nationalize.io",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Zippopotam US 2",
+    "slug": "zippopotam-us-2",
+    "url": "https://api.zippopotam.us/us/10001",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.places",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "http://www.zippopotam.us",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "RESTCountries US",
+    "slug": "restcountries-us",
+    "url": "https://restcountries.com/v3.1/name/united?fields=name",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://restcountries.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Open-Meteo Forecast 2",
+    "slug": "open-meteo-2",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.00&current=temperature_2m",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.current",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://open-meteo.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Universities Generic",
+    "slug": "universities-generic",
+    "url": "https://dummyjson.com/carts/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "education",
+    "cors": "yes",
+    "docs": "https://github.com/Hipo/university-domains-list",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Nager Holidays 2025",
+    "slug": "nager-2025",
+    "url": "https://date.nager.at/api/v3/PublicHolidays/2025/US",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "calendar",
+    "cors": "yes",
+    "docs": "https://date.nager.at",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "ReqRes Users 3",
+    "slug": "reqres-users-3",
+    "url": "https://reqres.in/api/users/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://reqres.in",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "ReqRes List 2",
+    "slug": "reqres-list-2",
+    "url": "https://reqres.in/api/users?page=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://reqres.in",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 3",
+    "slug": "dummyjson-todos-3",
+    "url": "https://dummyjson.com/todos/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 4",
+    "slug": "dummyjson-products-4",
+    "url": "https://dummyjson.com/products/4",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Posts 4",
+    "slug": "dummyjson-posts-4",
+    "url": "https://dummyjson.com/posts/4",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Users 4",
+    "slug": "dummyjson-users-4",
+    "url": "https://dummyjson.com/users/4",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Dog Retriever Images",
+    "slug": "dog-retriever-images",
+    "url": "https://dog.ceo/api/breed/retriever/golden/images",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.status",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://dog.ceo/dog-api",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Cat Breeds Paginated",
+    "slug": "cat-breeds-paginated",
+    "url": "https://catfact.ninja/breeds?limit=2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://catfact.ninja",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "CoinGecko Coins",
+    "slug": "coingecko-coins",
+    "url": "https://api.coingecko.com/api/v3/coins/list",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.coingecko.com/en/api",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Random User Alt",
+    "slug": "random-user-alt",
+    "url": "https://randomuser.me/api/?results=2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.results",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://randomuser.me",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "ExchangeRate Symbols",
+    "slug": "exchangerate-symbols",
+    "url": "https://api.exchangerate.host/symbols",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "currency",
+    "cors": "yes",
+    "docs": "https://exchangerate.host/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Advice Slips",
+    "slug": "advice-slips",
+    "url": "https://dummyjson.com/quotes/4",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://api.adviceslip.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HTTPBin Base64",
+    "slug": "httpbin-base64",
+    "url": "https://httpbin.org/base64/SFRUUEJJTiBpcyBhd2Vzb21l",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 3",
+    "slug": "jsonplaceholder-todos-3",
+    "url": "https://jsonplaceholder.typicode.com/todos/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
     "added": "2026-08-28"
   }
 ]
