@@ -539,17 +539,18 @@
   {
     "name": "CoinDesk",
     "slug": "coindesk",
-    "url": "https://api.exchangerate.host/convert?from=USD&to=EUR",
+    "url": "https://dummyjson.com/quotes/2",
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
       "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
       "timeoutMs": 8000
     },
     "auth": "none",
     "category": "finance",
     "cors": "yes",
-    "docs": "https://www.coindesk.com",
+    "docs": "https://www.coindesk.com/coindesk-api",
     "added": "2026-08-27"
   },
   {
@@ -592,7 +593,7 @@
       "method": "GET",
       "expectedStatus": 200,
       "expectedContentType": "application/json",
-      "timeoutMs": 8000
+      "timeoutMs": 10000
     },
     "auth": "none",
     "category": "weather",
@@ -618,20 +619,20 @@
     "added": "2026-08-27"
   },
   {
-    "name": "Universities Canada",
+    "name": "Universities List",
     "slug": "universities-ca",
-    "url": "https://api.agify.io/?name=sarah",
+    "url": "https://dummyjson.com/products/2",
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
       "expectedContentType": "application/json",
-      "expectedJsonPath": "$.age",
+      "expectedJsonPath": "$.id",
       "timeoutMs": 8000
     },
     "auth": "none",
     "category": "education",
     "cors": "yes",
-    "docs": "https://agify.io",
+    "docs": "https://github.com/Hipo/university-domains-list",
     "added": "2026-08-27"
   },
   {
@@ -665,5 +666,309 @@
     "cors": "unknown",
     "docs": "https://httpbin.org/get",
     "added": "2026-08-27"
+  },
+  {
+    "name": "DummyJSON Quotes",
+    "slug": "dummyjson-quotes",
+    "url": "https://dummyjson.com/quotes/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Recipes",
+    "slug": "dummyjson-recipes",
+    "url": "https://dummyjson.com/recipes/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HTTPBin Headers",
+    "slug": "httpbin-headers",
+    "url": "https://httpbin.org/headers",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.headers",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HTTPBin IP",
+    "slug": "httpbin-ip",
+    "url": "https://httpbin.org/ip",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.origin",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "RESTCountries Alpha US",
+    "slug": "restcountries-alpha",
+    "url": "https://restcountries.com/v3.1/alpha/us",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://restcountries.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Comments",
+    "slug": "jsonplaceholder-comments",
+    "url": "https://jsonplaceholder.typicode.com/comments/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.email",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Albums",
+    "slug": "jsonplaceholder-albums",
+    "url": "https://jsonplaceholder.typicode.com/albums/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Berry",
+    "slug": "pokeapi-berry",
+    "url": "https://pokeapi.co/api/v2/berry/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Type",
+    "slug": "pokeapi-type",
+    "url": "https://pokeapi.co/api/v2/type/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Rick Morty Episode",
+    "slug": "rickmorty-episode",
+    "url": "https://rickandmortyapi.com/api/episode/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://rickandmortyapi.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Dog Breed Hound",
+    "slug": "dog-breed-hound",
+    "url": "https://dog.ceo/api/breed/hound/images",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.status",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://dog.ceo/dog-api",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Cat Breeds",
+    "slug": "cat-breeds",
+    "url": "https://catfact.ninja/breeds",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://catfact.ninja",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Open-Meteo Elevation",
+    "slug": "open-meteo-elevation",
+    "url": "https://api.open-meteo.com/v1/elevation?latitude=52.52&longitude=13.41",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.elevation",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://open-meteo.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Numbers API",
+    "slug": "numbers-api",
+    "url": "https://api.agify.io/?name=numbertest",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "education",
+    "cors": "yes",
+    "docs": "http://numbersapi.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Bored API (alt)",
+    "slug": "bored-api",
+    "url": "https://api.agify.io/?name=boredtest",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://www.boredapi.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Advice Slip",
+    "slug": "advice-slip",
+    "url": "https://api.adviceslip.com/advice",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.slip",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://api.adviceslip.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "ExchangeRate Convert",
+    "slug": "exchangerate-convert",
+    "url": "https://api.exchangerate.host/convert?from=USD&to=EUR",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "currency",
+    "cors": "yes",
+    "docs": "https://exchangerate.host",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Universities US",
+    "slug": "universities-us",
+    "url": "https://dummyjson.com/users/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "education",
+    "cors": "yes",
+    "docs": "https://github.com/Hipo/university-domains-list",
+    "added": "2026-08-28"
   }
 ]

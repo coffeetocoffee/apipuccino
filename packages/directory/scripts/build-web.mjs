@@ -9,10 +9,12 @@ const dataDir = path.resolve(__dirname, "../data");
 const apis = JSON.parse(await fs.readFile(path.join(dataDir, "apis.json"), "utf8"));
 const results = JSON.parse(await fs.readFile(path.join(dataDir, "results.json"), "utf8"));
 const bySlug = Object.fromEntries(results.results.map(r=>[r.slug,r]));
+let historySummary = {};
+try { historySummary = JSON.parse(await fs.readFile(path.join(dataDir, "history-summary.json"), "utf8")); } catch {}
 const pct = Math.round(results.summary.ok/results.summary.total*100);
 const checked = new Date(results.checkedAt).toLocaleString();
 
-const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apipuccino — Nobody lists dead APIs.</title><meta name="description" content="Nobody lists dead APIs. Free, self-verifying directory (40/40 live) + offline docs."><style>
+const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apipuccino — Nobody lists dead APIs.</title><meta name="description" content="Nobody lists dead APIs. Free, self-verifying directory (${results.summary.ok}/${results.summary.total} live) + offline docs."><style>
 :root{--bg:#fcfcf9;--fg:#0f172a;--muted:#64748b;--border:#e2e8f0;--card:#fff;--accent:#0ea5e9;--accent-2:#8b5cf6;--ok:#16a34a;--bad:#dc2626;--radius:16px;--shadow:0 8px 30px rgba(15,23,42,.06)}
 *{box-sizing:border-box}body{margin:0;font-family:ui-sans-system,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--fg);background:var(--bg);line-height:1.5}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
@@ -44,15 +46,17 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 </style></head><body>
 <header><div class="wrap nav"><div class="brand"><span class="dot"></span><b>Apipuccino</b> <span style="color:var(--muted);font-weight:600">· Nobody lists dead APIs.</span></div><div style="display:flex;gap:14px"><a href="https://github.com/coffeetocoffee/apipuccino">GitHub</a><a href="./api-docs/" style="font-weight:700">Docs →</a></div></div></header>
 <main class="wrap">
-<section class="hero"><h1>Nobody lists <span>dead APIs.</span></h1><p>Free, self-verifying directory (40/40 live, nightly L0-L3 checks + drift alerts) + offline OpenAPI docs generator. Pagefind search, Try-It playground, 4 themes. MIT+CC0, zero-cost.</p>
+<section class="hero"><h1>Nobody lists <span>dead APIs.</span></h1><p>Free, self-verifying directory (${results.summary.ok}/${results.summary.total} live, nightly L0-L3 checks + drift alerts) + offline OpenAPI docs generator. Pagefind search, Try-It playground, 4 themes. MIT+CC0, zero-cost.</p>
 <div class="stats"><span class="pill">● ${results.summary.ok}/${results.summary.total} live — ${pct}%</span><span class="pill">Last checked ${checked}</span><span class="pill">Pagefind + offline</span><span class="pill">MIT+CC0</span></div>
 <div class="cta"><a class="btn" href="#browse">Browse APIs</a><a class="btn sec" href="https://github.com/coffeetocoffee/apipuccino#quick-start">npx apidocs build</a></div></section>
 <section id="browse" class="card"><div class="toolbar"><label class="search">🔍 <input id="q" placeholder="Search APIs (name, category, slug)…"><span style="color:var(--muted);font-size:13px">${results.summary.total} APIs</span></label><span style="color:var(--muted);font-size:13px"><a href="https://github.com/coffeetocoffee/apipuccino/actions">Health Check</a> · <a href="./api-docs/">Demo</a></span></div>
 <div style="overflow:auto"><table><thead><tr><th>API</th><th>Status</th><th>Latency</th><th>Sparkline</th><th>Docs</th><th>Try</th></tr></thead><tbody id="tbody">
 ${apis.map(api=>{
   const r=bySlug[api.slug]; const ok=r?.ok; const lat=r?.latencyMs?`${r.latencyMs}ms`:"—";
-  const spark= r?.ok ? "▁▂▃▄▅▆▇█".slice(0, Math.min(8, Math.ceil((r.latencyMs||100)/250))) : "▁";
-  return `<tr data-search="${(api.name+" "+api.slug+" "+api.category).toLowerCase()}"><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span></td><td>${r? (ok?`<span style="color:var(--ok)">● ${r.status}</span>`:`<span style="color:var(--bad)">● ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="sparkline">${spark}</td><td><a href="${api.generatedDocs||api.docs}">Docs</a> <span class="badge">${ok?"live":"down"}</span></td><td><a href="${api.generatedDocs||api.docs}" class="badge">Try →</a></td></tr>`;
+  const hist = historySummary[api.slug];
+  const spark = hist?.sparkline || (r?.ok ? "\u2581\u2582\u2583\u2584\u2585\u2586\u2587\u2588".slice(0, Math.min(8, Math.ceil((r?.latencyMs||100)/250))) : "\u2581");
+  const uptime = hist ? `${(hist.uptime30d*100).toFixed(1)}%` : "";
+  return `<tr data-search="${(api.name+" "+api.slug+" "+api.category).toLowerCase()}"><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span></td><td>${r? (ok?`<span style="color:var(--ok)">\u25CF ${r.status}</span>`:`<span style="color:var(--bad)">\u25CF ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="${uptime} 30d ${spark}">${spark}</td><td><a href="${api.generatedDocs||api.docs}">Docs</a> <span class="badge">${ok?"live":"down"}</span></td><td><a href="${api.generatedDocs||api.docs}" class="badge">Try \u2192</a></td></tr>`;
 }).join("")}
 </tbody></table></div></section>
 <p style="color:var(--muted);font-size:13px;margin:12px 2px">Tip: <code>npx apidocs submit</code> reads your <code>openapi.yaml</code> and opens a PR — directory grows without scraping.</p>

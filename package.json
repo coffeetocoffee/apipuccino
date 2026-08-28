@@ -19,5 +19,14 @@
     "build:docs": "pnpm --filter @apipuccino/docs build",
     "dev:web": "pnpm --filter @apipuccino/web dev"
   },
-  "keywords": ["api-directory", "openapi", "docs-generator", "offline", "free"]
+  "keywords": [
+    "api-directory",
+    "openapi",
+    "docs-generator",
+    "offline",
+    "free"
+  ],
+  "devDependencies": {
+    "vitest": "^1.6.1"
+  }
 }

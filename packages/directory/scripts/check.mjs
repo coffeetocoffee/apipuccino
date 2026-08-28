@@ -20,7 +20,7 @@ const RESULTS_JSON = path.join(DATA_DIR, "results.json");
 const CONCURRENCY = 5;
 const JITTER_MIN = 800;
 const JITTER_MAX = 1600;
-const UA = "ApipuccinoBot/2.0 (+https://github.com/you/apipuccino)";
+const UA = "ApipuccinoBot/2.0 (+https://github.com/coffeetocoffee/apipuccino)";
 const CF_WORKER_URL = process.env.CF_WORKER_URL || ""; // e.g. https://apipuccino-probe.workers.dev/?url=
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }

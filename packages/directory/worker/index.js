@@ -14,7 +14,7 @@ export default {
     const controller = new AbortController();
     const t = setTimeout(() => controller.abort(), 8000);
     try {
-      const res = await fetch(target, { headers: { "User-Agent": "ApipuccinoBot/2.0 (+https://github.com/you/apipuccino)" }, signal: controller.signal });
+      const res = await fetch(target, { headers: { "User-Agent": "ApipuccinoBot/2.0 (+https://github.com/coffeetocoffee/apipuccino)" }, signal: controller.signal });
       const body = await res.text();
       return new Response(body.slice(0, 4000), { status: res.status, headers: { "content-type": res.headers.get("content-type") || "text/plain", "access-control-allow-origin": "*" } });
     } catch (e) {
