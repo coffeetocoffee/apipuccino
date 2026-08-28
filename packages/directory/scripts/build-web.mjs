@@ -17,6 +17,10 @@ let death = null;
 try { death = JSON.parse(await fs.readFile(path.join(dataDir, "death-report.json"), "utf8")); } catch {}
 const pct = Math.round(results.summary.ok/results.summary.total*100);
 const checked = new Date(results.checkedAt).toLocaleString();
+const byCat = {};
+for(const a of apis) byCat[a.category] = (byCat[a.category]||0)+1;
+const catChips = Object.entries(byCat).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<span class="cat">${c} ${n}</span>`).join(" ");
+const topHistory = Object.entries(historySummary).sort((a,b)=>b[1].uptime30d - a[1].uptime30d).slice(0,5);
 
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apipuccino — Nobody lists dead APIs.</title><meta name="description" content="Nobody lists dead APIs. Free, self-verifying directory (${results.summary.ok}/${results.summary.total} live) + offline docs."><style>
 :root{--bg:#fcfcf9;--fg:#0f172a;--muted:#64748b;--border:#e2e8f0;--card:#fff;--accent:#0ea5e9;--accent-2:#8b5cf6;--ok:#16a34a;--bad:#dc2626;--radius:16px;--shadow:0 8px 30px rgba(15,23,42,.06)}
@@ -55,6 +59,7 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 <div class="cta"><a class="btn" href="#browse">Browse APIs</a><a class="btn sec" href="https://github.com/coffeetocoffee/apipuccino#quick-start">npx apidocs build</a></div></section>
 ${drift?.drifts?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fffbeb;border-color:#f59e0b"><b>\u25B2 Drift Alert (${drift.drifts.length})</b> — schema hash changed: ${drift.drifts.map(d=>`<code>${d.slug}</code> ${d.prevHash.slice(0,6)}\u2192${d.newHash.slice(0,6)}`).join(", ")} <span style="color:var(--muted)">checked ${new Date(drift.checkedAt).toLocaleString()}</span></section>` : "" }
 ${death?.deaths?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fef2f2;border-color:#dc2626"><b>\u25CF Death Report (${death.deaths.length})</b> — failing \u22653 days: ${death.deaths.map(d=>`<code>${d.slug}</code>`).join(", ")}</section>` : "" }
+<section class="card" style="margin:12px 0;padding:14px"><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><b>Categories:</b> ${catChips}</div>${topHistory.length ? `<div style="margin-top:10px;color:var(--muted);font-size:12px">Top 30d uptime: ${topHistory.map(([s,h])=>`<code>${s}</code> ${(h.uptime30d*100).toFixed(0)}% ${h.sparkline}`).join(" · ")}</div>` : ""}<details style="margin-top:8px"><summary style="cursor:pointer;color:var(--accent)">History graph (30d)</summary><pre style="overflow:auto;font-size:11px;background:var(--bg);padding:8px;border-radius:8px">${Object.entries(historySummary).slice(0,12).map(([s,h])=>`${s.padEnd(22)} ${h.sparkline} ${(h.uptime30d*100).toFixed(1)}% avg ${h.avgLatencyMs||0}ms`).join("\n")}</pre><a href="./history-summary.json" style="font-size:12px">→ full history-summary.json</a></details></section>
 <section id="browse" class="card"><div class="toolbar"><label class="search">\uD83D\uDD0D <input id="q" placeholder="Search APIs (name, category, slug)…"><span style="color:var(--muted);font-size:13px">${results.summary.total} APIs</span></label><span style="color:var(--muted);font-size:13px"><a href="https://github.com/coffeetocoffee/apipuccino/actions">Health Check</a> \u00B7 <a href="./api-docs/">Demo</a> \u00B7 <a href="./history-summary.json">History</a></span></div>
 <div style="overflow:auto"><table><thead><tr><th>API</th><th>Status</th><th>Latency</th><th>Sparkline</th><th>Docs</th><th>Try</th></tr></thead><tbody id="tbody">
 ${apis.map(api=>{

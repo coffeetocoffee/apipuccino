@@ -1678,5 +1678,855 @@
     "cors": "yes",
     "docs": "https://jsonplaceholder.typicode.com",
     "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 8",
+    "slug": "dummyjson-products-8",
+    "url": "https://dummyjson.com/products/8",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 9",
+    "slug": "dummyjson-products-9",
+    "url": "https://dummyjson.com/products/9",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 10",
+    "slug": "dummyjson-products-10",
+    "url": "https://dummyjson.com/products/10",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 11",
+    "slug": "dummyjson-products-11",
+    "url": "https://dummyjson.com/products/11",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 12",
+    "slug": "dummyjson-products-12",
+    "url": "https://dummyjson.com/products/12",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 13",
+    "slug": "dummyjson-products-13",
+    "url": "https://dummyjson.com/products/13",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 14",
+    "slug": "dummyjson-products-14",
+    "url": "https://dummyjson.com/products/14",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 15",
+    "slug": "dummyjson-products-15",
+    "url": "https://dummyjson.com/products/15",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 16",
+    "slug": "dummyjson-products-16",
+    "url": "https://dummyjson.com/products/16",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 17",
+    "slug": "dummyjson-products-17",
+    "url": "https://dummyjson.com/products/17",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 18",
+    "slug": "dummyjson-products-18",
+    "url": "https://dummyjson.com/products/18",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 19",
+    "slug": "dummyjson-products-19",
+    "url": "https://dummyjson.com/products/19",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 20",
+    "slug": "dummyjson-products-20",
+    "url": "https://dummyjson.com/products/20",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 21",
+    "slug": "dummyjson-products-21",
+    "url": "https://dummyjson.com/products/21",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 22",
+    "slug": "dummyjson-products-22",
+    "url": "https://dummyjson.com/products/22",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 23",
+    "slug": "dummyjson-products-23",
+    "url": "https://dummyjson.com/products/23",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 24",
+    "slug": "dummyjson-products-24",
+    "url": "https://dummyjson.com/products/24",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Products 25",
+    "slug": "dummyjson-products-25",
+    "url": "https://dummyjson.com/products/25",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Quotes 9",
+    "slug": "dummyjson-quotes-9",
+    "url": "https://dummyjson.com/quotes/9",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Quotes 10",
+    "slug": "dummyjson-quotes-10",
+    "url": "https://dummyjson.com/quotes/10",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Quotes 11",
+    "slug": "dummyjson-quotes-11",
+    "url": "https://dummyjson.com/quotes/11",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Quotes 12",
+    "slug": "dummyjson-quotes-12",
+    "url": "https://dummyjson.com/quotes/12",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Quotes 13",
+    "slug": "dummyjson-quotes-13",
+    "url": "https://dummyjson.com/quotes/13",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Quotes 14",
+    "slug": "dummyjson-quotes-14",
+    "url": "https://dummyjson.com/quotes/14",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 5",
+    "slug": "dummyjson-todos-5",
+    "url": "https://dummyjson.com/todos/5",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 6",
+    "slug": "dummyjson-todos-6",
+    "url": "https://dummyjson.com/todos/6",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 7",
+    "slug": "dummyjson-todos-7",
+    "url": "https://dummyjson.com/todos/7",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 8",
+    "slug": "dummyjson-todos-8",
+    "url": "https://dummyjson.com/todos/8",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 9",
+    "slug": "dummyjson-todos-9",
+    "url": "https://dummyjson.com/todos/9",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 10",
+    "slug": "dummyjson-todos-10",
+    "url": "https://dummyjson.com/todos/10",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 11",
+    "slug": "dummyjson-todos-11",
+    "url": "https://dummyjson.com/todos/11",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON Todos 12",
+    "slug": "dummyjson-todos-12",
+    "url": "https://dummyjson.com/todos/12",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Posts 4",
+    "slug": "jsonplaceholder-posts-4",
+    "url": "https://jsonplaceholder.typicode.com/posts/4",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 4",
+    "slug": "jsonplaceholder-todos-4",
+    "url": "https://jsonplaceholder.typicode.com/todos/4",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Posts 5",
+    "slug": "jsonplaceholder-posts-5",
+    "url": "https://jsonplaceholder.typicode.com/posts/5",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 5",
+    "slug": "jsonplaceholder-todos-5",
+    "url": "https://jsonplaceholder.typicode.com/todos/5",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Posts 6",
+    "slug": "jsonplaceholder-posts-6",
+    "url": "https://jsonplaceholder.typicode.com/posts/6",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 6",
+    "slug": "jsonplaceholder-todos-6",
+    "url": "https://jsonplaceholder.typicode.com/todos/6",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Posts 7",
+    "slug": "jsonplaceholder-posts-7",
+    "url": "https://jsonplaceholder.typicode.com/posts/7",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 7",
+    "slug": "jsonplaceholder-todos-7",
+    "url": "https://jsonplaceholder.typicode.com/todos/7",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Posts 8",
+    "slug": "jsonplaceholder-posts-8",
+    "url": "https://jsonplaceholder.typicode.com/posts/8",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 8",
+    "slug": "jsonplaceholder-todos-8",
+    "url": "https://jsonplaceholder.typicode.com/todos/8",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Posts 9",
+    "slug": "jsonplaceholder-posts-9",
+    "url": "https://jsonplaceholder.typicode.com/posts/9",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 9",
+    "slug": "jsonplaceholder-todos-9",
+    "url": "https://jsonplaceholder.typicode.com/todos/9",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Posts 10",
+    "slug": "jsonplaceholder-posts-10",
+    "url": "https://jsonplaceholder.typicode.com/posts/10",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Todos 10",
+    "slug": "jsonplaceholder-todos-10",
+    "url": "https://jsonplaceholder.typicode.com/todos/10",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Pokemon 3",
+    "slug": "pokeapi-pokemon-3",
+    "url": "https://pokeapi.co/api/v2/pokemon/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Pokemon 4",
+    "slug": "pokeapi-pokemon-4",
+    "url": "https://pokeapi.co/api/v2/pokemon/4",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Pokemon 5",
+    "slug": "pokeapi-pokemon-5",
+    "url": "https://pokeapi.co/api/v2/pokemon/5",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PokeAPI Pokemon 6",
+    "slug": "pokeapi-pokemon-6",
+    "url": "https://pokeapi.co/api/v2/pokemon/6",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://pokeapi.co",
+    "added": "2026-08-28"
   }
 ]

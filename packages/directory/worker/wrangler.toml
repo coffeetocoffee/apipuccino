@@ -3,3 +3,5 @@ main = "index.js"
 compatibility_date = "2026-08-27"
 # Deploy: npx wrangler deploy
 # Free tier: 100k req/day — enough for 500 APIs *1 nightly
+
+# Deployed: pending secret CF_WORKER_URL in GH Actions (Sec 7 dual-region)

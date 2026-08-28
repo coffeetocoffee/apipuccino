@@ -1,100 +1,80 @@
 {
-  "checkedAt": "2026-08-28T01:29:11.644Z",
+  "checkedAt": "2026-08-28T06:11:46.073Z",
   "drifts": [
     {
       "slug": "advice-slip",
-      "prevHash": "017f4eb721c3",
-      "newHash": "9cb35d1bf651"
-    },
-    {
-      "slug": "agify",
-      "prevHash": "63eebb053296",
-      "newHash": "7e13d517132b"
-    },
-    {
-      "slug": "agify-batch",
-      "prevHash": "63eebb053296",
-      "newHash": "10713a0062c6"
-    },
-    {
-      "slug": "bored-api",
-      "prevHash": "63eebb053296",
-      "newHash": "7f67e5b9a902"
+      "prevHash": "9cb35d1bf651",
+      "newHash": "7ff484a0d707"
     },
     {
       "slug": "cat-facts",
-      "prevHash": "f064e006bc8c",
-      "newHash": "2f5330e9a5ef"
+      "prevHash": "2f5330e9a5ef",
+      "newHash": "5295c4f9d94e"
+    },
+    {
+      "slug": "coingecko-coins",
+      "prevHash": "893b87506c6e",
+      "newHash": "bc31137c3d28"
     },
     {
       "slug": "dog-ceo",
-      "prevHash": "3c756f92ccc8",
-      "newHash": "2849d813e706"
-    },
-    {
-      "slug": "genderize",
-      "prevHash": "63eebb053296",
-      "newHash": "95fe5fe57a53"
+      "prevHash": "2849d813e706",
+      "newHash": "5e4b31df7e86"
     },
     {
       "slug": "github-api",
-      "prevHash": "3e6f138a512b",
-      "newHash": "350b3f018173"
+      "prevHash": "350b3f018173",
+      "newHash": "a6567804b19d"
     },
     {
       "slug": "httpbin",
-      "prevHash": "2a676e3dd8dd",
-      "newHash": "9afd86563c37"
+      "prevHash": "9afd86563c37",
+      "newHash": "53abb2d7fc72"
     },
     {
       "slug": "httpbin-anything",
-      "prevHash": "c332fcafb99d",
-      "newHash": "493ad54750e0"
+      "prevHash": "493ad54750e0",
+      "newHash": "7b33824bba4d"
     },
     {
       "slug": "httpbin-headers",
-      "prevHash": "569c21cf58cf",
-      "newHash": "e13a205bdad2"
+      "prevHash": "e13a205bdad2",
+      "newHash": "a257f6f37cbc"
     },
     {
       "slug": "httpbin-uuid",
-      "prevHash": "9ea192627b0d",
-      "newHash": "87b1fbc34b38"
-    },
-    {
-      "slug": "nationalize",
-      "prevHash": "63eebb053296",
-      "newHash": "64492f5ce6e3"
-    },
-    {
-      "slug": "numbers-api",
-      "prevHash": "63eebb053296",
-      "newHash": "47745e7b6012"
+      "prevHash": "87b1fbc34b38",
+      "newHash": "c81f0c3f0673"
     },
     {
       "slug": "open-meteo",
-      "prevHash": "dcfac4de3898",
-      "newHash": "f52343b767bb"
+      "prevHash": "f52343b767bb",
+      "newHash": "b209b41c4d47"
     },
     {
       "slug": "open-meteo-2",
-      "prevHash": "6364666f142a",
-      "newHash": "fcd70d020199"
+      "prevHash": "fcd70d020199",
+      "newHash": "752469792f34"
     },
     {
       "slug": "open-meteo-archive",
-      "prevHash": "db0dde709819",
-      "newHash": "1021a9351da2"
+      "prevHash": "1021a9351da2",
+      "newHash": "359c73091be8"
     },
     {
       "slug": "random-user",
-      "prevHash": "d8f529796cf8",
-      "newHash": "2097f252c5d3"
+      "prevHash": "2097f252c5d3",
+      "newHash": "d530f04fa81c"
     },
     {
       "slug": "random-user-alt",
-      "prevHash": "c98d70023a7e",
-      "newHash": "f8346abde542"
+      "prevHash": "f8346abde542",
+      "newHash": "89dc700256a7"
+    },
+    {
+      "slug": "reqres-list",
+      "prevHash": "a7cdde9e2796",
+      "newHash": "07b41a5c816c"
     }
   ]
 }
