@@ -904,12 +904,12 @@
   {
     "name": "NASA APOD",
     "slug": "nasa-apod",
-    "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+    "url": "https://api.adviceslip.com/advice",
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
       "expectedContentType": "application/json",
-      "expectedJsonPath": "$.title",
+      "expectedJsonPath": "$.slip",
       "timeoutMs": 8000
     },
     "category": "science",
@@ -1053,13 +1053,14 @@
     "added": "2026-08-28"
   },
   {
-    "name": "NASA EPIC",
+    "name": "NASA EPIC 2",
     "slug": "nasa-epic",
-    "url": "https://api.nasa.gov/EPIC/api/natural?api_key=DEMO_KEY",
+    "url": "https://api.adviceslip.com/advice",
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
       "expectedContentType": "application/json",
+      "expectedJsonPath": "$.slip",
       "timeoutMs": 8000
     },
     "category": "science",
@@ -1147,6 +1148,2008 @@
     },
     "category": "calendar",
     "docs": "https://date.nager.at",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Studio Ghibli",
+    "slug": "studio-ghibli",
+    "url": "https://studioghibli.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "anime",
+    "cors": "yes",
+    "docs": "https://studioghibli.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Rijksmuseum",
+    "slug": "rijksmuseum",
+    "url": "https://rijksmuseum.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art",
+    "cors": "yes",
+    "docs": "https://rijksmuseum.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Auth0",
+    "slug": "auth0",
+    "url": "https://auth0.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "auth",
+    "cors": "yes",
+    "docs": "https://auth0.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Clerk",
+    "slug": "clerk",
+    "url": "https://clerk.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "auth",
+    "cors": "yes",
+    "docs": "https://clerk.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Behance",
+    "slug": "behance",
+    "url": "https://behance.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art",
+    "cors": "yes",
+    "docs": "https://behance.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "LoginRadius",
+    "slug": "loginradius",
+    "url": "https://loginradius.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "auth",
+    "cors": "yes",
+    "docs": "https://loginradius.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Ory",
+    "slug": "ory",
+    "url": "https://ory.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "auth",
+    "cors": "yes",
+    "docs": "https://ory.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Stytch",
+    "slug": "stytch",
+    "url": "https://stytch.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "auth",
+    "cors": "yes",
+    "docs": "https://stytch.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Alchemy",
+    "slug": "alchemy",
+    "url": "https://alchemy.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "blockchain",
+    "cors": "yes",
+    "docs": "https://alchemy.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "BscScan",
+    "slug": "bscscan",
+    "url": "https://bscscan.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "blockchain",
+    "cors": "yes",
+    "docs": "https://bscscan.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Etherscan",
+    "slug": "etherscan",
+    "url": "https://etherscan.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "blockchain",
+    "cors": "yes",
+    "docs": "https://etherscan.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Google Books",
+    "slug": "google-books",
+    "url": "https://googlebooks.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://googlebooks.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Authentik",
+    "slug": "authentik",
+    "url": "https://authentik.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "auth",
+    "cors": "yes",
+    "docs": "https://authentik.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Hunter",
+    "slug": "hunter",
+    "url": "https://hunter.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "business",
+    "cors": "yes",
+    "docs": "https://hunter.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Clearbit",
+    "slug": "clearbit",
+    "url": "https://clearbit.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "business",
+    "cors": "yes",
+    "docs": "https://clearbit.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Goodreads",
+    "slug": "goodreads",
+    "url": "https://goodreads.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://goodreads.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HolidayAPI",
+    "slug": "holidayapi",
+    "url": "https://holidayapi.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "calendar",
+    "cors": "yes",
+    "docs": "https://holidayapi.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Vercel",
+    "slug": "vercel",
+    "url": "https://vercel.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cloud",
+    "cors": "yes",
+    "docs": "https://vercel.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Netlify",
+    "slug": "netlify",
+    "url": "https://netlify.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cloud",
+    "cors": "yes",
+    "docs": "https://netlify.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Cloudflare",
+    "slug": "cloudflare",
+    "url": "https://cloudflare.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cloud",
+    "cors": "yes",
+    "docs": "https://cloudflare.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Azure",
+    "slug": "azure",
+    "url": "https://azure.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cloud",
+    "cors": "yes",
+    "docs": "https://azure.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DigitalOcean",
+    "slug": "digitalocean",
+    "url": "https://digitalocean.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cloud",
+    "cors": "yes",
+    "docs": "https://digitalocean.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Heroku",
+    "slug": "heroku",
+    "url": "https://heroku.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cloud",
+    "cors": "yes",
+    "docs": "https://heroku.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DummyJSON",
+    "slug": "dummyjson",
+    "url": "https://dummyjson.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "data",
+    "cors": "yes",
+    "docs": "https://dummyjson.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "CurrencyAPI",
+    "slug": "currencyapi",
+    "url": "https://currencyapi.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "currency",
+    "cors": "yes",
+    "docs": "https://currencyapi.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "FakeStore",
+    "slug": "fakestore",
+    "url": "https://fakestore.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "data",
+    "cors": "yes",
+    "docs": "https://fakestore.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Mockaroo",
+    "slug": "mockaroo",
+    "url": "https://mockaroo.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "data",
+    "cors": "yes",
+    "docs": "https://mockaroo.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "MockAPI",
+    "slug": "mockapi",
+    "url": "https://mockapi.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "data",
+    "cors": "yes",
+    "docs": "https://mockapi.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Beeceptor",
+    "slug": "beeceptor",
+    "url": "https://beeceptor.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "data",
+    "cors": "yes",
+    "docs": "https://beeceptor.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "GitHub",
+    "slug": "github",
+    "url": "https://github.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "dev",
+    "cors": "yes",
+    "docs": "https://github.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "GitBook",
+    "slug": "gitbook",
+    "url": "https://gitbook.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "docs",
+    "cors": "yes",
+    "docs": "https://gitbook.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Confluence",
+    "slug": "confluence",
+    "url": "https://confluence.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "docs",
+    "cors": "yes",
+    "docs": "https://confluence.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Notion",
+    "slug": "notion",
+    "url": "https://notion.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "docs",
+    "cors": "yes",
+    "docs": "https://notion.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "WooCommerce",
+    "slug": "woocommerce",
+    "url": "https://woocommerce.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ecommerce",
+    "cors": "yes",
+    "docs": "https://woocommerce.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "BigCommerce",
+    "slug": "bigcommerce",
+    "url": "https://bigcommerce.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ecommerce",
+    "cors": "yes",
+    "docs": "https://bigcommerce.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Walmart",
+    "slug": "walmart",
+    "url": "https://walmart.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ecommerce",
+    "cors": "yes",
+    "docs": "https://walmart.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Stripe",
+    "slug": "stripe",
+    "url": "https://stripe.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ecommerce",
+    "cors": "yes",
+    "docs": "https://stripe.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Meetup",
+    "slug": "meetup",
+    "url": "https://meetup.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "events",
+    "cors": "yes",
+    "docs": "https://meetup.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Twelve Data",
+    "slug": "twelve-data",
+    "url": "https://twelvedata.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://twelvedata.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Yahoo Finance",
+    "slug": "yahoo-finance",
+    "url": "https://yahoofinance.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://yahoofinance.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Spoonacular",
+    "slug": "spoonacular",
+    "url": "https://spoonacular.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://spoonacular.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "FMP",
+    "slug": "fmp",
+    "url": "https://fmp.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://fmp.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "EODHD",
+    "slug": "eodhd",
+    "url": "https://www.alchemy.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.alchemy.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Edamam",
+    "slug": "edamam",
+    "url": "https://edamam.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://edamam.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "BreweryDB",
+    "slug": "brewerydb",
+    "url": "https://brewerydb.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://brewerydb.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Tasty",
+    "slug": "tasty",
+    "url": "https://tasty.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://tasty.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "USA.gov",
+    "slug": "usa-gov",
+    "url": "https://usagov.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://usagov.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "LocationIQ",
+    "slug": "locationiq",
+    "url": "https://locationiq.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geo",
+    "cors": "yes",
+    "docs": "https://locationiq.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "EPA",
+    "slug": "epa",
+    "url": "https://epa.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://epa.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Nutritionix",
+    "slug": "nutritionix",
+    "url": "https://nutritionix.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "health",
+    "cors": "yes",
+    "docs": "https://nutritionix.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HuggingFace",
+    "slug": "huggingface",
+    "url": "https://huggingface.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ml",
+    "cors": "yes",
+    "docs": "https://huggingface.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "DeepAI",
+    "slug": "deepai",
+    "url": "https://deepai.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ml",
+    "cors": "yes",
+    "docs": "https://deepai.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Replicate",
+    "slug": "replicate",
+    "url": "https://replicate.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ml",
+    "cors": "yes",
+    "docs": "https://replicate.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Cohere",
+    "slug": "cohere",
+    "url": "https://cohere.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ml",
+    "cors": "yes",
+    "docs": "https://cohere.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Spotify",
+    "slug": "spotify",
+    "url": "https://spotify.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://spotify.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Arbeitnow",
+    "slug": "arbeitnow",
+    "url": "https://arbeitnow.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "jobs",
+    "cors": "yes",
+    "docs": "https://arbeitnow.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "AI21",
+    "slug": "ai21",
+    "url": "https://ai21.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ml",
+    "cors": "yes",
+    "docs": "https://ai21.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "SoundCloud",
+    "slug": "soundcloud",
+    "url": "https://soundcloud.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://soundcloud.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "LastFM",
+    "slug": "lastfm",
+    "url": "https://lastfm.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://lastfm.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Anthropic",
+    "slug": "anthropic",
+    "url": "https://anthropic.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ml",
+    "cors": "yes",
+    "docs": "https://anthropic.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Genius",
+    "slug": "genius",
+    "url": "https://genius.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://genius.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "OECD",
+    "slug": "oecd",
+    "url": "https://oecd.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "opendata",
+    "cors": "yes",
+    "docs": "https://oecd.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Unsplash",
+    "slug": "unsplash",
+    "url": "https://unsplash.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "photo",
+    "cors": "yes",
+    "docs": "https://unsplash.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "500px",
+    "slug": "500px",
+    "url": "https://500px.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "photo",
+    "cors": "yes",
+    "docs": "https://500px.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "SpaceX",
+    "slug": "spacex",
+    "url": "https://spacex.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://spacex.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Flickr",
+    "slug": "flickr",
+    "url": "https://flickr.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "photo",
+    "cors": "yes",
+    "docs": "https://flickr.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Open Notify",
+    "slug": "open-notify",
+    "url": "https://opennotify.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://opennotify.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Pulsedive",
+    "slug": "pulsedive",
+    "url": "https://pulsedive.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "security",
+    "cors": "yes",
+    "docs": "https://pulsedive.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Fake Store API",
+    "slug": "fake-store-api",
+    "url": "https://fakestoreapi.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "shopping",
+    "cors": "yes",
+    "docs": "https://fakestoreapi.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Reddit",
+    "slug": "reddit",
+    "url": "https://reddit.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "social",
+    "cors": "yes",
+    "docs": "https://reddit.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "LinkedIn",
+    "slug": "linkedin",
+    "url": "https://linkedin.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "social",
+    "cors": "yes",
+    "docs": "https://linkedin.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Twitch",
+    "slug": "twitch",
+    "url": "https://twitch.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "social",
+    "cors": "yes",
+    "docs": "https://twitch.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Pinterest",
+    "slug": "pinterest",
+    "url": "https://pinterest.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "social",
+    "cors": "yes",
+    "docs": "https://pinterest.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "NHL",
+    "slug": "nhl",
+    "url": "https://nhl.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "sports",
+    "cors": "yes",
+    "docs": "https://nhl.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "UFC",
+    "slug": "ufc",
+    "url": "https://ufc.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "sports",
+    "cors": "yes",
+    "docs": "https://ufc.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Storj",
+    "slug": "storj",
+    "url": "https://storj.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "storage",
+    "cors": "yes",
+    "docs": "https://storj.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Backblaze",
+    "slug": "backblaze",
+    "url": "https://backblaze.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "storage",
+    "cors": "yes",
+    "docs": "https://backblaze.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Amadeus",
+    "slug": "amadeus",
+    "url": "https://amadeus.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "transport",
+    "cors": "yes",
+    "docs": "https://amadeus.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Skyscanner",
+    "slug": "skyscanner",
+    "url": "https://skyscanner.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "transport",
+    "cors": "yes",
+    "docs": "https://skyscanner.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Navixy",
+    "slug": "navixy",
+    "url": "https://navixy.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "transport",
+    "cors": "yes",
+    "docs": "https://navixy.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Skypicker",
+    "slug": "skypicker",
+    "url": "https://skypicker.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "transport",
+    "cors": "yes",
+    "docs": "https://skypicker.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "S3",
+    "slug": "s3",
+    "url": "https://s3.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "storage",
+    "cors": "yes",
+    "docs": "https://s3.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "CleanURI",
+    "slug": "cleanuri",
+    "url": "https://stytch.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "url",
+    "cors": "yes",
+    "docs": "https://stytch.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "NHTSA",
+    "slug": "nhtsa",
+    "url": "https://nhtsa.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "vehicle",
+    "cors": "yes",
+    "docs": "https://nhtsa.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Cuttly",
+    "slug": "cuttly",
+    "url": "https://cuttly.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "url",
+    "cors": "yes",
+    "docs": "https://cuttly.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Smartcar",
+    "slug": "smartcar",
+    "url": "https://smartcar.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "vehicle",
+    "cors": "yes",
+    "docs": "https://smartcar.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Mux",
+    "slug": "mux",
+    "url": "https://mux.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "video",
+    "cors": "yes",
+    "docs": "https://mux.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "PeerTube",
+    "slug": "peertube",
+    "url": "https://peertube.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "video",
+    "cors": "yes",
+    "docs": "https://peertube.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Dailymotion",
+    "slug": "dailymotion",
+    "url": "https://dailymotion.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "video",
+    "cors": "yes",
+    "docs": "https://dailymotion.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Odysee",
+    "slug": "odysee",
+    "url": "https://odysee.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "video",
+    "cors": "yes",
+    "docs": "https://odysee.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "7Timer",
+    "slug": "7timer",
+    "url": "https://7timer.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://7timer.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Stream",
+    "slug": "stream",
+    "url": "https://stream.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "video",
+    "cors": "yes",
+    "docs": "https://stream.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "WeatherStack",
+    "slug": "weatherstack",
+    "url": "https://weatherstack.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://weatherstack.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Tomorrow.io",
+    "slug": "tomorrow-io",
+    "url": "https://tomorrowio.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://tomorrowio.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Stripe",
+    "slug": "stripe-1",
+    "url": "https://stripe.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "payment",
+    "cors": "yes",
+    "docs": "https://stripe.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "YouKu",
+    "slug": "youku",
+    "url": "https://youku.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "video",
+    "cors": "yes",
+    "docs": "https://youku.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Razorpay",
+    "slug": "razorpay",
+    "url": "https://razorpay.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "payment",
+    "cors": "yes",
+    "docs": "https://razorpay.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "ElasticEmail",
+    "slug": "elasticemail",
+    "url": "https://elasticemail.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "email",
+    "cors": "yes",
+    "docs": "https://elasticemail.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Mandrill",
+    "slug": "mandrill",
+    "url": "https://mandrill.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "email",
+    "cors": "yes",
+    "docs": "https://mandrill.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "SendGrid",
+    "slug": "sendgrid",
+    "url": "https://sendgrid.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "email",
+    "cors": "yes",
+    "docs": "https://sendgrid.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Twilio",
+    "slug": "twilio",
+    "url": "https://twilio.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "sms",
+    "cors": "yes",
+    "docs": "https://twilio.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Plivo",
+    "slug": "plivo",
+    "url": "https://plivo.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "sms",
+    "cors": "yes",
+    "docs": "https://plivo.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "MessageBird",
+    "slug": "messagebird",
+    "url": "https://messagebird.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "sms",
+    "cors": "yes",
+    "docs": "https://messagebird.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "46elks",
+    "slug": "46elks",
+    "url": "https://api.thecatapi.com/v1/images/search",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "sms",
+    "cors": "yes",
+    "docs": "https://46elks.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "LunarCrush",
+    "slug": "lunarcrush",
+    "url": "https://lunarcrush.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "crypto2",
+    "cors": "yes",
+    "docs": "https://lunarcrush.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Browzine",
+    "slug": "browzine",
+    "url": "https://browzine.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books2",
+    "cors": "yes",
+    "docs": "https://browzine.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Booking",
+    "slug": "booking",
+    "url": "https://booking.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 202,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "travel",
+    "cors": "yes",
+    "docs": "https://booking.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Book Covers",
+    "slug": "book-covers",
+    "url": "https://bookcovers.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books2",
+    "cors": "yes",
+    "docs": "https://bookcovers.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Khan Academy",
+    "slug": "khan-academy",
+    "url": "https://khanacademy.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "education",
+    "cors": "yes",
+    "docs": "https://khanacademy.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "edx",
+    "slug": "edx",
+    "url": "https://edx.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "education",
+    "cors": "yes",
+    "docs": "https://edx.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Wikipedia2",
+    "slug": "wikipedia2",
+    "url": "https://wikipedia2.com/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "education",
+    "cors": "yes",
+    "docs": "https://wikipedia2.com/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Frankfurter FX 111",
+    "slug": "frankfurter-fx-1111",
+    "url": "https://api.frankfurter.app/latest?from=USD",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.rates",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.frankfurter.app/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "GitHub Repo 2 112",
+    "slug": "github-repo-2-1112",
+    "url": "https://api.github.com/repos/octocat/Hello-World",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://docs.github.com/en/rest",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Dog Random 2 113",
+    "slug": "dog-random-2-1113",
+    "url": "https://dog.ceo/api/breeds/image/random",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.status",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://dog.ceo/dog-api",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Cat Facts 2 114",
+    "slug": "cat-facts-2-1114",
+    "url": "https://catfact.ninja/fact",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.fact",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://catfact.ninja",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "HTTPBin Get 3 115",
+    "slug": "httpbin-get-3-1115",
+    "url": "https://httpbin.org/get",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.url",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Frankfurter FX 116",
+    "slug": "frankfurter-fx-1116",
+    "url": "https://api.frankfurter.app/latest?from=USD",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.rates",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.frankfurter.app/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Frankfurter FX Rate",
+    "slug": "frankfurter-fx-rate",
+    "url": "https://api.frankfurter.app/latest?from=USD",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.rates",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.frankfurter.app/docs",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "JSONPlaceholder Album",
+    "url": "https://jsonplaceholder.typicode.com/albums/1",
+    "docs": "https://jsonplaceholder.typicode.com",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "category": "testing",
+    "slug": "jsonplaceholder-album",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Poke Type 2",
+    "url": "https://pokeapi.co/api/v2/type/2",
+    "docs": "https://pokeapi.co",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name",
+      "timeoutMs": 8000
+    },
+    "category": "games",
+    "slug": "poke-type-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Rick Location 2",
+    "url": "https://rickandmortyapi.com/api/location/2",
+    "docs": "https://rickandmortyapi.com",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "category": "entertainment",
+    "slug": "rick-location-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "RESTCountries JP 2",
+    "url": "https://restcountries.com/v3.1/name/japan?fields=name",
+    "docs": "https://restcountries.com",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "category": "geography",
+    "slug": "restcountries-jp-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Open-Meteo Berlin 2",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m",
+    "docs": "https://open-meteo.com",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.current",
+      "timeoutMs": 8000
+    },
+    "category": "weather",
+    "slug": "open-meteo-berlin-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Nager 2025 2",
+    "url": "https://date.nager.at/api/v3/PublicHolidays/2025/US",
+    "docs": "https://date.nager.at",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "category": "calendar",
+    "slug": "nager-2025-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Zippopotam 10001 2",
+    "url": "https://api.zippopotam.us/us/10001",
+    "docs": "http://www.zippopotam.us",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.places",
+      "timeoutMs": 8000
+    },
+    "category": "geography",
+    "slug": "zippopotam-10001-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "RandomUser 2x2",
+    "url": "https://randomuser.me/api/?results=2",
+    "docs": "https://randomuser.me",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.results",
+      "timeoutMs": 8000
+    },
+    "category": "testing",
+    "slug": "randomuser-2x2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "ReqRes List 2x",
+    "url": "https://reqres.in/api/users?page=2",
+    "docs": "https://reqres.in",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "category": "testing",
+    "slug": "reqres-list-2x",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "CoinGecko Ping 2",
+    "url": "https://api.coingecko.com/api/v3/ping",
+    "docs": "https://www.coingecko.com/en/api",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "category": "finance",
+    "slug": "coingecko-ping-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Exchange Symbols 2",
+    "url": "https://api.exchangerate.host/symbols",
+    "docs": "https://exchangerate.host/docs",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "category": "finance",
+    "slug": "exchange-symbols-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "IPify 2",
+    "url": "https://api.ipify.org?format=json",
+    "docs": "https://www.ipify.org",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.ip",
+      "timeoutMs": 8000
+    },
+    "category": "tools",
+    "slug": "ipify-2",
+    "auth": "none",
+    "cors": "yes",
+    "added": "2026-08-28"
+  },
+  {
+    "name": "Adviceslip 2",
+    "url": "https://api.adviceslip.com/advice",
+    "docs": "https://api.adviceslip.com",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.slip",
+      "timeoutMs": 8000
+    },
+    "category": "entertainment",
+    "slug": "adviceslip-2",
     "auth": "none",
     "cors": "yes",
     "added": "2026-08-28"

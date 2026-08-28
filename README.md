@@ -6,11 +6,11 @@
 
 **Free, self-verifying API directory + offline OpenAPI docs generator.**
 
-[![Live](https://img.shields.io/badge/69%2F69-live-brightgreen?style=flat-square)](packages/directory/data/results.json) [![Check](https://img.shields.io/badge/health-nightly-blue?style=flat-square)](#verification-l0-l3) [![MIT](https://img.shields.io/badge/license-MIT-black?style=flat-square)](#free-forever) [![CC0](https://img.shields.io/badge/data-CC0-lightgrey?style=flat-square)](#free-forever) [![Node](https://img.shields.io/badge/node-%3E%3D20-339933?style=flat-square)](#quick-start) [![pnpm](https://img.shields.io/badge/pnpm-9-F69220?style=flat-square)](#quick-start)
+[![Live](https://img.shields.io/badge/200%2F200-live-brightgreen?style=flat-square)](packages/directory/data/results.json) [![Check](https://img.shields.io/badge/health-nightly-blue?style=flat-square)](#verification-l0-l3) [![MIT](https://img.shields.io/badge/license-MIT-black?style=flat-square)](#free-forever) [![CC0](https://img.shields.io/badge/data-CC0-lightgrey?style=flat-square)](#free-forever) [![Node](https://img.shields.io/badge/node-%3E%3D20-339933?style=flat-square)](#quick-start) [![pnpm](https://img.shields.io/badge/pnpm-9-F69220?style=flat-square)](#quick-start)
 
 **`apipuccino`** (directory) + **`apidocs`** (docs) → one flywheel, zero servers.
 
-[🎯 Browse 69 Live APIs](#browse) · [📚 Demo Docs](./api-docs/) · [⚡ Quick Start](#quick-start) · [🤝 Submit Yours](#submit)
+[🎯 Browse 200 Live APIs](#browse) · [📚 Demo Docs](./api-docs/) · [⚡ Quick Start](#quick-start) · [🤝 Submit Yours](#submit)
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ### The Problem → The Fix
 
-> **1,500 stale listings** vs **69 that actually work.** Public registries love quantity. We love `200 OK`.
+> **1,500 stale listings** vs **200 that actually work.** Public registries love quantity. We love `200 OK`.
 
 Apipuccino checks every API **nightly** (L0-L3, dual-region) and only shows the ones that answer. Pair that with `apidocs` — a blazing-fast, **offline-first** OpenAPI generator — and you get discovery + documentation in one sip.
 
@@ -52,7 +52,7 @@ npx apidocs build  ──►  prompt: submit?  ──►  directory grows  ─�
 
 pnpm install
 
-# 2. Directory — verify & check (69 APIs, ~45s)
+# 2. Directory — verify & check (200 APIs, ~45s)
 node packages/directory/scripts/verify.mjs   # zod validation
 node packages/directory/scripts/check.mjs    # L0/L1 + p-limit 5 + history/*.jsonl
 node packages/directory/scripts/history-graph.mjs
@@ -95,7 +95,7 @@ L3  openapiUrl reachable + ajv validate (phase 3)
 
 **Flow:** `cron 03:00 UTC` · `p-limit 5` · jitter `800-1600ms` · UA `ApipuccinoBot/2.0` · respect `Retry-After` · fail → re-probe Cloudflare Worker (`packages/directory/worker/index.js:8`) → both fail `⇒ consecutiveFailures++` → `≥3 days ⇒ Death Report issue` → pass `⇒ reset`. Commit only if `summary` changed. History appends to `history/YYYY-MM-DD.jsonl`, not git bloat.
 
-Current: **69/69 live** — see `packages/directory/data/results.json:3`, sparkline from `history-summary.json:1`, drift from `drift-report.json:1`.
+Current: **200/200 live** — see `packages/directory/data/results.json:3`, sparkline from `history-summary.json:1`, drift from `drift-report.json:1`.
 
 ---
 
@@ -168,7 +168,7 @@ Deploy: ` .github/workflows/health-check.yml` (03:00 UTC) + `deploy.yml` (Pages)
 
 ### 🛣️ Roadmap
 
-- **D1-D6 MVP done** — 69 Live (diverse, max 3/host), parser glob+generator+search+themes+playground+PDF+flywheel
+- **D1-D6 MVP done** — 200 Live (diverse, max 3/host), parser glob+generator+search+themes+playground+PDF+flywheel
 - **Phase 2** — drift UI history graphs + category chips (`build-web.mjs:56` now surfaces drift/death + 30d sparklines)
 - **Phase 3** — community discovery + AI search (still free)
 
