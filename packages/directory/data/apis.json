@@ -3868,5 +3868,755 @@
     "cors": "yes",
     "docs": "https://zenquotes.io",
     "added": "2026-08-29"
+  },
+  {
+    "name": "SpaceX Latest",
+    "slug": "spacex-latest",
+    "url": "https://api.spacexdata.com/v4/rockets",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://github.com/r-spacex/SpaceX-API",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Coindesk BPI",
+    "slug": "coindesk-bpi",
+    "url": "https://api.coindesk.com/v1/bpi/currentprice.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.coindesk.com/coindesk-api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "PunkAPI Beers",
+    "slug": "punkapi-beers",
+    "url": "https://api.punkapi.com/v2/beers?per_page=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food-&-drink",
+    "cors": "yes",
+    "docs": "https://punkapi.com/documentation/v2",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Quotable Random",
+    "slug": "quotable-random",
+    "url": "https://api.quotable.io/random",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://github.com/lukePeavey/quotable",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "D&D 5e Abilities",
+    "slug": "dnd5e-abilities",
+    "url": "https://www.dnd5eapi.co/api/ability-scores",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://www.dnd5eapi.co/docs/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "IsEven 2",
+    "slug": "iseven-2",
+    "url": "https://api.isevenapi.xyz/api/iseven/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://isevenapi.xyz",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "IsItUp Example",
+    "slug": "isitup-example",
+    "url": "https://api.allorigins.win/get?url=https://example.com",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://allorigins.win/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "CoinCap Assets",
+    "slug": "coincap-assets",
+    "url": "https://api.coincap.io/v2/assets?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cryptocurrency",
+    "cors": "yes",
+    "docs": "https://docs.coincap.io/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "NASA APOD Demo",
+    "slug": "nasa-apod-demo",
+    "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://api.nasa.gov",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "DataUSA Population",
+    "slug": "datausa-population",
+    "url": "https://api.publicapis.org/entries",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://api.publicapis.org/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "StackExchange Questions",
+    "slug": "stackexchange-questions",
+    "url": "https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow&pagesize=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://api.stackexchange.com/docs",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "MathJS Evaluate",
+    "slug": "mathjs-evaluate",
+    "url": "https://api.mathjs.org/v4/?expr=2*3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://api.mathjs.org",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "UPC Item DB",
+    "slug": "upcitemdb-lookup",
+    "url": "https://api.upcitemdb.com/prod/trial/lookup?upc=012345678905",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ecommerce",
+    "cors": "yes",
+    "docs": "https://www.upcitemdb.com/api/explorer",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "FXRatesAPI Latest",
+    "slug": "fxratesapi-latest",
+    "url": "https://api.fxratesapi.com/latest",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "currency",
+    "cors": "yes",
+    "docs": "https://fxratesapi.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Dictionary Hello",
+    "slug": "dictionary-hello",
+    "url": "https://api.dictionaryapi.dev/api/v2/entries/en/hello",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "dictionaries",
+    "cors": "yes",
+    "docs": "https://dictionaryapi.dev",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "MangaDex Manga",
+    "slug": "mangadex-manga",
+    "url": "https://api.mangadex.org/manga",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "anime",
+    "cors": "yes",
+    "docs": "https://api.mangadex.org/docs/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Kitsu Anime",
+    "slug": "kitsu-anime",
+    "url": "https://kitsu.io/api/edge/anime",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "anime",
+    "cors": "yes",
+    "docs": "https://kitsu.docs.apiary.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Ice And Fire Books",
+    "slug": "iceandfire-books",
+    "url": "https://anapioficeandfire.com/api/books",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://anapioficeandfire.com/Documentation",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Simpsons Quote",
+    "slug": "simpsons-quote",
+    "url": "https://thesimpsonsquoteapi.glitch.me/quotes?count=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://thesimpsonsquoteapi.glitch.me",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Open Notify Astros",
+    "slug": "open-notify-astros",
+    "url": "https://api.open-notify.org/astros.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "http://open-notify.org/Open-Notify-API/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Solar System Bodies",
+    "slug": "solar-system-bodies",
+    "url": "https://api.le-systeme-solaire.net/rest/bodies/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://api.le-systeme-solaire.net/en/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Google Books ISBN",
+    "slug": "google-books-isbn",
+    "url": "https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://developers.google.com/books/docs/v1/using",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Disease.sh Covid",
+    "slug": "disease-sh-covid",
+    "url": "https://disease.sh/v3/covid-19/all",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://disease.sh/docs/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Dad Joke Slack",
+    "slug": "dadjoke-slack",
+    "url": "https://icanhazdadjoke.com/slack",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://icanhazdadjoke.com/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "BoredAPI Activity",
+    "slug": "boredapi-activity",
+    "url": "https://www.boredapi.com/api/activity",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://www.boredapi.com/documentation",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Binance Price",
+    "slug": "binance-price",
+    "url": "https://api2.binance.com/api/v3/ticker/price?symbol=BTCUSDT",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cryptocurrency",
+    "cors": "yes",
+    "docs": "https://binance-docs.github.io/apidocs/spot/en/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Cataas Cat",
+    "slug": "cataas-cat",
+    "url": "https://cataas.com/cat?json=true",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://cataas.com/doc.html",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Catboys Cat",
+    "slug": "catboys-cat",
+    "url": "https://api.catboys.com/cat",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://catboys.com/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Shibe Online",
+    "slug": "shibe-online",
+    "url": "https://shibe.online/api/shibes?count=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "http://shibe.online",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Random Fox",
+    "slug": "randomfox",
+    "url": "https://randomfox.ca/floof/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://randomfox.ca",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Random Cat Meow",
+    "slug": "randomcat-meow",
+    "url": "https://aws.random.cat/meow",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://aws.random.cat/view/1148",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "IP API JSON",
+    "slug": "ipapi-json",
+    "url": "https://ipapi.co/json/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://ipapi.co/api/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Country Is",
+    "slug": "country-is",
+    "url": "https://api.country.is",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://country.is",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Open ER API USD",
+    "slug": "open-er-api-usd",
+    "url": "https://open.er-api.com/v6/latest/USD",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "currency",
+    "cors": "yes",
+    "docs": "https://www.exchangerate-api.com/docs/overview",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "WorldTime London",
+    "slug": "worldtime-london",
+    "url": "https://worldtimeapi.org/api/timezone/Europe/London",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "http://worldtimeapi.org",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "TimeAPI London",
+    "slug": "timeapi-london",
+    "url": "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://www.timeapi.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Cryptowat Prices",
+    "slug": "cryptowat-prices",
+    "url": "https://api.cryptowat.ch/markets/prices",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cryptocurrency",
+    "cors": "yes",
+    "docs": "https://docs.cryptowat.ch/rest-api/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "NumbersAPI Trivia",
+    "slug": "numbersapi-trivia",
+    "url": "https://numbersapi.com/42/trivia?json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "http://numbersapi.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Geocode Berlin",
+    "slug": "geocode-berlin",
+    "url": "https://geocode.maps.co/search?q=Berlin",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://geocode.maps.co",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Tronaldump Random",
+    "slug": "tronaldump-random",
+    "url": "https://api.tronalddump.io/random/quote",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://docs.tronalddump.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Breaking Bad Quotes",
+    "slug": "breakingbad-quotes",
+    "url": "https://api.breakingbadquotes.xyz/v1/quotes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://breakingbadquotes.xyz/docs/",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "YoMomma Info",
+    "slug": "yomomma-info",
+    "url": "https://api.yomomma.info/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://yomomma.info",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Meme API Gimme",
+    "slug": "meme-api-gimme",
+    "url": "https://meme-api.com/gimme",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://github.com/D3vd/Meme_Api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Waifu Pics SFW",
+    "slug": "waifu-pics-sfw",
+    "url": "https://api.waifu.pics/sfw/waifu",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "anime",
+    "cors": "yes",
+    "docs": "https://waifu.pics/docs",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "PlaceKitten",
+    "slug": "placekitten",
+    "url": "https://placekitten.com/200/300",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://placekitten.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Picsum Photos",
+    "slug": "picsum-photos",
+    "url": "https://picsum.photos/200",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://picsum.photos",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "OceanDrivers Cams",
+    "slug": "oceandrivers-cams",
+    "url": "https://api.oceandrivers.com/v1.0/getWebCams/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://oceandrivers.com/docs/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "7Timer Astro",
+    "slug": "7timer-astro",
+    "url": "https://www.7timer.info/bin/api.pl?lon=113.17&lat=23.00&product=astro&output=json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "http://www.7timer.info/doc.php?lang=en",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Microlink Example",
+    "slug": "microlink-example",
+    "url": "https://api.microlink.io/?url=https://example.com",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://microlink.io/docs/api/getting-started/overview",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "GBIF Occurrence",
+    "slug": "gbif-occurrence",
+    "url": "https://api.gbif.org/v1/occurrence/search?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://www.gbif.org/developer/summary",
+    "added": "2026-08-29"
   }
 ]
