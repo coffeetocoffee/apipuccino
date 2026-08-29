@@ -6,11 +6,11 @@
 
 **Free, self-verifying API directory + offline OpenAPI docs generator.**
 
-[![Live](https://img.shields.io/badge/237%2F250-live-brightgreen?style=flat-square)](packages/directory/data/results.json) [![Check](https://img.shields.io/badge/health-nightly-blue?style=flat-square)](#verification-l0-l3) [![MIT](https://img.shields.io/badge/license-MIT-black?style=flat-square)](#free-forever) [![CC0](https://img.shields.io/badge/data-CC0-lightgrey?style=flat-square)](#free-forever) [![Node](https://img.shields.io/badge/node-%3E%3D20-339933?style=flat-square)](#quick-start) [![pnpm](https://img.shields.io/badge/pnpm-9-F69220?style=flat-square)](#quick-start)
+[![Live](https://img.shields.io/badge/332%2F350-live-brightgreen?style=flat-square)](packages/directory/data/results.json) [![Check](https://img.shields.io/badge/health-nightly-blue?style=flat-square)](#verification-l0-l3) [![MIT](https://img.shields.io/badge/license-MIT-black?style=flat-square)](#free-forever) [![CC0](https://img.shields.io/badge/data-CC0-lightgrey?style=flat-square)](#free-forever) [![Node](https://img.shields.io/badge/node-%3E%3D20-339933?style=flat-square)](#quick-start) [![pnpm](https://img.shields.io/badge/pnpm-9-F69220?style=flat-square)](#quick-start)
 
 **`apipuccino`** (directory) + **`apidocs`** (docs) → one flywheel, zero servers.
 
-[🎯 Browse 250 Live APIs](#browse) · [📚 Demo Docs](./api-docs/) · [⚡ Quick Start](#quick-start) · [🤝 Submit Yours](#submit)
+[🎯 Browse 350 Live APIs](#browse) · [📚 Demo Docs](./api-docs/) · [⚡ Quick Start](#quick-start) · [🤝 Submit Yours](#submit)
 
 </div>
 
@@ -52,7 +52,7 @@ npx apidocs build  ──►  prompt: submit?  ──►  directory grows  ─�
 
 pnpm install
 
-# 2. Directory — verify & check (200 APIs, ~45s)
+# 2. Directory — verify & check (350 APIs, ~75s)
 node packages/directory/scripts/verify.mjs   # zod validation
 node packages/directory/scripts/check.mjs    # L0/L1 + p-limit 5 + history/*.jsonl
 node packages/directory/scripts/history-graph.mjs
@@ -95,7 +95,7 @@ L3  openapiUrl reachable + ajv validate (phase 3)
 
 **Flow:** `cron 03:00 UTC` · `p-limit 5` · jitter `800-1600ms` · UA `ApipuccinoBot/2.0` · respect `Retry-After` · fail → re-probe Cloudflare Worker (`packages/directory/worker/index.js:8`) → both fail `⇒ consecutiveFailures++` → `≥3 days ⇒ Death Report issue` → pass `⇒ reset`. Commit only if `summary` changed. History appends to `history/YYYY-MM-DD.jsonl`, not git bloat.
 
-Current: **200/250 Live** — see `packages/directory/data/results.json:3`, sparkline from `history-summary.json:1`, drift from `drift-report.json:1`.
+Current: **332/350 Live (94.9%)** — see `packages/directory/data/results.json:3`, sparkline from `history-summary.json:1`, drift from `drift-report.json:1`.
 
 ---
 
