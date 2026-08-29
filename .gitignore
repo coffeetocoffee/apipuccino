@@ -10,3 +10,5 @@ apps/web/src/env.d.ts
 test-results
 packages/directory/data/history/*.jsonl
 !packages/directory/data/history/.gitkeep
+*.bak
+packages/directory/data/*.bak

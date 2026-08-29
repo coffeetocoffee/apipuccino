@@ -520,7 +520,8 @@
     "probe": {
       "method": "GET",
       "expectedStatus": 200,
-      "timeoutMs": 8000
+      "expectedContentType": "text/html",
+      "timeoutMs": 10000
     },
     "auth": "none",
     "category": "games-&-comics",
@@ -892,18 +893,20 @@
     "added": "2026-08-28"
   },
   {
-    "name": "Fun Fact",
+    "name": "Useless Facts",
     "slug": "fun-fact",
-    "url": "https://api.aakhilv.me",
+    "url": "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en",
     "probe": {
-      "method": "GET",
       "expectedStatus": 200,
-      "timeoutMs": 8000
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.text",
+      "timeoutMs": 8000,
+      "method": "GET"
     },
     "auth": "none",
     "category": "entertainment",
     "cors": "yes",
-    "docs": "https://api.aakhilv.me",
+    "docs": "https://uselessfacts.jsph.pl",
     "added": "2026-08-28"
   },
   {
@@ -2328,21 +2331,6 @@
     "added": "2026-08-28"
   },
   {
-    "name": "SEC EDGAR Data",
-    "slug": "sec-edgar-data",
-    "url": "https://www.sec.gov/edgar/sec-api-documentation",
-    "probe": {
-      "method": "GET",
-      "expectedStatus": 200,
-      "timeoutMs": 8000
-    },
-    "auth": "none",
-    "category": "finance",
-    "cors": "yes",
-    "docs": "https://www.sec.gov/edgar/sec-api-documentation",
-    "added": "2026-08-28"
-  },
-  {
     "name": "Statically",
     "slug": "statically",
     "url": "https://statically.io/",
@@ -2635,5 +2623,1250 @@
     "cors": "yes",
     "docs": "http://www.zippopotam.us",
     "added": "2026-08-28"
+  },
+  {
+    "name": "Agify Sarah",
+    "slug": "agify-sarah",
+    "url": "https://api.agify.io?name=sarah",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://agify.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Genderize Anna",
+    "slug": "genderize-anna",
+    "url": "https://api.genderize.io?name=anna",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://genderize.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Nationalize Emily",
+    "slug": "nationalize-emily",
+    "url": "https://api.nationalize.io?name=emily",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://nationalize.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Met Museum Object",
+    "slug": "met-museum-object",
+    "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://metmuseum.github.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Met Museum Search",
+    "slug": "met-museum-search",
+    "url": "https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://metmuseum.github.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Sunrise Sunset NY",
+    "slug": "sunrise-sunset-ny",
+    "url": "https://api.sunrise-sunset.org/json?lat=40.71&lng=-74.00&formatted=0",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://sunrise-sunset.org/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Carbon Intensity Regional",
+    "slug": "carbon-regional",
+    "url": "https://api.carbonintensity.org.uk/regional/england",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "environment",
+    "cors": "yes",
+    "docs": "https://carbon-intensity.github.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Aladhan London",
+    "slug": "aladhan-london",
+    "url": "https://api.aladhan.com/v1/timingsByCity/01-01-2025?city=London&country=UK&method=2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "religion",
+    "cors": "yes",
+    "docs": "https://aladhan.com/prayer-times-api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ISRO Spacecrafts",
+    "slug": "isro-spacecrafts",
+    "url": "https://isro.vercel.app/api/spacecrafts",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://isro.vercel.app",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ZenQuotes Today",
+    "slug": "zenquotes-today",
+    "url": "https://zenquotes.io/api/today",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://zenquotes.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ZenQuotes Random",
+    "slug": "zenquotes-random",
+    "url": "https://zenquotes.io/api/random",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://zenquotes.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Launch Library Next",
+    "slug": "launch-library",
+    "url": "https://ll.thespacedevs.com/2.2.0/launch/upcoming/?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://thespacedevs.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "DummyJSON Quote Random",
+    "slug": "dummyjson-quote",
+    "url": "https://dummyjson.com/quotes/random",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "FakeStore Product",
+    "slug": "fakestore-product",
+    "url": "https://fakestoreapi.com/products/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ecommerce",
+    "cors": "yes",
+    "docs": "https://fakestoreapi.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Disney Character",
+    "slug": "disney-character",
+    "url": "https://api.disneyapi.dev/character/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://disneyapi.dev",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "CheapShark Deals",
+    "slug": "cheapshark-deals",
+    "url": "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games-&-comics",
+    "cors": "yes",
+    "docs": "https://www.cheapshark.com/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Art Institute Artwork",
+    "slug": "artic-artwork",
+    "url": "https://api.artic.edu/api/v1/artworks/129884",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://api.artic.edu/docs",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Advice Slip 1",
+    "slug": "advice-slip-1",
+    "url": "https://api.adviceslip.com/advice/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://api.adviceslip.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Zippopotam CA",
+    "slug": "zippopotam-ca",
+    "url": "https://api.zippopotam.us/ca/K2A",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "http://www.zippopotam.us",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Frankfurter Timeframe",
+    "slug": "frankfurter-timeframe",
+    "url": "https://api.frankfurter.app/2023-01-01",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.frankfurter.app/docs",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "OpenBrewery San Diego",
+    "slug": "openbrewery-sd",
+    "url": "https://api.openbrewerydb.org/v1/breweries?by_city=san_diego&per_page=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://www.openbrewerydb.org",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Cocktail Random",
+    "slug": "cocktail-random",
+    "url": "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://www.thecocktaildb.com/api.php",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "MealDB Random",
+    "slug": "mealdb-random",
+    "url": "https://www.themealdb.com/api/json/v1/1/random.php",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://www.themealdb.com/api.php",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "TheCatAPI Limit",
+    "slug": "thecatapi-limit",
+    "url": "https://api.thecatapi.com/v1/images/search?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://thecatapi.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "HTTPBin IP",
+    "slug": "httpbin-ip",
+    "url": "https://httpbin.org/ip",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "DummyJSON Products",
+    "slug": "dummyjson-products",
+    "url": "https://dummyjson.com/products?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "CoinGecko Search",
+    "slug": "coingecko-search",
+    "url": "https://api.coingecko.com/api/v3/search?query=bitcoin",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.coingecko.com/en/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "GitHub Node Repo",
+    "slug": "github-node",
+    "url": "https://api.github.com/repos/nodejs/node",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://docs.github.com/en/rest",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Open-Meteo Elevation 2",
+    "slug": "open-meteo-elev-2",
+    "url": "https://api.open-meteo.com/v1/elevation?latitude=40.71&longitude=-74.00",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://open-meteo.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Cat Fact Ninja Breeds",
+    "slug": "catfact-breeds-2",
+    "url": "https://catfact.ninja/breeds?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://catfact.ninja",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Dog CEO Breed List",
+    "slug": "dog-ceo-list",
+    "url": "https://dog.ceo/api/breeds/list",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://dog.ceo/dog-api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ExchangeRate Latest EUR",
+    "slug": "exchangerate-eur",
+    "url": "https://api.exchangerate.host/latest?base=EUR",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "currency",
+    "cors": "yes",
+    "docs": "https://exchangerate.host",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "CoinPaprika Ticker BTC",
+    "slug": "coinpaprika-btc",
+    "url": "https://api.coinpaprika.com/v1/tickers/btc-bitcoin",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cryptocurrency",
+    "cors": "yes",
+    "docs": "https://api.coinpaprika.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "TVMaze Episode",
+    "slug": "tvmaze-episode",
+    "url": "https://api.tvmaze.com/episodes/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://www.tvmaze.com/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Lyrics Queen",
+    "slug": "lyrics-queen",
+    "url": "https://api.lyrics.ovh/v1/Queen/Bohemian%20Rhapsody",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://lyricsovh.docs.apiary.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "JokeAPI Dark",
+    "slug": "jokeapi-dark",
+    "url": "https://v2.jokeapi.dev/joke/Dark?type=single",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://jokeapi.dev",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Official Joke Ten",
+    "slug": "official-joke-ten",
+    "url": "https://official-joke-api.appspot.com/jokes/ten",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://github.com/15Dkatz/official_joke_api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Chuck Norris Search",
+    "slug": "chuck-search",
+    "url": "https://api.chucknorris.io/jokes/search?query=hello",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://api.chucknorris.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Bible Verse",
+    "slug": "bible-verse",
+    "url": "https://bible-api.com/john%203:16",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://bible-api.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Kanye Quote",
+    "slug": "kanye-quote",
+    "url": "https://api.kanye.rest",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://kanye.rest",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Agify John",
+    "slug": "agify-john",
+    "url": "https://api.agify.io?name=john",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://agify.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Genderize John",
+    "slug": "genderize-john",
+    "url": "https://api.genderize.io?name=john",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://genderize.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Nationalize John",
+    "slug": "nationalize-john",
+    "url": "https://api.nationalize.io?name=john",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://nationalize.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Useless Facts 2",
+    "slug": "useless-facts-2",
+    "url": "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://uselessfacts.jsph.pl",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Advice Slip 22",
+    "slug": "advice-slip-22",
+    "url": "https://api.adviceslip.com/advice/22",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://api.adviceslip.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Official Joke Programming Ten",
+    "slug": "official-joke-prog-ten",
+    "url": "https://official-joke-api.appspot.com/jokes/programming/ten",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://github.com/15Dkatz/official_joke_api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "HTTPBin Anything",
+    "slug": "httpbin-anything",
+    "url": "https://httpbin.org/anything",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://httpbin.org",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "DummyJSON Todos",
+    "slug": "dummyjson-todos",
+    "url": "https://dummyjson.com/todos/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "testing",
+    "cors": "yes",
+    "docs": "https://dummyjson.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "TVMaze People",
+    "slug": "tvmaze-people",
+    "url": "https://api.tvmaze.com/people/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://www.tvmaze.com/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Lyrics Beatles",
+    "slug": "lyrics-beatles",
+    "url": "https://api.lyrics.ovh/v1/Beatles/Yesterday",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://lyricsovh.docs.apiary.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "CheapShark Stores",
+    "slug": "cheapshark-stores",
+    "url": "https://www.cheapshark.com/api/1.0/stores",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games-&-comics",
+    "cors": "yes",
+    "docs": "https://www.cheapshark.com/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Art Institute Search",
+    "slug": "artic-search",
+    "url": "https://api.artic.edu/api/v1/artworks/search?q=cats&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://api.artic.edu/docs",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "CoinPaprika Global",
+    "slug": "coinpaprika-global",
+    "url": "https://api.coinpaprika.com/v1/global",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cryptocurrency",
+    "cors": "yes",
+    "docs": "https://api.coinpaprika.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Nager Long Weekend",
+    "slug": "nager-long-weekend",
+    "url": "https://date.nager.at/api/v3/LongWeekend/2026/US",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "calendar",
+    "cors": "yes",
+    "docs": "https://date.nager.at",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "IPify IP",
+    "slug": "ipify-ip",
+    "url": "https://api.ipify.org?format=json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://www.ipify.org",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Open-Meteo Geocoding",
+    "slug": "open-meteo-geocode",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Berlin&count=1&language=en&format=json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://open-meteo.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Frankfurter Latest GBP",
+    "slug": "frankfurter-gbp",
+    "url": "https://api.frankfurter.app/latest?from=GBP",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.frankfurter.app/docs",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Cocktail Filter",
+    "slug": "cocktail-filter",
+    "url": "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://www.thecocktaildb.com/api.php",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "MealDB Categories",
+    "slug": "mealdb-categories",
+    "url": "https://www.themealdb.com/api/json/v1/1/categories.php",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "food",
+    "cors": "yes",
+    "docs": "https://www.themealdb.com/api.php",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Agify Michael",
+    "slug": "agify-michael",
+    "url": "https://api.agify.io?name=michael",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://agify.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Genderize Michael",
+    "slug": "genderize-michael",
+    "url": "https://api.genderize.io?name=michael",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://genderize.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Nationalize Michael",
+    "slug": "nationalize-michael",
+    "url": "https://api.nationalize.io?name=michael",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://nationalize.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Useless Facts DE",
+    "slug": "useless-de",
+    "url": "https://uselessfacts.jsph.pl/api/v2/facts/random?language=de",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://uselessfacts.jsph.pl",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Met Object 2",
+    "slug": "met-object-2",
+    "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://metmuseum.github.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Sunrise London",
+    "slug": "sunrise-london",
+    "url": "https://api.sunrise-sunset.org/json?lat=51.5074&lng=-0.1278&formatted=0",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://sunrise-sunset.org/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ISRO Launchers",
+    "slug": "isro-launchers",
+    "url": "https://isro.vercel.app/api/launchers",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://isro.vercel.app",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ISRO Customers",
+    "slug": "isro-customers",
+    "url": "https://isro.vercel.app/api/customer_satellites",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://isro.vercel.app",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "FakeStore 2",
+    "slug": "fakestore-2",
+    "url": "https://fakestoreapi.com/products/2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ecommerce",
+    "cors": "yes",
+    "docs": "https://fakestoreapi.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Art Institute Agents",
+    "slug": "artic-agents",
+    "url": "https://api.artic.edu/api/v1/agents?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://api.artic.edu/docs",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ZenQuotes Quotes",
+    "slug": "zenquotes-quotes",
+    "url": "https://zenquotes.io/api/quotes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://zenquotes.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Aladhan Timings 2",
+    "slug": "aladhan-timings2",
+    "url": "https://api.aladhan.com/v1/timings/01-01-2025?latitude=51.5074&longitude=-0.1278&method=2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "religion",
+    "cors": "yes",
+    "docs": "https://aladhan.com/prayer-times-api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "TVMaze Search",
+    "slug": "tvmaze-search",
+    "url": "https://api.tvmaze.com/search/shows?q=girls",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://www.tvmaze.com/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Lyrics Adele",
+    "slug": "lyrics-adele",
+    "url": "https://api.lyrics.ovh/v1/Adele/Hello",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://lyricsovh.docs.apiary.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Agify David",
+    "slug": "agify-david",
+    "url": "https://api.agify.io?name=david",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://agify.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Genderize David",
+    "slug": "genderize-david",
+    "url": "https://api.genderize.io?name=david",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://genderize.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Nationalize David",
+    "slug": "nationalize-david",
+    "url": "https://api.nationalize.io?name=david",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "prediction",
+    "cors": "yes",
+    "docs": "https://nationalize.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Sunrise Tokyo",
+    "slug": "sunrise-tokyo",
+    "url": "https://api.sunrise-sunset.org/json?lat=35.6762&lng=139.6503&formatted=0",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://sunrise-sunset.org/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "Met Object 3",
+    "slug": "met-object-3",
+    "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://metmuseum.github.io",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ISRO Centres",
+    "slug": "isro-centres",
+    "url": "https://isro.vercel.app/api/centres",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://isro.vercel.app",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "FakeStore 3",
+    "slug": "fakestore-3",
+    "url": "https://fakestoreapi.com/products/3",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "ecommerce",
+    "cors": "yes",
+    "docs": "https://fakestoreapi.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": " Sunrise Paris",
+    "slug": "sunrise-paris",
+    "url": "https://api.sunrise-sunset.org/json?lat=48.8566&lng=2.3522&formatted=0",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://sunrise-sunset.org/api",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "TheDogAPI 2",
+    "slug": "thedogapi-2",
+    "url": "https://api.thedogapi.com/v1/images/search?limit=2",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://thedogapi.com",
+    "added": "2026-08-29"
+  },
+  {
+    "name": "ZenQuotes Inspire",
+    "slug": "zenquotes-inspire",
+    "url": "https://zenquotes.io/api/image",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://zenquotes.io",
+    "added": "2026-08-29"
   }
 ]

@@ -71,20 +71,29 @@ async function probe(api, prevFailures = 0) {
   const start = Date.now();
   let status = null, contentType = null, bodyText = "", ok = false, error = null;
   try {
-    const res = await fetch(url, {
-      method: cfg.method || "GET",
-      signal: controller.signal,
-      headers: { "User-Agent": UA, "Accept": "*/*" },
-    });
-    status = res.status;
-    contentType = res.headers.get("content-type");
-    // Respect Retry-After
-    if (res.status === 429) {
-      const ra = res.headers.get("retry-after");
-      if (ra) await sleep(Math.min(Number(ra) * 1000, 5000));
+    // Fetch with single retry on 429
+    let lastRes = null;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      const res = await fetch(url, {
+        method: cfg.method || "GET",
+        signal: controller.signal,
+        headers: { "User-Agent": UA, "Accept": "*/*" },
+      });
+      lastRes = res;
+      status = res.status;
+      contentType = res.headers.get("content-type");
+      if (res.status === 429) {
+        const ra = res.headers.get("retry-after");
+        const wait = ra ? Math.min(Number(ra) * 1000, 4000) : 1200;
+        await sleep(wait);
+        if (attempt === 0) continue; // retry once
+        bodyText = await res.text().catch(() => "");
+        throw new Error(`expected status ${cfg.expectedStatus ?? 200} got 429 (rate-limited, retried)`);
+      }
+      bodyText = await res.text();
+      break;
     }
-    // Read body with limit
-    bodyText = await res.text();
+    if (!lastRes) throw new Error("no response");
     // L0: status
     if (status !== (cfg.expectedStatus ?? 200)) throw new Error(`expected status ${cfg.expectedStatus} got ${status}`);
     // L1: content-type
@@ -148,6 +157,7 @@ async function probe(api, prevFailures = 0) {
   }
 
   const consecutiveFailures = ok ? 0 : prevFailures + 1;
+  const schemaHash = bodyText ? hashKeys(bodyText) : null;
   return {
     slug: api.slug,
     ok,
@@ -157,6 +167,7 @@ async function probe(api, prevFailures = 0) {
     timeChecked: new Date().toISOString(),
     consecutiveFailures,
     contentHash: bodyText ? hashContent(bodyText) : null,
+    schemaHash,
     l3Validated,
     probeFallback,
     ...(error ? { error } : {}),
@@ -166,8 +177,20 @@ async function probe(api, prevFailures = 0) {
 function hashKeys(json) {
   try {
     const obj = JSON.parse(json);
-    const keys = Object.keys(obj).sort().join(",");
-    return crypto.createHash("sha256").update(keys).digest("hex").slice(0, 12);
+    if (Array.isArray(obj)) {
+      if (obj.length === 0) return "empty-array";
+      const first = obj[0];
+      if (typeof first === "object" && first !== null) {
+        const keys = Object.keys(first).sort().join(",");
+        return crypto.createHash("sha256").update(keys + ":len" + obj.length).digest("hex").slice(0, 12);
+      }
+      return crypto.createHash("sha256").update("array:len" + obj.length).digest("hex").slice(0, 12);
+    }
+    if (obj && typeof obj === "object") {
+      const keys = Object.keys(obj).sort().join(",");
+      return crypto.createHash("sha256").update(keys).digest("hex").slice(0, 12);
+    }
+    return null;
   } catch { return null; }
 }
 
@@ -175,11 +198,15 @@ async function main() {
   const apis = JSON.parse(await fs.readFile(APIS_JSON, "utf8"));
   let prevResults = {};
   let prevHashes = {};
+  let prevSchemaHashes = {};
   try {
     const prev = JSON.parse(await fs.readFile(RESULTS_JSON, "utf8"));
     for (const r of prev.results) {
       prevResults[r.slug] = r.consecutiveFailures;
       if (r.contentHash) prevHashes[r.slug] = r.contentHash;
+      if (r.schemaHash) prevSchemaHashes[r.slug] = r.schemaHash;
+      // fallback: if no schemaHash stored yet, derive from contentHash history (will be noisy once, then stabilizes)
+      else if (r.contentHash) prevSchemaHashes[r.slug] = r.contentHash;
     }
   } catch {}
 
@@ -213,11 +240,12 @@ async function main() {
   const line = JSON.stringify({ checkedAt, summary, results }) + "\n";
   await fs.appendFile(histFile, line, "utf8");
 
-  // L2 Drift detection: contentHash changed while ok (keys drift)
-  const drifts = results.filter(r => r.ok && prevHashes[r.slug] && r.contentHash && r.contentHash !== prevHashes[r.slug]);
+  // L2 Drift detection: schemaHash changed while ok (stable drift, not random values)
+  // Compare schemaHash (sorted keys) not full contentHash to avoid noise from random responses
+  const drifts = results.filter(r => r.ok && prevSchemaHashes[r.slug] && r.schemaHash && r.schemaHash !== prevSchemaHashes[r.slug]);
   if (drifts.length) {
-    console.log(`\n● Drift Alert: ${drifts.map(d=>`${d.slug} ${prevHashes[d.slug]}→${d.contentHash}`).join(", ")}`);
-    await fs.writeFile(path.join(DATA_DIR, "drift-report.json"), JSON.stringify({ checkedAt, drifts: drifts.map(d=>({ slug: d.slug, prevHash: prevHashes[d.slug], newHash: d.contentHash })) }, null, 2), "utf8");
+    console.log(`\n● Drift Alert (schema keys): ${drifts.map(d=>`${d.slug} ${prevSchemaHashes[d.slug]}→${d.schemaHash}`).join(", ")}`);
+    await fs.writeFile(path.join(DATA_DIR, "drift-report.json"), JSON.stringify({ checkedAt, drifts: drifts.map(d=>({ slug: d.slug, prevHash: prevSchemaHashes[d.slug], newHash: d.schemaHash })) }, null, 2), "utf8");
   } else {
     // remove stale drift report if no drift
     await fs.unlink(path.join(DATA_DIR, "drift-report.json")).catch(()=>{});
