@@ -1,9 +1,8 @@
 {
   "agify": {
-    "uptime30d": 0.905,
-    "avgLatencyMs": 812,
+    "uptime30d": 0.9,
+    "avgLatencyMs": 777,
     "last30": [
-      1,
       1,
       1,
       1,
@@ -25,27 +24,11 @@
       1,
       1
     ],
-    "sparkline": "██████████░░█████████"
-  },
-  "bored-api": {
-    "uptime30d": 0.333,
-    "avgLatencyMs": 514,
-    "last30": [
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      1,
-      1
-    ],
-    "sparkline": "░░░█░░░██"
+    "sparkline": "█████████░░█████████"
   },
   "cat-facts": {
     "uptime30d": 1,
-    "avgLatencyMs": 722,
+    "avgLatencyMs": 712,
     "last30": [
       1,
       1,
@@ -82,9 +65,8 @@
   },
   "coingecko": {
     "uptime30d": 0.967,
-    "avgLatencyMs": 399,
+    "avgLatencyMs": 400,
     "last30": [
-      1,
       1,
       1,
       1,
@@ -113,13 +95,14 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "███████████████████████░██████"
+    "sparkline": "██████████████████████░███████"
   },
   "dog-ceo": {
     "uptime30d": 1,
-    "avgLatencyMs": 431,
+    "avgLatencyMs": 432,
     "last30": [
       1,
       1,
@@ -154,9 +137,44 @@
     ],
     "sparkline": "██████████████████████████████"
   },
+  "dummyjson": {
+    "uptime30d": 1,
+    "avgLatencyMs": 225,
+    "last30": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sparkline": "████████████████████████████"
+  },
   "exchangerate-host": {
     "uptime30d": 1,
-    "avgLatencyMs": 936,
+    "avgLatencyMs": 931,
     "last30": [
       1,
       1,
@@ -192,10 +210,9 @@
     "sparkline": "██████████████████████████████"
   },
   "genderize": {
-    "uptime30d": 0.905,
-    "avgLatencyMs": 788,
+    "uptime30d": 0.9,
+    "avgLatencyMs": 753,
     "last30": [
-      1,
       1,
       1,
       1,
@@ -217,11 +234,11 @@
       1,
       1
     ],
-    "sparkline": "██████████░░█████████"
+    "sparkline": "█████████░░█████████"
   },
   "github-api": {
     "uptime30d": 1,
-    "avgLatencyMs": 331,
+    "avgLatencyMs": 323,
     "last30": [
       1,
       1,
@@ -258,7 +275,7 @@
   },
   "httpbin": {
     "uptime30d": 1,
-    "avgLatencyMs": 2819,
+    "avgLatencyMs": 2848,
     "last30": [
       1,
       1,
@@ -332,7 +349,7 @@
   },
   "jsonplaceholder": {
     "uptime30d": 1,
-    "avgLatencyMs": 163,
+    "avgLatencyMs": 162,
     "last30": [
       1,
       1,
@@ -369,7 +386,7 @@
   },
   "nager-date": {
     "uptime30d": 1,
-    "avgLatencyMs": 201,
+    "avgLatencyMs": 191,
     "last30": [
       1,
       1,
@@ -405,10 +422,9 @@
     "sparkline": "██████████████████████████████"
   },
   "nationalize": {
-    "uptime30d": 0.905,
-    "avgLatencyMs": 737,
+    "uptime30d": 0.9,
+    "avgLatencyMs": 698,
     "last30": [
-      1,
       1,
       1,
       1,
@@ -430,27 +446,11 @@
       1,
       1
     ],
-    "sparkline": "██████████░░█████████"
-  },
-  "numbers-api": {
-    "uptime30d": 0.444,
-    "avgLatencyMs": 675,
-    "last30": [
-      0,
-      0,
-      0,
-      1,
-      1,
-      0,
-      0,
-      1,
-      1
-    ],
-    "sparkline": "░░░██░░██"
+    "sparkline": "█████████░░█████████"
   },
   "open-meteo": {
     "uptime30d": 1,
-    "avgLatencyMs": 1062,
+    "avgLatencyMs": 1095,
     "last30": [
       1,
       1,
@@ -485,17 +485,46 @@
     ],
     "sparkline": "██████████████████████████████"
   },
-  "quotable": {
-    "uptime30d": 0,
-    "avgLatencyMs": null,
+  "pokeapi": {
+    "uptime30d": 1,
+    "avgLatencyMs": 191,
     "last30": [
-      0
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
     ],
-    "sparkline": "░"
+    "sparkline": "██████████████████████████████"
   },
   "random-user": {
     "uptime30d": 1,
-    "avgLatencyMs": 494,
+    "avgLatencyMs": 473,
     "last30": [
       1,
       1,
@@ -529,10 +558,46 @@
       1
     ],
     "sparkline": "██████████████████████████████"
+  },
+  "reqres": {
+    "uptime30d": 0.862,
+    "avgLatencyMs": 358,
+    "last30": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sparkline": "████████████████████░░░░█████"
   },
   "rest-countries": {
     "uptime30d": 1,
-    "avgLatencyMs": 356,
+    "avgLatencyMs": 368,
     "last30": [
       1,
       1,
@@ -567,17 +632,46 @@
     ],
     "sparkline": "██████████████████████████████"
   },
-  "universities-list": {
-    "uptime30d": 0,
-    "avgLatencyMs": null,
+  "rickandmorty": {
+    "uptime30d": 1,
+    "avgLatencyMs": 207,
     "last30": [
-      0
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
     ],
-    "sparkline": "░"
+    "sparkline": "██████████████████████████████"
   },
   "zippopotam": {
     "uptime30d": 1,
-    "avgLatencyMs": 173,
+    "avgLatencyMs": 170,
     "last30": [
       1,
       1,
@@ -612,9 +706,26 @@
     ],
     "sparkline": "██████████████████████████████"
   },
-  "dummyjson": {
+  "agify-batch": {
+    "uptime30d": 0.8,
+    "avgLatencyMs": 878,
+    "last30": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "sparkline": "██████░░██"
+  },
+  "cat-facts-random": {
     "uptime30d": 1,
-    "avgLatencyMs": 229,
+    "avgLatencyMs": 601,
     "last30": [
       1,
       1,
@@ -646,163 +757,6 @@
     ],
     "sparkline": "███████████████████████████"
   },
-  "pokeapi": {
-    "uptime30d": 1,
-    "avgLatencyMs": 196,
-    "last30": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "sparkline": "█████████████████████████████"
-  },
-  "reqres": {
-    "uptime30d": 0.857,
-    "avgLatencyMs": 357,
-    "last30": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      1,
-      1
-    ],
-    "sparkline": "████████████████████░░░░████"
-  },
-  "rickandmorty": {
-    "uptime30d": 1,
-    "avgLatencyMs": 211,
-    "last30": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "sparkline": "█████████████████████████████"
-  },
-  "agify-batch": {
-    "uptime30d": 0.8,
-    "avgLatencyMs": 878,
-    "last30": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      0,
-      0,
-      1,
-      1
-    ],
-    "sparkline": "██████░░██"
-  },
-  "cat-facts-random": {
-    "uptime30d": 1,
-    "avgLatencyMs": 611,
-    "last30": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "sparkline": "██████████████████████████"
-  },
   "coindesk": {
     "uptime30d": 0.8,
     "avgLatencyMs": 315,
@@ -822,8 +776,9 @@
   },
   "dog-breeds": {
     "uptime30d": 1,
-    "avgLatencyMs": 469,
+    "avgLatencyMs": 464,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -851,7 +806,7 @@
       1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "dummyjson-carts": {
     "uptime30d": 1,
@@ -889,8 +844,9 @@
   },
   "github-emojis": {
     "uptime30d": 1,
-    "avgLatencyMs": 296,
+    "avgLatencyMs": 292,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -918,12 +874,13 @@
       1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "httpbin-json": {
     "uptime30d": 1,
-    "avgLatencyMs": 1516,
+    "avgLatencyMs": 1518,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -951,7 +908,7 @@
       1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "httpbin-status": {
     "uptime30d": 1,
@@ -979,8 +936,9 @@
   },
   "jsonplaceholder-posts": {
     "uptime30d": 1,
-    "avgLatencyMs": 203,
+    "avgLatencyMs": 198,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1008,12 +966,13 @@
       1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "jsonplaceholder-todos": {
     "uptime30d": 1,
-    "avgLatencyMs": 134,
+    "avgLatencyMs": 132,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1041,7 +1000,7 @@
       1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "jsonplaceholder-users": {
     "uptime30d": 1,
@@ -1061,7 +1020,7 @@
     "sparkline": "██████████"
   },
   "open-meteo-archive": {
-    "uptime30d": 0.962,
+    "uptime30d": 0.963,
     "avgLatencyMs": 870,
     "last30": [
       1,
@@ -1089,13 +1048,14 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "████░█████████████████████"
+    "sparkline": "████░██████████████████████"
   },
   "pokeapi-ability": {
     "uptime30d": 1,
-    "avgLatencyMs": 118,
+    "avgLatencyMs": 116,
     "last30": [
       1,
       1,
@@ -1122,9 +1082,10 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "protected-example": {
     "uptime30d": 0.9,
@@ -1144,8 +1105,8 @@
     "sparkline": "░█████████"
   },
   "reqres-list": {
-    "uptime30d": 0.84,
-    "avgLatencyMs": 284,
+    "uptime30d": 0.846,
+    "avgLatencyMs": 282,
     "last30": [
       1,
       1,
@@ -1171,14 +1132,16 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "█████████████████░░░░████"
+    "sparkline": "█████████████████░░░░█████"
   },
   "restcountries-region": {
     "uptime30d": 1,
-    "avgLatencyMs": 320,
+    "avgLatencyMs": 317,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1206,7 +1169,7 @@
       1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "rickmorty-location": {
     "uptime30d": 1,
@@ -1237,9 +1200,10 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "universities-ca": {
     "uptime30d": 0.8,
@@ -1260,8 +1224,9 @@
   },
   "zippopotam-de": {
     "uptime30d": 1,
-    "avgLatencyMs": 179,
+    "avgLatencyMs": 183,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1289,12 +1254,13 @@
       1,
       1
     ],
-    "sparkline": "██████████████████████████"
+    "sparkline": "███████████████████████████"
   },
   "advice-slip": {
     "uptime30d": 1,
-    "avgLatencyMs": 731,
+    "avgLatencyMs": 737,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1320,12 +1286,28 @@
       1,
       1
     ],
-    "sparkline": "████████████████████████"
+    "sparkline": "█████████████████████████"
+  },
+  "bored-api": {
+    "uptime30d": 0.375,
+    "avgLatencyMs": 514,
+    "last30": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "sparkline": "░░█░░░██"
   },
   "cat-breeds": {
     "uptime30d": 1,
-    "avgLatencyMs": 566,
+    "avgLatencyMs": 560,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1351,12 +1333,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████████████"
+    "sparkline": "█████████████████████████"
   },
   "dog-breed-hound": {
     "uptime30d": 1,
-    "avgLatencyMs": 390,
+    "avgLatencyMs": 417,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1382,7 +1365,7 @@
       1,
       1
     ],
-    "sparkline": "████████████████████████"
+    "sparkline": "█████████████████████████"
   },
   "dummyjson-quotes": {
     "uptime30d": 1,
@@ -1416,8 +1399,9 @@
   },
   "exchangerate-convert": {
     "uptime30d": 1,
-    "avgLatencyMs": 843,
+    "avgLatencyMs": 852,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1443,7 +1427,7 @@
       1,
       1
     ],
-    "sparkline": "████████████████████████"
+    "sparkline": "█████████████████████████"
   },
   "httpbin-headers": {
     "uptime30d": 1,
@@ -1462,8 +1446,9 @@
   },
   "httpbin-ip": {
     "uptime30d": 1,
-    "avgLatencyMs": 2125,
+    "avgLatencyMs": 2193,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1477,7 +1462,7 @@
       1,
       1
     ],
-    "sparkline": "████████████"
+    "sparkline": "█████████████"
   },
   "jsonplaceholder-albums": {
     "uptime30d": 1,
@@ -1509,10 +1494,26 @@
     ],
     "sparkline": "████████"
   },
+  "numbers-api": {
+    "uptime30d": 0.5,
+    "avgLatencyMs": 675,
+    "last30": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "sparkline": "░░██░░██"
+  },
   "open-meteo-elevation": {
     "uptime30d": 1,
-    "avgLatencyMs": 695,
+    "avgLatencyMs": 676,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1538,12 +1539,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████████████"
+    "sparkline": "█████████████████████████"
   },
   "pokeapi-berry": {
     "uptime30d": 1,
-    "avgLatencyMs": 85,
+    "avgLatencyMs": 84,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1569,7 +1571,7 @@
       1,
       1
     ],
-    "sparkline": "████████████████████████"
+    "sparkline": "█████████████████████████"
   },
   "pokeapi-type": {
     "uptime30d": 1,
@@ -1588,8 +1590,9 @@
   },
   "restcountries-alpha": {
     "uptime30d": 1,
-    "avgLatencyMs": 230,
+    "avgLatencyMs": 249,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1615,7 +1618,7 @@
       1,
       1
     ],
-    "sparkline": "████████████████████████"
+    "sparkline": "█████████████████████████"
   },
   "rickmorty-episode": {
     "uptime30d": 1,
@@ -1644,9 +1647,10 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "████████████████████████"
+    "sparkline": "█████████████████████████"
   },
   "universities-us": {
     "uptime30d": 0.875,
@@ -1676,7 +1680,7 @@
     "sparkline": "░████"
   },
   "agify-sarah": {
-    "uptime30d": 0.556,
+    "uptime30d": 0.5,
     "avgLatencyMs": 441,
     "last30": [
       0,
@@ -1687,9 +1691,10 @@
       1,
       0,
       0,
+      0,
       0
     ],
-    "sparkline": "░█████░░░"
+    "sparkline": "░█████░░░░"
   },
   "cat-breeds-paginated": {
     "uptime30d": 1,
@@ -1704,8 +1709,8 @@
     "sparkline": "█████"
   },
   "coingecko-coins": {
-    "uptime30d": 0.905,
-    "avgLatencyMs": 219,
+    "uptime30d": 0.909,
+    "avgLatencyMs": 221,
     "last30": [
       1,
       1,
@@ -1727,9 +1732,10 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "█████████████░░██████"
+    "sparkline": "█████████████░░███████"
   },
   "dog-retriever-images": {
     "uptime30d": 1,
@@ -1865,8 +1871,9 @@
   },
   "exchangerate-symbols": {
     "uptime30d": 1,
-    "avgLatencyMs": 791,
+    "avgLatencyMs": 795,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1889,7 +1896,7 @@
       1,
       1
     ],
-    "sparkline": "█████████████████████"
+    "sparkline": "██████████████████████"
   },
   "genderize-sarah": {
     "uptime30d": 0.833,
@@ -1906,8 +1913,9 @@
   },
   "httpbin-anything": {
     "uptime30d": 1,
-    "avgLatencyMs": 2568,
+    "avgLatencyMs": 2761,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -1918,7 +1926,7 @@
       1,
       1
     ],
-    "sparkline": "█████████"
+    "sparkline": "██████████"
   },
   "httpbin-base64": {
     "uptime30d": 1,
@@ -2018,8 +2026,9 @@
   },
   "nager-2025": {
     "uptime30d": 1,
-    "avgLatencyMs": 237,
+    "avgLatencyMs": 245,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2042,7 +2051,7 @@
       1,
       1
     ],
-    "sparkline": "█████████████████████"
+    "sparkline": "██████████████████████"
   },
   "nationalize-sarah": {
     "uptime30d": 0.8,
@@ -2058,8 +2067,9 @@
   },
   "open-meteo-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 637,
+    "avgLatencyMs": 645,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2082,7 +2092,7 @@
       1,
       1
     ],
-    "sparkline": "█████████████████████"
+    "sparkline": "██████████████████████"
   },
   "pokeapi-ability-2": {
     "uptime30d": 1,
@@ -2134,8 +2144,9 @@
   },
   "random-user-alt": {
     "uptime30d": 1,
-    "avgLatencyMs": 440,
+    "avgLatencyMs": 435,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2158,7 +2169,7 @@
       1,
       1
     ],
-    "sparkline": "█████████████████████"
+    "sparkline": "██████████████████████"
   },
   "reqres-list-2": {
     "uptime30d": 1,
@@ -2173,8 +2184,8 @@
     "sparkline": "█████"
   },
   "reqres-users-3": {
-    "uptime30d": 0.81,
-    "avgLatencyMs": 454,
+    "uptime30d": 0.818,
+    "avgLatencyMs": 457,
     "last30": [
       1,
       1,
@@ -2196,9 +2207,10 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "█████████████░░░░████"
+    "sparkline": "█████████████░░░░█████"
   },
   "restcountries-us": {
     "uptime30d": 1,
@@ -2262,8 +2274,9 @@
   },
   "zippopotam-us-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 95,
+    "avgLatencyMs": 97,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2286,7 +2299,7 @@
       1,
       1
     ],
-    "sparkline": "█████████████████████"
+    "sparkline": "██████████████████████"
   },
   "dummyjson-products-10": {
     "uptime30d": 1,
@@ -2690,8 +2703,9 @@
   },
   "chuck-categories": {
     "uptime30d": 1,
-    "avgLatencyMs": 699,
+    "avgLatencyMs": 711,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2709,12 +2723,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "chuck-norris": {
     "uptime30d": 1,
-    "avgLatencyMs": 615,
+    "avgLatencyMs": 691,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2732,12 +2747,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "cocktail-lookup": {
     "uptime30d": 1,
-    "avgLatencyMs": 426,
+    "avgLatencyMs": 452,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2755,12 +2771,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "cocktaildb": {
     "uptime30d": 1,
-    "avgLatencyMs": 574,
+    "avgLatencyMs": 556,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2778,11 +2795,11 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "coingecko-bitcoin": {
-    "uptime30d": 0.938,
-    "avgLatencyMs": 248,
+    "uptime30d": 0.941,
+    "avgLatencyMs": 243,
     "last30": [
       1,
       1,
@@ -2799,14 +2816,16 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "█████████░██████"
+    "sparkline": "█████████░███████"
   },
   "deckofcards": {
     "uptime30d": 1,
-    "avgLatencyMs": 1060,
+    "avgLatencyMs": 1016,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2824,12 +2843,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "deckofcards-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 625,
+    "avgLatencyMs": 646,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2847,12 +2867,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "frankfurter": {
     "uptime30d": 1,
-    "avgLatencyMs": 395,
+    "avgLatencyMs": 391,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2870,12 +2891,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "github-repo": {
     "uptime30d": 1,
-    "avgLatencyMs": 362,
+    "avgLatencyMs": 359,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2893,12 +2915,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "jikan-anime": {
     "uptime30d": 1,
-    "avgLatencyMs": 734,
+    "avgLatencyMs": 732,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2916,12 +2939,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "jokeapi": {
     "uptime30d": 1,
-    "avgLatencyMs": 482,
+    "avgLatencyMs": 495,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2939,12 +2963,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "jokeapi-prog": {
     "uptime30d": 1,
-    "avgLatencyMs": 305,
+    "avgLatencyMs": 300,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2962,12 +2987,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "lyrics-ovh": {
     "uptime30d": 1,
-    "avgLatencyMs": 902,
+    "avgLatencyMs": 915,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -2985,12 +3011,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "mealdb": {
     "uptime30d": 1,
-    "avgLatencyMs": 457,
+    "avgLatencyMs": 453,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -3008,12 +3035,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "nager-countries": {
     "uptime30d": 1,
-    "avgLatencyMs": 198,
+    "avgLatencyMs": 214,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -3031,7 +3059,7 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "nasa-apod": {
     "uptime30d": 0.857,
@@ -3063,8 +3091,9 @@
   },
   "official-joke": {
     "uptime30d": 1,
-    "avgLatencyMs": 420,
+    "avgLatencyMs": 415,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -3082,12 +3111,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "official-joke-prog": {
     "uptime30d": 1,
-    "avgLatencyMs": 311,
+    "avgLatencyMs": 337,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -3105,12 +3135,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "open-brewery": {
     "uptime30d": 1,
-    "avgLatencyMs": 330,
+    "avgLatencyMs": 434,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -3128,12 +3159,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "thecatapi": {
     "uptime30d": 1,
-    "avgLatencyMs": 549,
+    "avgLatencyMs": 546,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -3151,12 +3183,13 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "tvmaze": {
     "uptime30d": 1,
-    "avgLatencyMs": 920,
+    "avgLatencyMs": 931,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -3174,7 +3207,7 @@
       1,
       1
     ],
-    "sparkline": "████████████████"
+    "sparkline": "█████████████████"
   },
   "46elks": {
     "uptime30d": 0.8,
@@ -3910,8 +3943,9 @@
   },
   "jsonplaceholder-album": {
     "uptime30d": 1,
-    "avgLatencyMs": 141,
+    "avgLatencyMs": 135,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -3927,7 +3961,7 @@
       1,
       1
     ],
-    "sparkline": "██████████████"
+    "sparkline": "███████████████"
   },
   "khan-academy": {
     "uptime30d": 1,
@@ -4255,8 +4289,9 @@
   },
   "poke-type-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 314,
+    "avgLatencyMs": 302,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4272,7 +4307,7 @@
       1,
       1
     ],
-    "sparkline": "██████████████"
+    "sparkline": "███████████████"
   },
   "pulsedive": {
     "uptime30d": 1,
@@ -4348,8 +4383,9 @@
   },
   "restcountries-jp-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 279,
+    "avgLatencyMs": 268,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4365,12 +4401,13 @@
       1,
       1
     ],
-    "sparkline": "██████████████"
+    "sparkline": "███████████████"
   },
   "rick-location-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 288,
+    "avgLatencyMs": 293,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4386,7 +4423,7 @@
       1,
       1
     ],
-    "sparkline": "██████████████"
+    "sparkline": "███████████████"
   },
   "rijksmuseum": {
     "uptime30d": 1,
@@ -4774,8 +4811,9 @@
   },
   "24-pull-requests": {
     "uptime30d": 1,
-    "avgLatencyMs": 1318,
+    "avgLatencyMs": 1714,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4783,12 +4821,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "agpc-domain-check": {
     "uptime30d": 1,
-    "avgLatencyMs": 984,
+    "avgLatencyMs": 1006,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4796,12 +4835,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "alpha-mossland": {
     "uptime30d": 1,
-    "avgLatencyMs": 420,
+    "avgLatencyMs": 429,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4809,25 +4849,27 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "amiiboapi": {
-    "uptime30d": 0.833,
-    "avgLatencyMs": 287,
+    "uptime30d": 0.857,
+    "avgLatencyMs": 304,
     "last30": [
       1,
       1,
       1,
       0,
       1,
+      1,
       1
     ],
-    "sparkline": "███░██"
+    "sparkline": "███░███"
   },
   "animefacts": {
     "uptime30d": 1,
-    "avgLatencyMs": 208,
+    "avgLatencyMs": 225,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4835,12 +4877,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "animenewsnetwork": {
     "uptime30d": 1,
-    "avgLatencyMs": 715,
+    "avgLatencyMs": 758,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4848,12 +4891,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "apicagent": {
     "uptime30d": 1,
-    "avgLatencyMs": 493,
+    "avgLatencyMs": 590,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4861,12 +4905,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "art-institute-of-chicago": {
     "uptime30d": 1,
-    "avgLatencyMs": 1192,
+    "avgLatencyMs": 1154,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4874,12 +4919,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "astroworld": {
     "uptime30d": 1,
-    "avgLatencyMs": 1304,
+    "avgLatencyMs": 1273,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4887,12 +4933,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "baconmockup": {
     "uptime30d": 1,
-    "avgLatencyMs": 1815,
+    "avgLatencyMs": 1779,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4900,12 +4947,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "bhagavad-gita-telugu": {
     "uptime30d": 1,
-    "avgLatencyMs": 984,
+    "avgLatencyMs": 1143,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4913,12 +4961,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "bible-api": {
     "uptime30d": 1,
-    "avgLatencyMs": 876,
+    "avgLatencyMs": 873,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4926,12 +4975,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "bitcoin-halving": {
     "uptime30d": 1,
-    "avgLatencyMs": 334,
+    "avgLatencyMs": 358,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4939,12 +4989,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "block-lottos": {
     "uptime30d": 1,
-    "avgLatencyMs": 900,
+    "avgLatencyMs": 893,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4952,12 +5003,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "btcglobe": {
     "uptime30d": 1,
-    "avgLatencyMs": 875,
+    "avgLatencyMs": 874,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4965,12 +5017,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "caldays": {
     "uptime30d": 1,
-    "avgLatencyMs": 423,
+    "avgLatencyMs": 429,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -4978,7 +5031,7 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "cheapshark": {
     "uptime30d": 0.833,
@@ -4995,8 +5048,9 @@
   },
   "cleartrace": {
     "uptime30d": 1,
-    "avgLatencyMs": 1075,
+    "avgLatencyMs": 1219,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5004,12 +5058,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "coinlobster": {
     "uptime30d": 1,
-    "avgLatencyMs": 330,
+    "avgLatencyMs": 363,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5017,12 +5072,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "coinpaprika": {
     "uptime30d": 1,
-    "avgLatencyMs": 641,
+    "avgLatencyMs": 625,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5030,9 +5086,23 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "cosmyday-astrology": {
+    "uptime30d": 1,
+    "avgLatencyMs": 248,
+    "last30": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sparkline": "███████"
+  },
+  "crafatar": {
     "uptime30d": 1,
     "avgLatencyMs": 226,
     "last30": [
@@ -5041,40 +5111,30 @@
       1,
       1,
       1,
-      1
-    ],
-    "sparkline": "██████"
-  },
-  "crafatar": {
-    "uptime30d": 1,
-    "avgLatencyMs": 218,
-    "last30": [
-      1,
-      1,
-      1,
-      1,
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "cross-universe": {
-    "uptime30d": 0.833,
-    "avgLatencyMs": 1653,
+    "uptime30d": 0.857,
+    "avgLatencyMs": 1704,
     "last30": [
       1,
       0,
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "█░████"
+    "sparkline": "█░█████"
   },
   "digmyname": {
     "uptime30d": 1,
-    "avgLatencyMs": 2148,
+    "avgLatencyMs": 2664,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5082,12 +5142,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "disify": {
     "uptime30d": 1,
-    "avgLatencyMs": 1493,
+    "avgLatencyMs": 1515,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5095,12 +5156,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "disney": {
     "uptime30d": 1,
-    "avgLatencyMs": 410,
+    "avgLatencyMs": 505,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5108,12 +5170,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "docstruct": {
     "uptime30d": 1,
-    "avgLatencyMs": 145,
+    "avgLatencyMs": 150,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5121,12 +5184,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "dog-facts": {
     "uptime30d": 1,
-    "avgLatencyMs": 281,
+    "avgLatencyMs": 291,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5134,12 +5198,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "dog-facts-1": {
     "uptime30d": 1,
-    "avgLatencyMs": 433,
+    "avgLatencyMs": 432,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5147,12 +5212,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "dotsweep": {
     "uptime30d": 1,
-    "avgLatencyMs": 271,
+    "avgLatencyMs": 310,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5160,12 +5226,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "dungeons-and-dragons-alternate": {
     "uptime30d": 1,
-    "avgLatencyMs": 983,
+    "avgLatencyMs": 1094,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5173,12 +5240,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "econdb": {
     "uptime30d": 1,
-    "avgLatencyMs": 492,
+    "avgLatencyMs": 489,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5186,12 +5254,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "emojihub": {
     "uptime30d": 1,
-    "avgLatencyMs": 907,
+    "avgLatencyMs": 905,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5199,12 +5268,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "extendsclass-json-storage": {
     "uptime30d": 1,
-    "avgLatencyMs": 1264,
+    "avgLatencyMs": 1287,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5212,12 +5282,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "ffxiv-collect": {
     "uptime30d": 1,
-    "avgLatencyMs": 1193,
+    "avgLatencyMs": 1309,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5225,12 +5296,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "fishwatch": {
     "uptime30d": 1,
-    "avgLatencyMs": 957,
+    "avgLatencyMs": 961,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5238,25 +5310,27 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "fun-fact": {
-    "uptime30d": 0.833,
-    "avgLatencyMs": 676,
+    "uptime30d": 0.857,
+    "avgLatencyMs": 681,
     "last30": [
       1,
       0,
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "█░████"
+    "sparkline": "█░█████"
   },
   "get-started-with-web3": {
     "uptime30d": 1,
-    "avgLatencyMs": 547,
+    "avgLatencyMs": 575,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5264,12 +5338,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "helium": {
     "uptime30d": 1,
-    "avgLatencyMs": 480,
+    "avgLatencyMs": 510,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5277,12 +5352,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "http-cat": {
     "uptime30d": 1,
-    "avgLatencyMs": 296,
+    "avgLatencyMs": 385,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5290,12 +5366,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "http-dog": {
     "uptime30d": 1,
-    "avgLatencyMs": 183,
+    "avgLatencyMs": 200,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5303,12 +5380,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "icanhazepoch": {
     "uptime30d": 1,
-    "avgLatencyMs": 1075,
+    "avgLatencyMs": 1126,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5316,12 +5394,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "icanhazip": {
     "uptime30d": 1,
-    "avgLatencyMs": 294,
+    "avgLatencyMs": 314,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5329,12 +5408,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "icon-horse": {
     "uptime30d": 1,
-    "avgLatencyMs": 1168,
+    "avgLatencyMs": 1140,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5342,12 +5422,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "iconify": {
     "uptime30d": 1,
-    "avgLatencyMs": 657,
+    "avgLatencyMs": 655,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5355,12 +5436,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "image-charts": {
     "uptime30d": 1,
-    "avgLatencyMs": 345,
+    "avgLatencyMs": 352,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5368,12 +5450,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "ip-fast-com": {
     "uptime30d": 1,
-    "avgLatencyMs": 1272,
+    "avgLatencyMs": 1214,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5381,12 +5464,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "justmeme-wtf": {
     "uptime30d": 1,
-    "avgLatencyMs": 194,
+    "avgLatencyMs": 310,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5394,12 +5478,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "kanari": {
     "uptime30d": 1,
-    "avgLatencyMs": 294,
+    "avgLatencyMs": 318,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5407,12 +5492,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "kdp-intelligence": {
     "uptime30d": 1,
-    "avgLatencyMs": 509,
+    "avgLatencyMs": 494,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5420,12 +5506,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "kickbox": {
     "uptime30d": 1,
-    "avgLatencyMs": 1748,
+    "avgLatencyMs": 1770,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5433,12 +5520,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "kroki": {
     "uptime30d": 1,
-    "avgLatencyMs": 917,
+    "avgLatencyMs": 871,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5446,12 +5534,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "legal-sandbox-georgia": {
     "uptime30d": 1,
-    "avgLatencyMs": 301,
+    "avgLatencyMs": 349,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5459,12 +5548,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "liquilens": {
     "uptime30d": 1,
-    "avgLatencyMs": 418,
+    "avgLatencyMs": 459,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5472,12 +5562,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "lordicon": {
     "uptime30d": 1,
-    "avgLatencyMs": 837,
+    "avgLatencyMs": 836,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5485,12 +5576,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "mail-gw": {
     "uptime30d": 1,
-    "avgLatencyMs": 270,
+    "avgLatencyMs": 266,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5498,12 +5590,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "mail-tm": {
     "uptime30d": 1,
-    "avgLatencyMs": 175,
+    "avgLatencyMs": 178,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5511,12 +5604,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "monerometrics": {
     "uptime30d": 1,
-    "avgLatencyMs": 808,
+    "avgLatencyMs": 845,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5524,12 +5618,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "movebank": {
     "uptime30d": 1,
-    "avgLatencyMs": 746,
+    "avgLatencyMs": 750,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5537,12 +5632,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "myiprightnow": {
     "uptime30d": 1,
-    "avgLatencyMs": 255,
+    "avgLatencyMs": 318,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5550,12 +5646,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "national-bank-of-poland": {
     "uptime30d": 1,
-    "avgLatencyMs": 879,
+    "avgLatencyMs": 975,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5563,12 +5660,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "nekosbest": {
     "uptime30d": 1,
-    "avgLatencyMs": 284,
+    "avgLatencyMs": 306,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5576,12 +5674,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "networkcalc": {
     "uptime30d": 1,
-    "avgLatencyMs": 767,
+    "avgLatencyMs": 1035,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5589,12 +5688,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "non-working-days": {
     "uptime30d": 1,
-    "avgLatencyMs": 2722,
+    "avgLatencyMs": 2700,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5602,12 +5702,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "orca-scan": {
     "uptime30d": 1,
-    "avgLatencyMs": 968,
+    "avgLatencyMs": 1001,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5615,12 +5716,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "outagedeck": {
     "uptime30d": 1,
-    "avgLatencyMs": 238,
+    "avgLatencyMs": 268,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5628,7 +5730,7 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "pantry": {
     "uptime30d": 1,
@@ -5639,14 +5741,16 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "paralelo-bo": {
     "uptime30d": 1,
-    "avgLatencyMs": 623,
+    "avgLatencyMs": 742,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5654,12 +5758,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "penguin-publishing": {
     "uptime30d": 1,
-    "avgLatencyMs": 2682,
+    "avgLatencyMs": 2754,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5667,7 +5772,7 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "phone-specs": {
     "uptime30d": 1,
@@ -5678,14 +5783,16 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "php-noise": {
     "uptime30d": 1,
-    "avgLatencyMs": 1121,
+    "avgLatencyMs": 1152,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5693,12 +5800,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "pick-an-agency": {
     "uptime30d": 1,
-    "avgLatencyMs": 256,
+    "avgLatencyMs": 278,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5706,12 +5814,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "placebear": {
     "uptime30d": 1,
-    "avgLatencyMs": 992,
+    "avgLatencyMs": 976,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5719,12 +5828,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "placedog": {
     "uptime30d": 1,
-    "avgLatencyMs": 617,
+    "avgLatencyMs": 635,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5732,12 +5842,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "poetrydb": {
     "uptime30d": 1,
-    "avgLatencyMs": 1004,
+    "avgLatencyMs": 971,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5745,12 +5856,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "portfolio-optimizer": {
     "uptime30d": 1,
-    "avgLatencyMs": 190,
+    "avgLatencyMs": 192,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5758,12 +5870,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "potterdb": {
     "uptime30d": 1,
-    "avgLatencyMs": 854,
+    "avgLatencyMs": 868,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5771,12 +5884,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "proxyforge": {
     "uptime30d": 1,
-    "avgLatencyMs": 950,
+    "avgLatencyMs": 948,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5784,12 +5898,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "qr-code": {
     "uptime30d": 1,
-    "avgLatencyMs": 1095,
+    "avgLatencyMs": 1071,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5797,12 +5912,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "qr-code-crafter": {
     "uptime30d": 1,
-    "avgLatencyMs": 1407,
+    "avgLatencyMs": 1347,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5810,12 +5926,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "quickchart": {
     "uptime30d": 1,
-    "avgLatencyMs": 217,
+    "avgLatencyMs": 216,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5823,12 +5940,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "quran": {
     "uptime30d": 1,
-    "avgLatencyMs": 638,
+    "avgLatencyMs": 724,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5836,12 +5954,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "quran-cloud": {
     "uptime30d": 1,
-    "avgLatencyMs": 955,
+    "avgLatencyMs": 973,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5849,12 +5968,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "randomdog": {
     "uptime30d": 1,
-    "avgLatencyMs": 1431,
+    "avgLatencyMs": 1421,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5862,12 +5982,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "runyankole-bible": {
     "uptime30d": 1,
-    "avgLatencyMs": 219,
+    "avgLatencyMs": 225,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5875,7 +5996,7 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "sec-edgar-data": {
     "uptime30d": 0,
@@ -5896,9 +6017,10 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "the-calendar": {
     "uptime30d": 1,
@@ -5909,14 +6031,16 @@
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "thirukkural": {
     "uptime30d": 1,
-    "avgLatencyMs": 125,
+    "avgLatencyMs": 124,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5924,12 +6048,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "thunder-client": {
     "uptime30d": 1,
-    "avgLatencyMs": 1431,
+    "avgLatencyMs": 1458,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5937,12 +6062,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "tinymind-agent-tools": {
     "uptime30d": 1,
-    "avgLatencyMs": 736,
+    "avgLatencyMs": 777,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5950,12 +6076,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "trace-moe": {
     "uptime30d": 1,
-    "avgLatencyMs": 389,
+    "avgLatencyMs": 391,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5963,12 +6090,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "twzrd-agent-intel": {
     "uptime30d": 1,
-    "avgLatencyMs": 893,
+    "avgLatencyMs": 892,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5976,12 +6104,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "urantia-papers": {
     "uptime30d": 1,
-    "avgLatencyMs": 517,
+    "avgLatencyMs": 535,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -5989,7 +6118,7 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "urlhaus": {
     "uptime30d": 0.833,
@@ -6006,8 +6135,9 @@
   },
   "waifu-im": {
     "uptime30d": 1,
-    "avgLatencyMs": 1532,
+    "avgLatencyMs": 1682,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -6015,12 +6145,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "wiktionary": {
     "uptime30d": 1,
-    "avgLatencyMs": 1028,
+    "avgLatencyMs": 1033,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -6028,12 +6159,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "wizard-world": {
     "uptime30d": 1,
-    "avgLatencyMs": 996,
+    "avgLatencyMs": 998,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -6041,12 +6173,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "zelothorn": {
     "uptime30d": 1,
-    "avgLatencyMs": 380,
+    "avgLatencyMs": 388,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -6054,12 +6187,13 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "zennet": {
     "uptime30d": 1,
-    "avgLatencyMs": 682,
+    "avgLatencyMs": 683,
     "last30": [
+      1,
       1,
       1,
       1,
@@ -6067,29 +6201,31 @@
       1,
       1
     ],
-    "sparkline": "██████"
+    "sparkline": "███████"
   },
   "advice-slip-1": {
     "uptime30d": 1,
-    "avgLatencyMs": 697,
+    "avgLatencyMs": 709,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "advice-slip-22": {
     "uptime30d": 1,
-    "avgLatencyMs": 679,
+    "avgLatencyMs": 594,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "agify-emily": {
     "uptime30d": 1,
@@ -6123,69 +6259,75 @@
   },
   "aladhan-london": {
     "uptime30d": 1,
-    "avgLatencyMs": 134,
+    "avgLatencyMs": 121,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "aladhan-timings2": {
     "uptime30d": 1,
-    "avgLatencyMs": 117,
+    "avgLatencyMs": 106,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "artic-agents": {
     "uptime30d": 1,
-    "avgLatencyMs": 574,
+    "avgLatencyMs": 596,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "artic-artwork": {
-    "uptime30d": 1,
-    "avgLatencyMs": 754,
-    "last30": [
-      1,
-      1,
-      1,
-      1
-    ],
-    "sparkline": "████"
-  },
-  "artic-search": {
-    "uptime30d": 1,
-    "avgLatencyMs": 507,
-    "last30": [
-      1,
-      1,
-      1,
-      1
-    ],
-    "sparkline": "████"
-  },
-  "bible-verse": {
     "uptime30d": 1,
     "avgLatencyMs": 678,
     "last30": [
       1,
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
+  },
+  "artic-search": {
+    "uptime30d": 1,
+    "avgLatencyMs": 444,
+    "last30": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sparkline": "█████"
+  },
+  "bible-verse": {
+    "uptime30d": 1,
+    "avgLatencyMs": 710,
+    "last30": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sparkline": "█████"
   },
   "bored-remix": {
     "uptime30d": 0,
@@ -6197,14 +6339,15 @@
   },
   "carbon-regional": {
     "uptime30d": 1,
-    "avgLatencyMs": 975,
+    "avgLatencyMs": 972,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "carbon-today": {
     "uptime30d": 0,
@@ -6216,25 +6359,27 @@
   },
   "catfact-breeds-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 596,
+    "avgLatencyMs": 543,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "cheapshark-deals": {
     "uptime30d": 1,
-    "avgLatencyMs": 116,
+    "avgLatencyMs": 232,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "cheapshark-games": {
     "uptime30d": 0,
@@ -6246,201 +6391,219 @@
   },
   "cheapshark-stores": {
     "uptime30d": 1,
-    "avgLatencyMs": 164,
+    "avgLatencyMs": 203,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "chuck-search": {
     "uptime30d": 1,
-    "avgLatencyMs": 582,
+    "avgLatencyMs": 634,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "cocktail-filter": {
     "uptime30d": 1,
-    "avgLatencyMs": 471,
+    "avgLatencyMs": 529,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "cocktail-random": {
     "uptime30d": 1,
-    "avgLatencyMs": 699,
+    "avgLatencyMs": 688,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "coingecko-search": {
     "uptime30d": 1,
-    "avgLatencyMs": 186,
+    "avgLatencyMs": 162,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "coinpaprika-btc": {
     "uptime30d": 1,
-    "avgLatencyMs": 260,
+    "avgLatencyMs": 241,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "coinpaprika-global": {
     "uptime30d": 1,
-    "avgLatencyMs": 160,
+    "avgLatencyMs": 140,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "disney-character": {
     "uptime30d": 1,
-    "avgLatencyMs": 1944,
+    "avgLatencyMs": 1621,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "dog-ceo-list": {
     "uptime30d": 1,
-    "avgLatencyMs": 384,
+    "avgLatencyMs": 352,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "dummyjson-products": {
     "uptime30d": 1,
-    "avgLatencyMs": 274,
+    "avgLatencyMs": 284,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "dummyjson-quote": {
     "uptime30d": 1,
-    "avgLatencyMs": 316,
+    "avgLatencyMs": 298,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "dummyjson-todos": {
     "uptime30d": 1,
-    "avgLatencyMs": 285,
+    "avgLatencyMs": 272,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "exchangerate-eur": {
     "uptime30d": 1,
-    "avgLatencyMs": 900,
+    "avgLatencyMs": 928,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "fakestore-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 577,
+    "avgLatencyMs": 743,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "fakestore-product": {
     "uptime30d": 1,
-    "avgLatencyMs": 566,
+    "avgLatencyMs": 499,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "frankfurter-gbp": {
     "uptime30d": 1,
-    "avgLatencyMs": 279,
+    "avgLatencyMs": 259,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "frankfurter-timeframe": {
     "uptime30d": 1,
-    "avgLatencyMs": 307,
+    "avgLatencyMs": 341,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "genderize-anna": {
-    "uptime30d": 0.25,
+    "uptime30d": 0.2,
     "avgLatencyMs": 1110,
     "last30": [
       1,
       0,
       0,
+      0,
       0
     ],
-    "sparkline": "█░░░"
+    "sparkline": "█░░░░"
   },
   "genderize-john": {
     "uptime30d": 0.25,
@@ -6466,58 +6629,63 @@
   },
   "github-node": {
     "uptime30d": 1,
-    "avgLatencyMs": 423,
+    "avgLatencyMs": 598,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "ipify-ip": {
     "uptime30d": 1,
-    "avgLatencyMs": 502,
+    "avgLatencyMs": 463,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "isro-customers": {
     "uptime30d": 1,
-    "avgLatencyMs": 710,
+    "avgLatencyMs": 631,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "isro-launchers": {
     "uptime30d": 1,
-    "avgLatencyMs": 571,
+    "avgLatencyMs": 581,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "isro-spacecrafts": {
     "uptime30d": 1,
-    "avgLatencyMs": 353,
+    "avgLatencyMs": 334,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "jikan-next-season": {
     "uptime30d": 0,
@@ -6545,135 +6713,147 @@
   },
   "jokeapi-dark": {
     "uptime30d": 1,
-    "avgLatencyMs": 465,
+    "avgLatencyMs": 496,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "kanye-quote": {
     "uptime30d": 1,
-    "avgLatencyMs": 337,
+    "avgLatencyMs": 293,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "launch-library": {
     "uptime30d": 1,
-    "avgLatencyMs": 873,
+    "avgLatencyMs": 979,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "lyrics-adele": {
     "uptime30d": 1,
-    "avgLatencyMs": 906,
+    "avgLatencyMs": 908,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "lyrics-beatles": {
     "uptime30d": 1,
-    "avgLatencyMs": 887,
+    "avgLatencyMs": 889,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "lyrics-queen": {
     "uptime30d": 1,
-    "avgLatencyMs": 798,
+    "avgLatencyMs": 817,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "mealdb-categories": {
     "uptime30d": 1,
-    "avgLatencyMs": 318,
+    "avgLatencyMs": 300,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "mealdb-random": {
     "uptime30d": 1,
-    "avgLatencyMs": 374,
+    "avgLatencyMs": 345,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "met-museum-object": {
     "uptime30d": 1,
-    "avgLatencyMs": 836,
+    "avgLatencyMs": 890,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "met-museum-search": {
     "uptime30d": 1,
-    "avgLatencyMs": 729,
+    "avgLatencyMs": 808,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "met-object-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 386,
+    "avgLatencyMs": 532,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "nager-long-weekend": {
     "uptime30d": 1,
-    "avgLatencyMs": 124,
+    "avgLatencyMs": 113,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "nationalize-anna": {
     "uptime30d": 1,
@@ -6684,15 +6864,16 @@
     "sparkline": "█"
   },
   "nationalize-emily": {
-    "uptime30d": 0.25,
+    "uptime30d": 0.2,
     "avgLatencyMs": 310,
     "last30": [
       1,
       0,
       0,
+      0,
       0
     ],
-    "sparkline": "█░░░"
+    "sparkline": "█░░░░"
   },
   "nationalize-john": {
     "uptime30d": 0.25,
@@ -6718,190 +6899,207 @@
   },
   "official-joke-prog-ten": {
     "uptime30d": 1,
-    "avgLatencyMs": 213,
+    "avgLatencyMs": 327,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "official-joke-ten": {
     "uptime30d": 1,
-    "avgLatencyMs": 396,
+    "avgLatencyMs": 482,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "open-meteo-elev-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 690,
+    "avgLatencyMs": 596,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "open-meteo-geocode": {
     "uptime30d": 1,
-    "avgLatencyMs": 1238,
+    "avgLatencyMs": 1228,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "openbrewery-sd": {
     "uptime30d": 1,
-    "avgLatencyMs": 190,
+    "avgLatencyMs": 278,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "sunrise-london": {
     "uptime30d": 1,
-    "avgLatencyMs": 417,
+    "avgLatencyMs": 471,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "sunrise-sunset-ny": {
     "uptime30d": 1,
-    "avgLatencyMs": 441,
+    "avgLatencyMs": 430,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "thecatapi-limit": {
     "uptime30d": 1,
-    "avgLatencyMs": 497,
+    "avgLatencyMs": 516,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "tvmaze-episode": {
     "uptime30d": 1,
-    "avgLatencyMs": 863,
+    "avgLatencyMs": 867,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "tvmaze-people": {
     "uptime30d": 1,
-    "avgLatencyMs": 857,
+    "avgLatencyMs": 859,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "tvmaze-search": {
     "uptime30d": 1,
-    "avgLatencyMs": 852,
+    "avgLatencyMs": 741,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "useless-de": {
     "uptime30d": 1,
-    "avgLatencyMs": 631,
+    "avgLatencyMs": 633,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "useless-facts-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 632,
+    "avgLatencyMs": 634,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "zenquotes-quotes": {
     "uptime30d": 1,
-    "avgLatencyMs": 1531,
+    "avgLatencyMs": 1700,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "zenquotes-random": {
     "uptime30d": 1,
-    "avgLatencyMs": 891,
+    "avgLatencyMs": 1104,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "zenquotes-today": {
     "uptime30d": 1,
-    "avgLatencyMs": 898,
+    "avgLatencyMs": 1108,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "zippopotam-ca": {
     "uptime30d": 1,
-    "avgLatencyMs": 178,
+    "avgLatencyMs": 207,
     "last30": [
+      1,
       1,
       1,
       1,
       1
     ],
-    "sparkline": "████"
+    "sparkline": "█████"
   },
   "agify-david": {
     "uptime30d": 0,
@@ -6915,13 +7113,14 @@
   },
   "fakestore-3": {
     "uptime30d": 1,
-    "avgLatencyMs": 529,
+    "avgLatencyMs": 477,
     "last30": [
+      1,
       1,
       1,
       1
     ],
-    "sparkline": "███"
+    "sparkline": "████"
   },
   "genderize-david": {
     "uptime30d": 0,
@@ -6935,23 +7134,25 @@
   },
   "isro-centres": {
     "uptime30d": 1,
-    "avgLatencyMs": 351,
+    "avgLatencyMs": 441,
     "last30": [
+      1,
       1,
       1,
       1
     ],
-    "sparkline": "███"
+    "sparkline": "████"
   },
   "met-object-3": {
     "uptime30d": 1,
-    "avgLatencyMs": 399,
+    "avgLatencyMs": 375,
     "last30": [
+      1,
       1,
       1,
       1
     ],
-    "sparkline": "███"
+    "sparkline": "████"
   },
   "nationalize-david": {
     "uptime30d": 0,
@@ -6965,13 +7166,14 @@
   },
   "sunrise-paris": {
     "uptime30d": 1,
-    "avgLatencyMs": 331,
+    "avgLatencyMs": 398,
     "last30": [
+      1,
       1,
       1,
       1
     ],
-    "sparkline": "███"
+    "sparkline": "████"
   },
   "sunrise-tokyo": {
     "uptime30d": 1,
@@ -6979,38 +7181,42 @@
     "last30": [
       1,
       1,
+      1,
       1
     ],
-    "sparkline": "███"
+    "sparkline": "████"
   },
   "thedogapi-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 487,
+    "avgLatencyMs": 518,
     "last30": [
+      1,
       1,
       1,
       1
     ],
-    "sparkline": "███"
+    "sparkline": "████"
   },
   "zenquotes-inspire": {
     "uptime30d": 1,
-    "avgLatencyMs": 2162,
+    "avgLatencyMs": 2357,
+    "last30": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "sparkline": "████"
+  },
+  "7timer-astro": {
+    "uptime30d": 1,
+    "avgLatencyMs": 781,
     "last30": [
       1,
       1,
       1
     ],
     "sparkline": "███"
-  },
-  "7timer-astro": {
-    "uptime30d": 1,
-    "avgLatencyMs": 788,
-    "last30": [
-      1,
-      1
-    ],
-    "sparkline": "██"
   },
   "binance-price": {
     "uptime30d": 0,
@@ -7038,12 +7244,13 @@
   },
   "cataas-cat": {
     "uptime30d": 1,
-    "avgLatencyMs": 1172,
+    "avgLatencyMs": 1153,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "catboys-cat": {
     "uptime30d": 0,
@@ -7071,12 +7278,13 @@
   },
   "country-is": {
     "uptime30d": 1,
-    "avgLatencyMs": 326,
+    "avgLatencyMs": 322,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "cryptowat-prices": {
     "uptime30d": 0,
@@ -7088,12 +7296,13 @@
   },
   "dadjoke-slack": {
     "uptime30d": 1,
-    "avgLatencyMs": 536,
+    "avgLatencyMs": 523,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "datausa-population": {
     "uptime30d": 0,
@@ -7113,39 +7322,43 @@
   },
   "disease-sh-covid": {
     "uptime30d": 1,
-    "avgLatencyMs": 858,
+    "avgLatencyMs": 842,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "dnd5e-abilities": {
     "uptime30d": 1,
-    "avgLatencyMs": 1717,
+    "avgLatencyMs": 1753,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "fxratesapi-latest": {
     "uptime30d": 1,
-    "avgLatencyMs": 471,
+    "avgLatencyMs": 440,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "gbif-occurrence": {
     "uptime30d": 1,
-    "avgLatencyMs": 1050,
+    "avgLatencyMs": 997,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "geocode-berlin": {
     "uptime30d": 0,
@@ -7165,30 +7378,33 @@
   },
   "iceandfire-books": {
     "uptime30d": 1,
-    "avgLatencyMs": 159,
+    "avgLatencyMs": 345,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "ipapi-json": {
     "uptime30d": 1,
-    "avgLatencyMs": 375,
+    "avgLatencyMs": 381,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "iseven-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 623,
+    "avgLatencyMs": 627,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "isitup-example": {
     "uptime30d": 0.5,
@@ -7201,12 +7417,13 @@
   },
   "kitsu-anime": {
     "uptime30d": 1,
-    "avgLatencyMs": 567,
+    "avgLatencyMs": 840,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "mangadex-manga": {
     "uptime30d": 0,
@@ -7218,39 +7435,43 @@
   },
   "mathjs-evaluate": {
     "uptime30d": 1,
-    "avgLatencyMs": 959,
+    "avgLatencyMs": 902,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "meme-api-gimme": {
     "uptime30d": 1,
-    "avgLatencyMs": 403,
+    "avgLatencyMs": 653,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "microlink-example": {
     "uptime30d": 1,
-    "avgLatencyMs": 265,
+    "avgLatencyMs": 222,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "nasa-apod-demo": {
-    "uptime30d": 1,
+    "uptime30d": 0.667,
     "avgLatencyMs": 2254,
     "last30": [
       1,
-      1
+      1,
+      0
     ],
-    "sparkline": "██"
+    "sparkline": "██░"
   },
   "numbersapi-trivia": {
     "uptime30d": 0,
@@ -7270,12 +7491,13 @@
   },
   "open-er-api-usd": {
     "uptime30d": 1,
-    "avgLatencyMs": 137,
+    "avgLatencyMs": 148,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "open-notify-astros": {
     "uptime30d": 0,
@@ -7287,12 +7509,13 @@
   },
   "picsum-photos": {
     "uptime30d": 1,
-    "avgLatencyMs": 442,
+    "avgLatencyMs": 452,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "placekitten": {
     "uptime30d": 0,
@@ -7369,21 +7592,23 @@
   },
   "stackexchange-questions": {
     "uptime30d": 1,
-    "avgLatencyMs": 556,
+    "avgLatencyMs": 688,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "timeapi-london": {
     "uptime30d": 1,
-    "avgLatencyMs": 906,
+    "avgLatencyMs": 903,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "tronaldump-random": {
     "uptime30d": 0,
@@ -7395,12 +7620,13 @@
   },
   "upcitemdb-lookup": {
     "uptime30d": 1,
-    "avgLatencyMs": 1133,
+    "avgLatencyMs": 1211,
     "last30": [
+      1,
       1,
       1
     ],
-    "sparkline": "██"
+    "sparkline": "███"
   },
   "waifu-pics-sfw": {
     "uptime30d": 0,
@@ -7428,363 +7654,408 @@
   },
   "adviceslip-advice": {
     "uptime30d": 1,
-    "avgLatencyMs": 240,
+    "avgLatencyMs": 249,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "aladhan-dubai": {
     "uptime30d": 1,
-    "avgLatencyMs": 313,
+    "avgLatencyMs": 301,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "aladhan-paris": {
     "uptime30d": 1,
-    "avgLatencyMs": 109,
+    "avgLatencyMs": 111,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "animefacts-rest": {
     "uptime30d": 1,
-    "avgLatencyMs": 123,
+    "avgLatencyMs": 291,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "baconmockup-200": {
     "uptime30d": 1,
-    "avgLatencyMs": 4999,
+    "avgLatencyMs": 4130,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "bible-john316-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 291,
+    "avgLatencyMs": 293,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "bible-random": {
     "uptime30d": 1,
-    "avgLatencyMs": 946,
+    "avgLatencyMs": 654,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "brewery-3": {
     "uptime30d": 1,
-    "avgLatencyMs": 425,
+    "avgLatencyMs": 605,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "brewery-perpage-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 78,
+    "avgLatencyMs": 452,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "caldays-mlb": {
     "uptime30d": 1,
-    "avgLatencyMs": 95,
+    "avgLatencyMs": 305,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "carbon-2024": {
-    "uptime30d": 1,
+    "uptime30d": 0.5,
     "avgLatencyMs": 1069,
     "last30": [
-      1
+      1,
+      0
     ],
-    "sparkline": "█"
+    "sparkline": "█░"
   },
   "carbon-regional-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 513,
+    "avgLatencyMs": 655,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "cataas-cats-limit": {
     "uptime30d": 1,
-    "avgLatencyMs": 904,
+    "avgLatencyMs": 899,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "cataas-json": {
     "uptime30d": 1,
-    "avgLatencyMs": 903,
+    "avgLatencyMs": 1012,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "cheapshark-stores-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 57,
+    "avgLatencyMs": 99,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "chuck-norris-search": {
     "uptime30d": 1,
-    "avgLatencyMs": 817,
+    "avgLatencyMs": 963,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "citybikes-networks": {
     "uptime30d": 1,
-    "avgLatencyMs": 624,
+    "avgLatencyMs": 629,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "coinpaprika-btc-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 74,
+    "avgLatencyMs": 171,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "dadjoke-home": {
     "uptime30d": 1,
-    "avgLatencyMs": 640,
+    "avgLatencyMs": 969,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "deck-draw": {
     "uptime30d": 1,
-    "avgLatencyMs": 1190,
+    "avgLatencyMs": 1179,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "deckofcards-shuffle-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 1186,
+    "avgLatencyMs": 758,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "disease-usa": {
     "uptime30d": 1,
-    "avgLatencyMs": 867,
+    "avgLatencyMs": 793,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "disney-character-1": {
     "uptime30d": 1,
-    "avgLatencyMs": 394,
+    "avgLatencyMs": 356,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "dnd-barbarian": {
     "uptime30d": 1,
-    "avgLatencyMs": 1044,
+    "avgLatencyMs": 1620,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "dogfacts-api": {
     "uptime30d": 1,
-    "avgLatencyMs": 40,
+    "avgLatencyMs": 49,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "escuelajs-products": {
     "uptime30d": 1,
-    "avgLatencyMs": 899,
+    "avgLatencyMs": 849,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "ffxiv-mount-1": {
     "uptime30d": 1,
-    "avgLatencyMs": 896,
+    "avgLatencyMs": 899,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "fishwatch-red-snapper": {
     "uptime30d": 1,
-    "avgLatencyMs": 188,
+    "avgLatencyMs": 145,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "frankfurter-eur-gbp": {
     "uptime30d": 1,
-    "avgLatencyMs": 173,
+    "avgLatencyMs": 143,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "fxrates-eur": {
     "uptime30d": 1,
-    "avgLatencyMs": 376,
+    "avgLatencyMs": 348,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "gbif-occ-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 1139,
+    "avgLatencyMs": 1853,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "gbif-species-search": {
     "uptime30d": 1,
-    "avgLatencyMs": 300,
+    "avgLatencyMs": 318,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "geocoding-berlin": {
     "uptime30d": 1,
-    "avgLatencyMs": 1173,
+    "avgLatencyMs": 1174,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "httpcat-200": {
     "uptime30d": 1,
-    "avgLatencyMs": 90,
+    "avgLatencyMs": 118,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "httpdog-jpg": {
     "uptime30d": 1,
-    "avgLatencyMs": 95,
+    "avgLatencyMs": 111,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "iceandfire-char583": {
     "uptime30d": 1,
-    "avgLatencyMs": 63,
+    "avgLatencyMs": 175,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "iconhorse-github": {
     "uptime30d": 1,
-    "avgLatencyMs": 148,
+    "avgLatencyMs": 178,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "iconify-mdi": {
     "uptime30d": 1,
-    "avgLatencyMs": 206,
+    "avgLatencyMs": 200,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "imagecharts-qr": {
     "uptime30d": 1,
-    "avgLatencyMs": 136,
+    "avgLatencyMs": 101,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "ipfast-ip": {
     "uptime30d": 1,
-    "avgLatencyMs": 896,
+    "avgLatencyMs": 872,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "ipify-json-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 316,
+    "avgLatencyMs": 317,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "isdayoff-20240101": {
     "uptime30d": 1,
-    "avgLatencyMs": 1283,
+    "avgLatencyMs": 1152,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "iseven-4": {
     "uptime30d": 1,
-    "avgLatencyMs": 624,
+    "avgLatencyMs": 625,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "jokeapi-programming": {
     "uptime30d": 1,
-    "avgLatencyMs": 225,
+    "avgLatencyMs": 266,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "kanye-json-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 128,
+    "avgLatencyMs": 132,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "kitsu-manga-one": {
     "uptime30d": 0,
@@ -7796,147 +8067,165 @@
   },
   "kitsu-naruto": {
     "uptime30d": 1,
-    "avgLatencyMs": 6434,
+    "avgLatencyMs": 4109,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "mathjs-2plus2": {
     "uptime30d": 1,
-    "avgLatencyMs": 1157,
+    "avgLatencyMs": 1148,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "microlink-example-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 108,
+    "avgLatencyMs": 73,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "microlink-github": {
     "uptime30d": 1,
-    "avgLatencyMs": 41,
+    "avgLatencyMs": 50,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "nbp-tables-a": {
     "uptime30d": 1,
-    "avgLatencyMs": 645,
+    "avgLatencyMs": 873,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "networkcalc-dns": {
     "uptime30d": 1,
-    "avgLatencyMs": 337,
+    "avgLatencyMs": 388,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "nominatim-berlin": {
     "uptime30d": 1,
-    "avgLatencyMs": 132,
+    "avgLatencyMs": 505,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "nominatim-eiffel": {
     "uptime30d": 1,
-    "avgLatencyMs": 59,
+    "avgLatencyMs": 232,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "opener-eur": {
     "uptime30d": 1,
-    "avgLatencyMs": 62,
+    "avgLatencyMs": 56,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "openmeteo-archive": {
     "uptime30d": 1,
-    "avgLatencyMs": 213,
+    "avgLatencyMs": 219,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "placebear-200x300": {
     "uptime30d": 1,
-    "avgLatencyMs": 1141,
+    "avgLatencyMs": 1216,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "placedog-300x200": {
     "uptime30d": 1,
-    "avgLatencyMs": 419,
+    "avgLatencyMs": 532,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "postalpin-110001": {
     "uptime30d": 1,
-    "avgLatencyMs": 939,
+    "avgLatencyMs": 946,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "potterdb-books": {
     "uptime30d": 1,
-    "avgLatencyMs": 1191,
+    "avgLatencyMs": 1181,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "qrtag-svg": {
     "uptime30d": 1,
-    "avgLatencyMs": 950,
+    "avgLatencyMs": 719,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "quickchart-qr": {
     "uptime30d": 1,
-    "avgLatencyMs": 509,
+    "avgLatencyMs": 624,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "quran-ayah": {
     "uptime30d": 1,
-    "avgLatencyMs": 176,
+    "avgLatencyMs": 203,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "randomdog-woof": {
     "uptime30d": 1,
-    "avgLatencyMs": 1349,
+    "avgLatencyMs": 1352,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "randomfox-floof": {
     "uptime30d": 0,
@@ -7948,95 +8237,627 @@
   },
   "randomuser-name": {
     "uptime30d": 1,
-    "avgLatencyMs": 305,
+    "avgLatencyMs": 319,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "randomuser-results-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 300,
+    "avgLatencyMs": 306,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "reqres-user-2": {
     "uptime30d": 1,
-    "avgLatencyMs": 63,
+    "avgLatencyMs": 195,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "seventimer-civil": {
     "uptime30d": 1,
-    "avgLatencyMs": 659,
+    "avgLatencyMs": 661,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "spacedevs-agencies": {
     "uptime30d": 1,
-    "avgLatencyMs": 1341,
+    "avgLatencyMs": 1785,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "stackexchange-tags": {
     "uptime30d": 1,
-    "avgLatencyMs": 379,
+    "avgLatencyMs": 358,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "thecatapi-limit2": {
     "uptime30d": 1,
-    "avgLatencyMs": 747,
+    "avgLatencyMs": 629,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "themealdb-categories": {
     "uptime30d": 1,
-    "avgLatencyMs": 312,
+    "avgLatencyMs": 444,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "timeapi-paris": {
     "uptime30d": 1,
-    "avgLatencyMs": 917,
+    "avgLatencyMs": 902,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "uselessfacts-random": {
     "uptime30d": 1,
-    "avgLatencyMs": 241,
+    "avgLatencyMs": 440,
     "last30": [
+      1,
       1
     ],
-    "sparkline": "█"
+    "sparkline": "██"
   },
   "wiktionary-hello": {
     "uptime30d": 1,
-    "avgLatencyMs": 128,
+    "avgLatencyMs": 127,
+    "last30": [
+      1,
+      1
+    ],
+    "sparkline": "██"
+  },
+  "wizardworld-houses": {
+    "uptime30d": 1,
+    "avgLatencyMs": 571,
+    "last30": [
+      1,
+      1
+    ],
+    "sparkline": "██"
+  },
+  "7timer-astro-2": {
+    "uptime30d": 1,
+    "avgLatencyMs": 905,
     "last30": [
       1
     ],
     "sparkline": "█"
   },
-  "wizardworld-houses": {
+  "baconmockup-300": {
     "uptime30d": 1,
-    "avgLatencyMs": 893,
+    "avgLatencyMs": 3087,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "baconmockup-400": {
+    "uptime30d": 1,
+    "avgLatencyMs": 2881,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "caldays-nhl": {
+    "uptime30d": 1,
+    "avgLatencyMs": 105,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "cataas-search": {
+    "uptime30d": 1,
+    "avgLatencyMs": 307,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "citybikes-berlin": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1255,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "citybikes-lisbon": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1410,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "dadjoke-search": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1476,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "disease-global": {
+    "uptime30d": 1,
+    "avgLatencyMs": 878,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "disney-char-2": {
+    "uptime30d": 1,
+    "avgLatencyMs": 398,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "dnd-spell": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1047,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "escuelajs-category": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1657,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "fakestore-4": {
+    "uptime30d": 1,
+    "avgLatencyMs": 235,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "fishwatch-crab": {
+    "uptime30d": 1,
+    "avgLatencyMs": 247,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "fishwatch-species-2": {
+    "uptime30d": 1,
+    "avgLatencyMs": 131,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "fxrates-currencies": {
+    "uptime30d": 1,
+    "avgLatencyMs": 434,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "fxrates-latest-2": {
+    "uptime30d": 1,
+    "avgLatencyMs": 385,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "gbif-occ-3": {
+    "uptime30d": 1,
+    "avgLatencyMs": 2951,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "geocoding-paris": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1204,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "geocoding-tokyo": {
+    "uptime30d": 1,
+    "avgLatencyMs": 311,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "httpcat-404": {
+    "uptime30d": 1,
+    "avgLatencyMs": 130,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "httpcat-500": {
+    "uptime30d": 1,
+    "avgLatencyMs": 855,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "httpdog-404": {
+    "uptime30d": 1,
+    "avgLatencyMs": 211,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "httpdog-500": {
+    "uptime30d": 1,
+    "avgLatencyMs": 126,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "iceandfire-book1": {
+    "uptime30d": 1,
+    "avgLatencyMs": 272,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "iceandfire-house1": {
+    "uptime30d": 1,
+    "avgLatencyMs": 911,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "iconify-search": {
+    "uptime30d": 1,
+    "avgLatencyMs": 50,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "imagecharts-line": {
+    "uptime30d": 1,
+    "avgLatencyMs": 168,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "ipfast-8888": {
+    "uptime30d": 1,
+    "avgLatencyMs": 852,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "ipfast-now": {
+    "uptime30d": 1,
+    "avgLatencyMs": 877,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "ipify-64": {
+    "uptime30d": 1,
+    "avgLatencyMs": 2037,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "isdayoff-20240201": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1282,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "isdayoff-20240301": {
+    "uptime30d": 1,
+    "avgLatencyMs": 392,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "iseven-6": {
+    "uptime30d": 1,
+    "avgLatencyMs": 234,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "iseven-8": {
+    "uptime30d": 1,
+    "avgLatencyMs": 673,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "kanye-2": {
+    "uptime30d": 1,
+    "avgLatencyMs": 340,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "kanye-quotes": {
+    "uptime30d": 1,
+    "avgLatencyMs": 125,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "kitsu-manga-search": {
+    "uptime30d": 1,
+    "avgLatencyMs": 760,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "mathjs-pow": {
+    "uptime30d": 1,
+    "avgLatencyMs": 793,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "mathjs-sqrt": {
+    "uptime30d": 1,
+    "avgLatencyMs": 273,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "microlink-metrics": {
+    "uptime30d": 1,
+    "avgLatencyMs": 37,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "nbp-gold": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1771,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "nbp-usd": {
+    "uptime30d": 1,
+    "avgLatencyMs": 271,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "networkcalc-example": {
+    "uptime30d": 1,
+    "avgLatencyMs": 409,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "networkcalc-subnet": {
+    "uptime30d": 1,
+    "avgLatencyMs": 431,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "nominatim-paris": {
+    "uptime30d": 1,
+    "avgLatencyMs": 53,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "nominatim-tokyo": {
+    "uptime30d": 1,
+    "avgLatencyMs": 53,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "opener-gbp": {
+    "uptime30d": 1,
+    "avgLatencyMs": 72,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "opener-jpy": {
+    "uptime30d": 1,
+    "avgLatencyMs": 65,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "openmeteo-archive-2": {
+    "uptime30d": 1,
+    "avgLatencyMs": 230,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "openmeteo-archive-ny": {
+    "uptime30d": 1,
+    "avgLatencyMs": 819,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "placebear-300": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1129,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "placebear-400": {
+    "uptime30d": 1,
+    "avgLatencyMs": 785,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "placedog-200": {
+    "uptime30d": 1,
+    "avgLatencyMs": 835,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "placedog-400": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1165,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "postalpin-500001": {
+    "uptime30d": 1,
+    "avgLatencyMs": 978,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "postalpin-mumbai": {
+    "uptime30d": 1,
+    "avgLatencyMs": 288,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "potterdb-character": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1481,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "qrtag-2": {
+    "uptime30d": 1,
+    "avgLatencyMs": 476,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "quickchart-pie": {
+    "uptime30d": 1,
+    "avgLatencyMs": 566,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "randomdog-2b": {
+    "uptime30d": 1,
+    "avgLatencyMs": 1395,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "spacedevs-astronaut": {
+    "uptime30d": 1,
+    "avgLatencyMs": 395,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "spacedevs-launch": {
+    "uptime30d": 1,
+    "avgLatencyMs": 786,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "wiktionary-world": {
+    "uptime30d": 1,
+    "avgLatencyMs": 115,
+    "last30": [
+      1
+    ],
+    "sparkline": "█"
+  },
+  "wizardworld-elixir": {
+    "uptime30d": 1,
+    "avgLatencyMs": 910,
     "last30": [
       1
     ],
