@@ -4805,21 +4805,6 @@
     "added": "2026-08-30"
   },
   {
-    "name": "OpenTDB Cat9",
-    "slug": "opentdb-cat9",
-    "url": "https://opentdb.com/api.php?amount=1&category=9",
-    "probe": {
-      "method": "GET",
-      "expectedStatus": 200,
-      "timeoutMs": 8000
-    },
-    "auth": "none",
-    "category": "entertainment",
-    "cors": "yes",
-    "docs": "https://opentdb.com/api_config.php",
-    "added": "2026-08-30"
-  },
-  {
     "name": "Orca Scan",
     "slug": "orca-scan",
     "url": "https://orcascan.com/guides/free-barcode-image-api-0e4a4fa6",
@@ -7708,6 +7693,474 @@
     "category": "email",
     "cors": "yes",
     "docs": "https://docs.mail.tm",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Federal Register Documents",
+    "slug": "federalregister-documents",
+    "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.count"
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://www.federalregister.gov/developers/documentation/api/v1",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "NOAA SWPC Kp Index",
+    "slug": "noaa-swpc-kp",
+    "url": "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$[0].Kp"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://www.swpc.noaa.gov/products/planetary-k-index",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "NOAA CO-OPS Tides",
+    "slug": "noaa-coops-tides",
+    "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=water_level&application=apipuccino&begin_date=20260829&end_date=20260830&datum=MLLW&station=8410140&time_zone=GMT&units=metric&format=json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.data[0].v"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://api.tidesandcurrents.noaa.gov/api/prod/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "USGS Water Services",
+    "slug": "usgs-water-services",
+    "url": "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=01646500&period=P1D",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.value.timeSeries[0]"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://waterservices.usgs.gov/rest/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "NHTSA VIN Decoder",
+    "slug": "nhtsa-vin-decoder",
+    "url": "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/5UXWX7C5*BA?format=json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.Results[0].Make"
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://vpic.nhtsa.dot.gov/api/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "USAspending Agencies",
+    "slug": "usaspending-agencies",
+    "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://api.usaspending.gov",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "BLS Unemployment",
+    "slug": "bls-unemployment",
+    "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/LNS14000000",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.status"
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.bls.gov/developers/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "CDC COVID Deaths",
+    "slug": "cdc-covid-deaths",
+    "url": "https://data.cdc.gov/resource/9bhg-hcku.json?$limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "health",
+    "cors": "yes",
+    "docs": "https://dev.socrata.com/foundry/data.cdc.gov/9bhg-hcku",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "GOV.UK Bank Holidays",
+    "slug": "govuk-bank-holidays",
+    "url": "https://www.gov.uk/bank-holidays.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.england-and-wales.division"
+    },
+    "auth": "none",
+    "category": "calendar",
+    "cors": "yes",
+    "docs": "https://www.gov.uk/bank-holidays",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "EA Flood Monitoring",
+    "slug": "ea-flood-stations",
+    "url": "https://environment.data.gov.uk/flood-monitoring/id/stations?_limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.items[0].notation"
+    },
+    "auth": "none",
+    "category": "environment",
+    "cors": "yes",
+    "docs": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "TfL Line Modes",
+    "slug": "tfl-line-modes",
+    "url": "https://api.tfl.gov.uk/Line/Meta/Modes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$[0].modeName"
+    },
+    "auth": "none",
+    "category": "transport",
+    "cors": "yes",
+    "docs": "https://api.tfl.gov.uk",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "France Geo Communes",
+    "slug": "gouvfr-geo-communes",
+    "url": "https://geo.api.gouv.fr/communes?nom=paris&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$[0].nom"
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://geo.api.gouv.fr/api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "data.gouv.fr Datasets",
+    "slug": "datagouv-datasets",
+    "url": "https://www.data.gouv.fr/api/2/datasets/?page_size=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.data[0].id"
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://doc.data.gouv.fr/api/reference/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Autobahn Roadworks",
+    "slug": "autobahn-roadworks",
+    "url": "https://verkehr.autobahn.de/o/autobahn/A1/services/roadworks",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "transport",
+    "cors": "yes",
+    "docs": "https://verkehr.autobahn.de",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "NL RDW Vehicles",
+    "slug": "rdw-vehicles",
+    "url": "https://opendata.rdw.nl/resource/m9d7-ebf2.json?$limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$[0].kenteken"
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://opendata.rdw.nl",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Norway Brreg Entities",
+    "slug": "brreg-entities",
+    "url": "https://data.brreg.no/enhetsregisteret/api/enheter?page=0&size=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "business",
+    "cors": "yes",
+    "docs": "https://data.brreg.no/enhetsregisteret/api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Sweden SCB",
+    "slug": "scb-sweden",
+    "url": "https://api.scb.se/OV0104/v1/doris/en/ssd",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://www.scb.se/en/services/open-data-api/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Denmark Dataforsyningen",
+    "slug": "dataforsyningen-autocomplete",
+    "url": "https://api.dataforsyningen.dk/autocomplete?q=paris",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://dataforsyningen.dk",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Eurostat Population",
+    "slug": "eurostat-population",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?format=JSON&geo=DE&age=TOTAL&sex=T&time=2024",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.value"
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://ec.europa.eu/eurostat/web/json-and-unicode-web-services",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "data.europa.eu Search",
+    "slug": "europa-datasearch",
+    "url": "https://data.europa.eu/api/hub/search/search?q=climate&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://data.europa.eu",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "ECB Exchange Rates",
+    "slug": "ecb-exr",
+    "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=1&format=jsondata",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "sdmx",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.dataSets[0]"
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://data.ecb.europa.eu/help",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Bank of Canada Valet",
+    "slug": "bankcanada-valet",
+    "url": "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?recent=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.observations[0].FXUSDCAD.v"
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://www.bankofcanada.ca/valet/docs",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Open Canada CKAN",
+    "slug": "opencanada-ckan",
+    "url": "https://open.canada.ca/data/en/api/3/action/package_search?q=climate&rows=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.success"
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://open.canada.ca/en",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "opendata.swiss CKAN",
+    "slug": "opendata-swiss",
+    "url": "https://opendata.swiss/api/3/action/package_search?q=wasser&rows=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.success"
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://opendata.swiss",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "data.gov.sg Air Temp",
+    "slug": "datagovsg-airtemp",
+    "url": "https://api.data.gov.sg/v1/environment/air-temperature",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.items[0]"
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://data.gov.sg",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Brazil BCB SGS",
+    "slug": "bcb-sgs",
+    "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados/ultimos/2?formato=json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$[0].valor"
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://dadosabertos.bcb.gov.br",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "UN SDG Series",
+    "slug": "un-sdg-series",
+    "url": "https://unstats.un.org/SDGAPI/v1/sdg/Series/List",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "international",
+    "cors": "yes",
+    "docs": "https://unstats.un.org/sdgs/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "WHO GHO Indicators",
+    "slug": "who-gho-indicators",
+    "url": "https://ghoapi.azureedge.net/api/Indicator?$top=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "timeoutMs": 8000,
+      "expectedJsonPath": "$.value[0].IndicatorCode"
+    },
+    "auth": "none",
+    "category": "health",
+    "cors": "yes",
+    "docs": "https://www.who.int/data/gho/info/gho-odata-api",
     "added": "2026-08-30"
   }
 ]

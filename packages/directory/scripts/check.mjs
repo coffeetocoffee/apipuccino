@@ -46,17 +46,11 @@ async function pLimit(concurrency) {
 }
 
 function getJsonPath(obj, path) {
-  // supports "$.a.b" and "$.a[0].b" simple
+  // supports "$.a.b" and "$[0].b" and "$.a[2].c" (brackets normalized to segments)
   if (!path || path === "$") return obj;
-  const clean = path.replace(/^\$\.?/, "");
-  const parts = clean.split(".");
+  const parts = path.replace(/^\$\.?/, "").replace(/\[(\d+)\]/g, ".$1").split(".").filter(Boolean);
   let cur = obj;
-  for (const p of parts) {
-    if (cur == null) return undefined;
-    const m = p.match(/^(\w+)\[(\d+)\]$/);
-    if (m) { cur = cur[m[1]]?.[Number(m[2])]; }
-    else cur = cur[p];
-  }
+  for (const p of parts) cur = cur?.[p];
   return cur;
 }
 
@@ -64,7 +58,7 @@ function hashContent(text) {
   return crypto.createHash("sha256").update(text).digest("hex").slice(0, 12);
 }
 
-async function probe(api, prevFailures = 0) {
+async function probe(api, failDaysSoFar = 0) {
   const { url, probe: cfg } = api;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), cfg.timeoutMs ?? 8000);
@@ -213,7 +207,9 @@ if (api.openapiUrl) {
     } catch { /* CF also failed — confirm failure */ }
   }
 
-  const consecutiveFailures = ok ? 0 : prevFailures + 1;
+  // consecutiveFailures = consecutive trailing DAYS failed (AGENTS.md: >=3 days => Death Report).
+  // Computed from per-day history so same-day reruns never inflate counters.
+  const consecutiveFailures = ok ? 0 : failDaysSoFar + 1;
   const schemaHash = bodyText ? hashKeys(bodyText) : null;
   return {
     slug: api.slug,
@@ -254,19 +250,38 @@ function hashKeys(json) {
 
 async function main() {
   const apis = JSON.parse(await fs.readFile(APIS_JSON, "utf8"));
-  let prevResults = {};
   let prevHashes = {};
   let prevSchemaHashes = {};
   try {
     const prev = JSON.parse(await fs.readFile(RESULTS_JSON, "utf8"));
     for (const r of prev.results) {
-      prevResults[r.slug] = r.consecutiveFailures;
       if (r.contentHash) prevHashes[r.slug] = r.contentHash;
       if (r.schemaHash) prevSchemaHashes[r.slug] = r.schemaHash;
       // fallback: if no schemaHash stored yet, derive from contentHash history (will be noisy once, then stabilizes)
       else if (r.contentHash) prevSchemaHashes[r.slug] = r.contentHash;
     }
   } catch {}
+
+  // Trailing failed-day count per slug from history/*.jsonl (last entry of each previous day)
+  const today = new Date().toISOString().slice(0, 10);
+  const histDir = path.join(DATA_DIR, "history");
+  const dayMaps = [];
+  for (const f of (await fs.readdir(histDir).catch(() => [])).filter(f => f.endsWith(".jsonl") && f.slice(0, 10) < today).sort()) {
+    try {
+      const lines = (await fs.readFile(path.join(histDir, f), "utf8")).trim().split("\n").filter(Boolean);
+      const lastEntry = JSON.parse(lines[lines.length - 1]);
+      dayMaps.push(new Map(lastEntry.results.map(r => [r.slug, r.ok])));
+    } catch {}
+  }
+  const failDays = (slug) => {
+    let n = 0;
+    for (let i = dayMaps.length - 1; i >= 0; i--) {
+      const ok = dayMaps[i].get(slug);
+      if (ok === undefined || ok) break;
+      n++;
+    }
+    return n;
+  };
 
   const limit = await pLimit(CONCURRENCY);
   const results = [];
@@ -275,8 +290,7 @@ async function main() {
   const tasks = apis.map((api) => limit(async () => {
     // throttle 30/min = ~2000ms per batch, we do jitter + concurrency 5 -> ~30/min achieved
     if (idx++ > 0) await sleep(jitter());
-    const prevFail = prevResults[api.slug] ?? 0;
-    const res = await probe(api, prevFail);
+    const res = await probe(api, failDays(api.slug));
     results.push(res);
     const icon = res.ok ? "✓" : "✗";
     console.log(`${icon} ${api.slug} ${res.status ?? "ERR"} ${res.latencyMs}ms${res.error ? " " + res.error : ""}`);
