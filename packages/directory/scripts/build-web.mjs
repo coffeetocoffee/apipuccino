@@ -17,7 +17,8 @@ const pct = Math.round(results.summary.ok/results.summary.total*100);
 const checked = new Date(results.checkedAt).toLocaleString();
 const byCat = {};
 for(const a of apis) byCat[a.category] = (byCat[a.category]||0)+1;
-const catChips = Object.entries(byCat).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<span class="cat">${c} ${n}</span>`).join(" ");
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+const catChips = Object.entries(byCat).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<a href="#browse" class="cat" data-cat="${esc(c)}" title="Filter by ${esc(c)}">${c} ${n}</a>`).join(" ");
 const topHistory = Object.entries(historySummary).sort((a,b)=>b[1].uptime30d - a[1].uptime30d).slice(0,5);
 
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apipuccino — Nobody lists dead APIs.</title><meta name="description" content="Nobody lists dead APIs. Free, self-verifying directory (${results.summary.ok}/${results.summary.total} live) + offline docs."><style>
@@ -46,7 +47,9 @@ td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:middle
 tr:hover td{background:color-mix(in srgb, var(--accent) 6%, var(--card))}
 code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;padding:2px 6px;border-radius:6px;background:var(--bg);border:1px solid var(--border)}
 .badge{font-size:11px;padding:4px 8px;border-radius:999px;background:var(--bg);border:1px solid var(--border)}
-.cat{font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:2px 6px;border-radius:999px}
+.cat{font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:2px 6px;border-radius:999px;cursor:pointer;transition:all .15s}
+.cat:hover{text-decoration:none;color:var(--accent);border-color:var(--accent)}
+.cat.on{background:var(--accent);border-color:var(--accent);color:#fff}
 footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 @media(max-width:700px){.hero h1{font-size:32px}}
 </style></head><body>
@@ -56,7 +59,7 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 <div class="stats"><span class="pill">● ${results.summary.ok}/${results.summary.total} live — ${pct}%</span><span class="pill">Last checked ${checked}</span><span class="pill">Pagefind + offline</span><span class="pill">MIT+CC0</span></div>
 <div class="cta"><a class="btn" href="#browse">Browse APIs</a><a class="btn sec" href="https://github.com/coffeetocoffee/apipuccino#quick-start">npx apidocs build</a></div></section>
 ${death?.deaths?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fef2f2;border-color:#dc2626"><b>\u25CF Death Report (${death.deaths.length})</b> — failing \u22653 days: ${death.deaths.map(d=>`<code>${d.slug}</code>`).join(", ")}</section>` : "" }
-<section class="card" style="margin:12px 0;padding:14px"><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><b>Categories:</b> ${catChips}</div>${topHistory.length ? `<div style="margin-top:10px;color:var(--muted);font-size:12px">Top 30d uptime: ${topHistory.map(([s,h])=>`<code>${s}</code> ${(h.uptime30d*100).toFixed(0)}% ${h.sparkline}`).join(" · ")}</div>` : ""}<details style="margin-top:8px"><summary style="cursor:pointer;color:var(--accent)">History graph (30d)</summary><pre style="overflow:auto;font-size:11px;background:var(--bg);padding:8px;border-radius:8px">${Object.entries(historySummary).slice(0,12).map(([s,h])=>`${s.padEnd(22)} ${h.sparkline} ${(h.uptime30d*100).toFixed(1)}% avg ${h.avgLatencyMs||0}ms`).join("\n")}</pre><a href="./history-summary.json" style="font-size:12px">→ full history-summary.json</a></details></section>
+<section class="card" style="margin:12px 0;padding:14px"><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><b>Categories</b> <span style="color:var(--muted);font-size:11px">(click to filter — click again to clear)</span>: ${catChips}</div>${topHistory.length ? `<div style="margin-top:10px;color:var(--muted);font-size:12px">Top 30d uptime: ${topHistory.map(([s,h])=>`<code>${s}</code> ${(h.uptime30d*100).toFixed(0)}% ${h.sparkline}`).join(" · ")}</div>` : ""}<details style="margin-top:8px"><summary style="cursor:pointer;color:var(--accent)">History graph (30d)</summary><pre style="overflow:auto;font-size:11px;background:var(--bg);padding:8px;border-radius:8px">${Object.entries(historySummary).slice(0,12).map(([s,h])=>`${s.padEnd(22)} ${h.sparkline} ${(h.uptime30d*100).toFixed(1)}% avg ${h.avgLatencyMs||0}ms`).join("\n")}</pre><a href="./history-summary.json" style="font-size:12px">→ full history-summary.json</a></details></section>
 <section id="browse" class="card"><div class="toolbar"><label class="search">\uD83D\uDD0D <input id="q" placeholder="Search APIs (name, category, slug)…"><span style="color:var(--muted);font-size:13px">${results.summary.total} APIs</span></label><span style="color:var(--muted);font-size:13px"><a href="https://github.com/coffeetocoffee/apipuccino/actions">Health Check</a> \u00B7 <a href="./api-docs/">Demo</a> \u00B7 <a href="./history-summary.json">History</a></span></div>
 <div style="overflow:auto"><table><thead><tr><th>API</th><th>Status</th><th>Latency</th><th>Sparkline</th><th>Docs</th><th>Try</th></tr></thead><tbody id="tbody">
 ${apis.map(api=>{
@@ -64,13 +67,13 @@ ${apis.map(api=>{
   const hist = historySummary[api.slug];
   const spark = hist?.sparkline || (r?.ok ? "\u2581\u2582\u2583\u2584\u2585\u2586\u2587\u2588".slice(0, Math.min(8, Math.ceil((r?.latencyMs||100)/250))) : "\u2581");
   const uptime = hist ? `${(hist.uptime30d*100).toFixed(1)}%` : "";
-  return `<tr data-search="${(api.name+" "+api.slug+" "+api.category).toLowerCase()}"><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span></td><td>${r? (ok?`<span style="color:var(--ok)">\u25CF ${r.status}</span>`:`<span style="color:var(--bad)">\u25CF ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="${uptime} 30d ${spark}">${spark}</td><td><a href="${api.generatedDocs||api.docs}">Docs</a> <span class="badge">${ok?"live":"down"}</span></td><td><a href="${api.generatedDocs||api.docs}" class="badge">Try \u2192</a></td></tr>`;
+  return `<tr data-cat="${esc(api.category)}" data-search="${esc(api.name+" "+api.slug+" "+api.category).toLowerCase()}"><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span></td><td>${r? (ok?`<span style="color:var(--ok)">\u25CF ${r.status}</span>`:`<span style="color:var(--bad)">\u25CF ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="${uptime} 30d ${spark}">${spark}</td><td><a href="${api.generatedDocs||api.docs}">Docs</a> <span class="badge">${ok?"live":"down"}</span></td><td><a href="${api.generatedDocs||api.docs}" class="badge">Try \u2192</a></td></tr>`;
 }).join("")}
 </tbody></table></div></section>
 <p style="color:var(--muted);font-size:13px;margin:12px 2px">Tip: <code>npx apidocs submit</code> reads your <code>openapi.yaml</code> and opens a PR — directory grows without scraping.</p>
 <footer>Generated by <code>npx apidocs build</code> — Free Forever MIT+CC0 — <a href="https://github.com/coffeetocoffee/apipuccino">coffeetocoffee/apipuccino</a></footer>
 </main>
-<script>const q=document.getElementById('q'),rows=[...document.querySelectorAll('#tbody tr')];q.addEventListener('input',()=>{const t=q.value.toLowerCase();rows.forEach(r=>r.style.display=r.dataset.search.includes(t)?'':'none')});</script>
+<script>const q=document.getElementById('q'),rows=[...document.querySelectorAll('#tbody tr')],chips=[...document.querySelectorAll('a.cat[data-cat]')];let activeCat=null;function apply(){const t=q.value.trim().toLowerCase();rows.forEach(r=>{const okT=!t||r.dataset.search.includes(t);const okC=!activeCat||r.dataset.cat===activeCat;r.style.display=(okT&&okC)?'':'none'})}q.addEventListener('input',apply);chips.forEach(ch=>ch.addEventListener('click',()=>{const c=ch.dataset.cat;activeCat=(activeCat===c)?null:c;chips.forEach(x=>x.classList.toggle('on',x.dataset.cat===activeCat));apply()}));</script>
 </body></html>`;
 
 const dist = path.join(root, "dist");
