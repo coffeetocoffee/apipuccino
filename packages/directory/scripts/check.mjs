@@ -113,15 +113,72 @@ async function probe(api, prevFailures = 0) {
   } finally {
     clearTimeout(timeout);
   }
-  let l3Validated = null; // null=not checked, true/false for openapiUrl
-  // L3: if openapiUrl exists, verify it is reachable & parseable (Phase 3 lightweight)
-  if (api.openapiUrl) {
-    try {
-      const oRes = await fetch(api.openapiUrl, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(8000) });
-      l3Validated = oRes.ok;
-      if (!oRes.ok) console.log(`  L3 ${api.slug} openapiUrl ${oRes.status}`);
-    } catch { l3Validated = false; }
+// L3: minimal OpenAPI meta-schema (lightweight — structural, not full 3.1 spec)
+const OPENAPI_META_SCHEMA = {
+  type: "object",
+  required: ["info", "paths"],
+  properties: {
+    openapi: { type: "string", pattern: "^3\\." },
+    swagger: { type: "string", pattern: "^2\\." },
+    info: {
+      type: "object",
+      required: ["title", "version"],
+      properties: { title: { type: "string" }, version: { type: "string" } },
+    },
+    paths: { type: "object" },
+    components: { type: "object" },
+  },
+  anyOf: [{ required: ["openapi"] }, { required: ["swagger"] }],
+};
+
+/** L3: fetch openapiUrl, parse JSON/YAML, ajv-validate against meta-schema (Phase 3) */
+async function validateOpenapi(api) {
+  const UA3 = UA;
+  let specText, status;
+  try {
+    const oRes = await fetch(api.openapiUrl, { headers: { "User-Agent": UA3 }, signal: AbortSignal.timeout(8000) });
+    status = oRes.status;
+    if (!oRes.ok) {
+      console.log(`  L3 ${api.slug} openapiUrl ${status}`);
+      return { l3Validated: false, l3Error: `openapiUrl HTTP ${status}` };
+    }
+    specText = await oRes.text();
+  } catch (e) {
+    return { l3Validated: false, l3Error: `openapiUrl ${e.name === "AbortError" ? "timeout" : e.message}` };
   }
+  // parse: JSON preferred, YAML fallback (docstruct rule: never execSync, always libs)
+  let spec = null;
+  try {
+    spec = JSON.parse(specText);
+  } catch {
+    try {
+      const yaml = await import("yaml");
+      spec = yaml.parse(specText);
+    } catch {
+      // last resort: structural string sniff for yaml/2.0 specs served without proper type
+      if (/^(openapi|swagger):/m.test(specText)) return { l3Validated: true };
+      return { l3Validated: false, l3Error: "openapiUrl not parseable as JSON/YAML" };
+    }
+  }
+  if (!spec || typeof spec !== "object") return { l3Validated: false, l3Error: "openapiUrl empty spec" };
+  // ajv validate if available, else structural fallback (same shape checks)
+  try {
+    const { default: Ajv } = await import("ajv");
+    const ajv = new Ajv({ allErrors: false, strict: false });
+    const valid = ajv.validate(OPENAPI_META_SCHEMA, spec);
+    if (!valid) return { l3Validated: false, l3Error: `openapiUrl meta-schema: ${ajv.errorsText().slice(0, 120)}` };
+  } catch {
+    const okStruct = typeof spec.info === "object" && spec.info !== null && typeof spec.paths === "object" && (typeof spec.openapi === "string" || typeof spec.swagger === "string");
+    if (!okStruct) return { l3Validated: false, l3Error: "openapiUrl structural check failed (ajv unavailable)" };
+  }
+  return { l3Validated: true };
+}
+
+let l3Validated = null, l3Error = null; // null=not checked
+if (api.openapiUrl) {
+  ({ l3Validated, l3Error } = await validateOpenapi(api));
+  if (!l3Validated && l3Error) console.log(`  L3 ${api.slug} ${l3Error}`);
+}
 
   // Fallback for auth-required APIs: probe docs URL instead of 401 data endpoint (per AGENTS.md FIX 5)
   let probeFallback = null;
@@ -169,6 +226,7 @@ async function probe(api, prevFailures = 0) {
     contentHash: bodyText ? hashContent(bodyText) : null,
     schemaHash,
     l3Validated,
+    ...(l3Error ? { l3Error } : {}),
     probeFallback,
     ...(error ? { error } : {}),
   };

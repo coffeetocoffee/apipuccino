@@ -4119,51 +4119,6 @@
     "added": "2026-08-29"
   },
   {
-    "name": "NASA APOD 2024",
-    "slug": "nasa-apod-2024",
-    "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2024-01-01",
-    "probe": {
-      "method": "GET",
-      "expectedStatus": 200,
-      "timeoutMs": 8000
-    },
-    "auth": "none",
-    "category": "science",
-    "cors": "yes",
-    "docs": "https://api.nasa.gov/",
-    "added": "2026-08-30"
-  },
-  {
-    "name": "NASA APOD Demo",
-    "slug": "nasa-apod-demo",
-    "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
-    "probe": {
-      "method": "GET",
-      "expectedStatus": 200,
-      "timeoutMs": 8000
-    },
-    "auth": "none",
-    "category": "science",
-    "cors": "yes",
-    "docs": "https://api.nasa.gov",
-    "added": "2026-08-29"
-  },
-  {
-    "name": "NASA NEO",
-    "slug": "nasa-neo",
-    "url": "https://api.nasa.gov/neo/rest/v1/feed?start_date=2024-01-01&end_date=2024-01-02&api_key=DEMO_KEY",
-    "probe": {
-      "method": "GET",
-      "expectedStatus": 200,
-      "timeoutMs": 8000
-    },
-    "auth": "none",
-    "category": "science",
-    "cors": "yes",
-    "docs": "https://api.nasa.gov/",
-    "added": "2026-08-30"
-  },
-  {
     "name": "National Bank of Poland",
     "slug": "national-bank-of-poland",
     "url": "http://api.nbp.pl/en.html",
@@ -4557,7 +4512,6 @@
     "category": "weather",
     "cors": "yes",
     "docs": "https://open-meteo.com",
-    "openapiUrl": "https://open-meteo.com/openapi.json",
     "added": "2026-08-27"
   },
   {
@@ -6868,5 +6822,892 @@
     "cors": "yes",
     "docs": "http://www.zippopotam.us",
     "added": "2026-08-28"
+  },
+  {
+    "name": "NASA Images",
+    "slug": "nasa-images",
+    "url": "https://images-api.nasa.gov/search?q=apollo&media_type=image",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.collection.href"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://images.nasa.gov/docs/images_api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "USGS Earthquakes",
+    "slug": "usgs-earthquakes",
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.features[0].id"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://earthquake.usgs.gov/fdsnws/event/1/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "WhereTheISS.at",
+    "slug": "wheretheiss-25544",
+    "url": "https://api.wheretheiss.at/v1/satellites/25544",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://wheretheiss.at/w/1",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Spaceflight News",
+    "slug": "spaceflightnews-latest",
+    "url": "https://api.spaceflightnewsapi.net/v4/articles/?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.results[0].title"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://api.spaceflightnewsapi.net",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "ADSB.lol Military",
+    "slug": "adsb-mil",
+    "url": "https://api.adsb.lol/v2/mil",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://api.adsb.lol",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "UniProt P12345",
+    "slug": "uniprot-p12345",
+    "url": "https://rest.uniprot.org/uniprotkb/P12345.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.primaryAccession"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://rest.uniprot.org",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Europe PMC Search",
+    "slug": "europepmc-covid",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=covid&format=json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "science",
+    "cors": "yes",
+    "docs": "https://europepmc.org/RestfulWebService",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Jikan Search",
+    "slug": "jikan-search-cowboy",
+    "url": "https://api.jikan.moe/v4/anime/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data.mal_id"
+    },
+    "auth": "none",
+    "category": "anime",
+    "cors": "yes",
+    "docs": "https://jikan.moe",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "OpenF1 Drivers",
+    "slug": "openf1-drivers",
+    "url": "https://api.openf1.org/v1/drivers?session_key=latest",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "sports",
+    "cors": "yes",
+    "docs": "https://openf1.org",
+    "openapiUrl": "https://api.openf1.org/openapi.json",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "TheSportsDB EPL",
+    "slug": "sportsdb-epl",
+    "url": "https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l=English%20Premier%20League",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.teams[0].strTeam"
+    },
+    "auth": "none",
+    "category": "sports",
+    "cors": "yes",
+    "docs": "https://www.thesportsdb.com/free_sports_api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "ESPN NFL Scoreboard",
+    "slug": "espn-nfl",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.leagues[0].name"
+    },
+    "auth": "none",
+    "category": "sports",
+    "cors": "yes",
+    "docs": "https://site.api.espn.com",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "MLB Stats Teams",
+    "slug": "mlb-teams",
+    "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.teams[0].name"
+    },
+    "auth": "none",
+    "category": "sports",
+    "cors": "yes",
+    "docs": "https://statsapi.mlb.com/api/v1/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Chess.com Player",
+    "slug": "chesscom-hikaru",
+    "url": "https://api.chess.com/pub/player/hikaru",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.username"
+    },
+    "auth": "none",
+    "category": "sports",
+    "cors": "yes",
+    "docs": "https://www.chess.com/news/view/published-data-api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "MusicBrainz Radiohead",
+    "slug": "musicbrainz-radiohead",
+    "url": "https://musicbrainz.org/ws/2/artist/?query=radiohead&fmt=json&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.artists[0].name"
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "TheAudioDB Coldplay",
+    "slug": "audiodb-coldplay",
+    "url": "https://theaudiodb.com/api/v1/json/2/search.php?s=coldplay",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.artists[0].strArtist"
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://www.theaudiodb.com/api_guide.php",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Dailymotion Videos",
+    "slug": "dailymotion-funny",
+    "url": "https://api.dailymotion.com/videos?search=funny&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.list[0].id"
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://developers.dailymotion.com/api/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "EmojiHub Random",
+    "slug": "emojihub-random",
+    "url": "https://emojihub.yurace.pro/api/random",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name"
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://github.com/cheatsnake/emojihub",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Stoic Quote",
+    "slug": "stoic-quote",
+    "url": "https://stoic-quotes.com/api/quote",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://stoic-quotes.com/docs/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "The Trivia API",
+    "slug": "trivia-api-qs",
+    "url": "https://the-trivia-api.com/api/questions?limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://the-trivia-api.com/docs/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "SWAPI People 1",
+    "slug": "swapi-people-1",
+    "url": "https://swapi.dev/api/people/1/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name"
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://swapi.dev",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "xkcd Latest",
+    "slug": "xkcd-latest",
+    "url": "https://xkcd.com/info.0.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.num"
+    },
+    "auth": "none",
+    "category": "entertainment",
+    "cors": "yes",
+    "docs": "https://xkcd.com/json.html",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Lichess User",
+    "slug": "lichess-user",
+    "url": "https://lichess.org/api/user/drnykterstein",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id"
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://lichess.org/api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Fortnite Cosmetics",
+    "slug": "fortnite-renegade",
+    "url": "https://fortnite-api.com/v2/cosmetics/br/search?name=renegade",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data.id"
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://fortnite-api.com",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Warframe Items",
+    "slug": "warframe-items",
+    "url": "https://api.warframestat.us/items",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://docs.warframestat.us",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "OpenDota Heroes",
+    "slug": "opendota-heroes",
+    "url": "https://api.opendota.com/api/heroStats",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://docs.opendota.com",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Cleveland Museum Art",
+    "slug": "cleveland-art",
+    "url": "https://openaccess-api.clevelandart.org/api/artworks/?limit=1&has_image=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data[0].title"
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://openaccess-api.clevelandart.org",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "JsDelivr Currency API",
+    "slug": "jsdelivr-usd-rates",
+    "url": "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.date"
+    },
+    "auth": "none",
+    "category": "currency",
+    "cors": "yes",
+    "docs": "https://github.com/fawazahmed0/exchange-api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Mempool.space Tip",
+    "slug": "mempool-tip",
+    "url": "https://mempool.space/api/blocks/tip/height",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "text/plain"
+    },
+    "auth": "none",
+    "category": "blockchain",
+    "cors": "yes",
+    "docs": "https://mempool.space/docs/api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Coinlore Tickers",
+    "slug": "coinlore-tickers",
+    "url": "https://api.coinlore.net/api/tickers/?start=0&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data[0].id"
+    },
+    "auth": "none",
+    "category": "cryptocurrency",
+    "cors": "yes",
+    "docs": "https://www.coinlore.com/cryptocurrency-data-api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Weather.gov Points",
+    "slug": "weathergov-points",
+    "url": "https://api.weather.gov/points/38.8894,-77.0352",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "geo+json",
+      "expectedJsonPath": "$.properties.relativeLocation.properties.city"
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://www.weather.gov/documentation/services-web-api",
+    "openapiUrl": "https://api.weather.gov/openapi.json",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "NLM Clinical Tables ICD",
+    "slug": "clinicaltables-icd",
+    "url": "https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search?sf=code,name&terms=diabetes",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "health",
+    "cors": "yes",
+    "docs": "https://clinicaltables.nlm.nih.gov",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "RxNav Drugs",
+    "slug": "rxnav-aspirin",
+    "url": "https://rxnav.nlm.nih.gov/REST/drugs.json?name=aspirin",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.drugGroup"
+    },
+    "auth": "none",
+    "category": "health",
+    "cors": "yes",
+    "docs": "https://lhncbc.nlm.nih.gov/RxNav/APIs",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "iNaturalist Observations",
+    "slug": "inaturalist-obs",
+    "url": "https://api.inaturalist.org/v1/observations?per_page=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.results[0].id"
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://api.inaturalist.org/v1/docs/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "RandomFox",
+    "slug": "randomfox-floof",
+    "url": "https://randomfox.ca/floof/?json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.image"
+    },
+    "auth": "none",
+    "category": "animals",
+    "cors": "yes",
+    "docs": "https://randomfox.ca",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "PyPI requests",
+    "slug": "pypi-requests",
+    "url": "https://pypi.org/pypi/requests/json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.info.name"
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://warehouse.pypa.io/api-reference/json.html",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "crates.io serde",
+    "slug": "crates-serde",
+    "url": "https://crates.io/api/v1/crates/serde",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.crate.name"
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://docs.rs/crate/serde/latest",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "RubyGems rails",
+    "slug": "rubygems-rails",
+    "url": "https://rubygems.org/api/v1/gems/rails.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name"
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://guides.rubygems.org/rubygems-org-api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Docker Hub nginx",
+    "slug": "dockerhub-nginx",
+    "url": "https://hub.docker.com/v2/repositories/library/nginx/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.name"
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://docs.docker.com/docker-hub/api/latest/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Hacker News Top",
+    "slug": "hackernews-top",
+    "url": "https://hacker-news.firebaseio.com/v0/topstories.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://github.com/HackerNews/API",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "cdnjs Libraries",
+    "slug": "cdnjs-libraries",
+    "url": "https://api.cdnjs.com/libraries?fields=name",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://api.cdnjs.com/libraries",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "APIs.guru Directory",
+    "slug": "apis-guru-list",
+    "url": "https://api.apis.guru/v2/list.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://apis.guru",
+    "openapiUrl": "https://api.apis.guru/v2/openapi.yaml",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "GitLab Project",
+    "slug": "gitlab-gitlab",
+    "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id"
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://docs.gitlab.com/ee/api/rest/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Treasury Interest Rates",
+    "slug": "treasury-rates",
+    "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/avg_interest_rates?page%5Bsize%5D=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data[0].record_date"
+    },
+    "auth": "none",
+    "category": "finance",
+    "cors": "yes",
+    "docs": "https://fiscaldata.treasury.gov/api-guide/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Photon Geocoder",
+    "slug": "photon-paris",
+    "url": "https://photon.komoot.io/api/?q=paris&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.features[0].properties.name"
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://photon.komoot.io",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "OpenTopoData Elevation",
+    "slug": "opentopodata-elev",
+    "url": "https://api.opentopodata.org/v1/eudem25m?locations=50.0,10.0",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "geography",
+    "cors": "yes",
+    "docs": "https://www.opentopodata.org/api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "GitHub Status",
+    "slug": "githubstatus",
+    "url": "https://www.githubstatus.com/api/v2/status.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.page.name"
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://www.githubstatus.com/api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "UUIDTools v4",
+    "slug": "uuidtools-v4",
+    "url": "https://www.uuidtools.com/api/generate/v4",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://www.uuidtools.com",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Hashify SHA-256",
+    "slug": "hashify-sha256",
+    "url": "https://api.hashify.net/hash/sha256/hex?value=hello",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.Digest"
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://hashify.net",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "ipwho.is",
+    "slug": "ipwhois-root",
+    "url": "https://ipwho.is/",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.ip"
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://ipwhois.io",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "MyMemory Translate",
+    "slug": "mymemory-hello",
+    "url": "https://api.mymemory.translated.net/get?q=hello&langpair=en|it",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.responseData.translatedText"
+    },
+    "auth": "none",
+    "category": "dictionaries",
+    "cors": "yes",
+    "docs": "https://mymemory.translated.net/doc/spec.php",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "LanguageTool Languages",
+    "slug": "languagetool-langs",
+    "url": "https://api.languagetool.org/v2/languages",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "dictionaries",
+    "cors": "yes",
+    "docs": "https://languagetool.org/http-api/swagger-ui/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Chicago Data Portal",
+    "slug": "socrata-chicago",
+    "url": "https://data.cityofchicago.org/resource/4ijn-s7e5.json?$limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "application/json"
+    },
+    "auth": "none",
+    "category": "government",
+    "cors": "yes",
+    "docs": "https://dev.socrata.com/foundry/data.cityofchicago.org/4ijn-s7e5",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Mail.tm Domains",
+    "slug": "mailtm-domains",
+    "url": "https://api.mail.tm/domains",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "timeoutMs": 8000,
+      "expectedContentType": "json"
+    },
+    "auth": "none",
+    "category": "email",
+    "cors": "yes",
+    "docs": "https://docs.mail.tm",
+    "added": "2026-08-30"
   }
 ]
