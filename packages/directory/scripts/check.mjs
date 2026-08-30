@@ -71,7 +71,12 @@ async function probe(api, failDaysSoFar = 0) {
       const res = await fetch(url, {
         method: cfg.method || "GET",
         signal: controller.signal,
-        headers: { "User-Agent": UA, "Accept": "*/*" },
+        headers: {
+          "User-Agent": UA,
+          "Accept": "*/*",
+          ...(cfg.body ? { "Content-Type": "application/json" } : {}),
+        },
+        ...(cfg.body ? { body: cfg.body } : {}),
       });
       lastRes = res;
       status = res.status;

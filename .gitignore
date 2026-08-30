@@ -12,3 +12,5 @@ packages/directory/data/history/*.jsonl
 !packages/directory/data/history/.gitkeep
 *.bak
 packages/directory/data/*.bak
+packages/directory/data/drift-report.json
+packages/directory/data/death-report.json

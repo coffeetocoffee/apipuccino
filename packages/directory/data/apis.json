@@ -1186,7 +1186,8 @@
     "category": "tools",
     "cors": "yes",
     "docs": "https://collegescorecard.ed.gov/data/documentation/",
-    "added": "2026-08-30"
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/data.gov/3.0/swagger.json"
   },
   {
     "name": "CosmyDay Astrology",
@@ -1536,7 +1537,8 @@
     "category": "games",
     "cors": "yes",
     "docs": "https://www.dnd5eapi.co/docs/",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/dnd5eapi.co/0.1/openapi.json"
   },
   {
     "name": "DnD Spell",
@@ -1551,7 +1553,8 @@
     "category": "games",
     "cors": "yes",
     "docs": "https://www.dnd5eapi.co/docs/",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/dnd5eapi.co/0.1/openapi.json"
   },
   {
     "name": "D&D 5e Abilities",
@@ -1566,7 +1569,8 @@
     "category": "games",
     "cors": "yes",
     "docs": "https://www.dnd5eapi.co/docs/",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/dnd5eapi.co/0.1/openapi.json"
   },
   {
     "name": "DocStruct",
@@ -1874,7 +1878,8 @@
     "category": "finance",
     "cors": "yes",
     "docs": "https://www.exchangerate-api.com/docs/overview",
-    "added": "2026-08-30"
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/exchangerate-api.com/4/openapi.json"
   },
   {
     "name": "ExchangeRate Convert",
@@ -2407,7 +2412,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://docs.github.com/en/rest",
-    "added": "2026-08-27"
+    "added": "2026-08-27",
+    "openapiUrl": "https://api.apis.guru/v2/specs/github.com/v0.1/openapi.json"
   },
   {
     "name": "GitHub Emojis",
@@ -2423,7 +2429,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://docs.github.com/en/rest",
-    "added": "2026-08-27"
+    "added": "2026-08-27",
+    "openapiUrl": "https://api.apis.guru/v2/specs/github.com/v0.1/openapi.json"
   },
   {
     "name": "GitHub Node Repo",
@@ -2438,7 +2445,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://docs.github.com/en/rest",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/github.com/v0.1/openapi.json"
   },
   {
     "name": "GitHub Repo",
@@ -2455,7 +2463,8 @@
     "docs": "https://docs.github.com/en/rest",
     "auth": "none",
     "cors": "yes",
-    "added": "2026-08-28"
+    "added": "2026-08-28",
+    "openapiUrl": "https://api.apis.guru/v2/specs/github.com/v0.1/openapi.json"
   },
   {
     "name": "Gutendex Books",
@@ -2532,7 +2541,8 @@
     "category": "testing",
     "cors": "yes",
     "docs": "https://httpbin.org",
-    "added": "2026-08-27"
+    "added": "2026-08-27",
+    "openapiUrl": "https://api.apis.guru/v2/specs/httpbin.org/0.9.2/openapi.json"
   },
   {
     "name": "HTTPBin Anything",
@@ -2547,7 +2557,8 @@
     "category": "testing",
     "cors": "yes",
     "docs": "https://httpbin.org",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/httpbin.org/0.9.2/openapi.json"
   },
   {
     "name": "HTTPBin IP",
@@ -2562,7 +2573,8 @@
     "category": "testing",
     "cors": "yes",
     "docs": "https://httpbin.org",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/httpbin.org/0.9.2/openapi.json"
   },
   {
     "name": "HTTPBin JSON",
@@ -2579,7 +2591,8 @@
     "category": "testing",
     "cors": "yes",
     "docs": "https://httpbin.org",
-    "added": "2026-08-27"
+    "added": "2026-08-27",
+    "openapiUrl": "https://api.apis.guru/v2/specs/httpbin.org/0.9.2/openapi.json"
   },
   {
     "name": "HttpCat 200",
@@ -2849,7 +2862,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://documentation.image-charts.com/",
-    "added": "2026-08-28"
+    "added": "2026-08-28",
+    "openapiUrl": "https://api.apis.guru/v2/specs/image-charts.com/6.1.19/swagger.json"
   },
   {
     "name": "ImageCharts Line",
@@ -2864,7 +2878,8 @@
     "category": "tools",
     "cors": "yes",
     "docs": "https://documentation.image-charts.com/",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/image-charts.com/6.1.19/swagger.json"
   },
   {
     "name": "ImageCharts QR",
@@ -2879,7 +2894,8 @@
     "category": "tools",
     "cors": "yes",
     "docs": "https://documentation.image-charts.com/",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/image-charts.com/6.1.19/swagger.json"
   },
   {
     "name": "IP-API",
@@ -5185,7 +5201,8 @@
     "category": "finance",
     "cors": "yes",
     "docs": "https://portfoliooptimizer.io/",
-    "added": "2026-08-28"
+    "added": "2026-08-28",
+    "openapiUrl": "https://api.apis.guru/v2/specs/portfoliooptimizer.io/1.0.9/openapi.json"
   },
   {
     "name": "PostalPin 110001",
@@ -5395,7 +5412,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://quickchart.io/",
-    "added": "2026-08-28"
+    "added": "2026-08-28",
+    "openapiUrl": "https://api.apis.guru/v2/specs/quickchart.io/1.0.0/openapi.json"
   },
   {
     "name": "QuickChart Pie",
@@ -5410,7 +5428,8 @@
     "category": "tools",
     "cors": "yes",
     "docs": "https://quickchart.io/documentation/",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/quickchart.io/1.0.0/openapi.json"
   },
   {
     "name": "QuickChart QR",
@@ -5425,7 +5444,8 @@
     "category": "tools",
     "cors": "yes",
     "docs": "https://quickchart.io/documentation/",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/quickchart.io/1.0.0/openapi.json"
   },
   {
     "name": "Quran",
@@ -5942,7 +5962,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://api.stackexchange.com/docs/questions",
-    "added": "2026-08-30"
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/stackexchange.com/2.0/openapi.json"
   },
   {
     "name": "StackExchange Questions",
@@ -5957,7 +5978,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://api.stackexchange.com/docs",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/stackexchange.com/2.0/openapi.json"
   },
   {
     "name": "StackExchange Tags",
@@ -5972,7 +5994,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://api.stackexchange.com/docs",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/stackexchange.com/2.0/openapi.json"
   },
   {
     "name": "Statically",
@@ -6275,7 +6298,8 @@
     "docs": "https://www.tvmaze.com/api",
     "auth": "none",
     "cors": "yes",
-    "added": "2026-08-28"
+    "added": "2026-08-28",
+    "openapiUrl": "https://api.apis.guru/v2/specs/tvmaze.com/1.0/openapi.json"
   },
   {
     "name": "TVMaze Episode",
@@ -6290,7 +6314,8 @@
     "category": "entertainment",
     "cors": "yes",
     "docs": "https://www.tvmaze.com/api",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/tvmaze.com/1.0/openapi.json"
   },
   {
     "name": "TVMaze People",
@@ -6305,7 +6330,8 @@
     "category": "entertainment",
     "cors": "yes",
     "docs": "https://www.tvmaze.com/api",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/tvmaze.com/1.0/openapi.json"
   },
   {
     "name": "TVMaze Search",
@@ -6320,7 +6346,8 @@
     "category": "entertainment",
     "cors": "yes",
     "docs": "https://www.tvmaze.com/api",
-    "added": "2026-08-29"
+    "added": "2026-08-29",
+    "openapiUrl": "https://api.apis.guru/v2/specs/tvmaze.com/1.0/openapi.json"
   },
   {
     "name": "TWZRD Agent Intel",
@@ -6923,7 +6950,8 @@
     "category": "science",
     "cors": "yes",
     "docs": "https://europepmc.org/RestfulWebService",
-    "added": "2026-08-30"
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/ebi.ac.uk/1.0/swagger.json"
   },
   {
     "name": "Jikan Search",
@@ -7159,7 +7187,8 @@
     "category": "entertainment",
     "cors": "yes",
     "docs": "https://xkcd.com/json.html",
-    "added": "2026-08-30"
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/xkcd.com/1.0.0/openapi.json"
   },
   {
     "name": "Lichess User",
@@ -7511,7 +7540,8 @@
     "category": "development",
     "cors": "yes",
     "docs": "https://docs.gitlab.com/ee/api/rest/",
-    "added": "2026-08-30"
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/gitlab.com/v3/swagger.json"
   },
   {
     "name": "Treasury Interest Rates",
@@ -7661,7 +7691,8 @@
     "category": "dictionaries",
     "cors": "yes",
     "docs": "https://languagetool.org/http-api/swagger-ui/",
-    "added": "2026-08-30"
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/languagetool.org/1.1.2/swagger.json"
   },
   {
     "name": "Chicago Data Portal",
@@ -7878,7 +7909,8 @@
     "category": "transport",
     "cors": "yes",
     "docs": "https://api.tfl.gov.uk",
-    "added": "2026-08-30"
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/tfl.gov.uk/v1/openapi.json"
   },
   {
     "name": "France Geo Communes",
@@ -8161,6 +8193,399 @@
     "category": "health",
     "cors": "yes",
     "docs": "https://www.who.int/data/gho/info/gho-odata-api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "AniList GraphQL",
+    "slug": "anilist-graphql",
+    "url": "https://graphql.anilist.co",
+    "probe": {
+      "method": "POST",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data.Page.media",
+      "body": "{\"query\":\"{ Page(perPage: 1) { media { id title { romaji } } } }\"}",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "anime",
+    "cors": "yes",
+    "docs": "https://docs.anilist.co/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Yu-Gi-Oh! Pro-Deck",
+    "slug": "yugioh-prodeck",
+    "url": "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=1&offset=0",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://ygoprodeck.com/api-guide/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Minecraft Player Lookup",
+    "slug": "mojang-profile",
+    "url": "https://api.mojang.com/users/profiles/minecraft/Notch",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "no",
+    "docs": "https://wiki.vg/Mojang_API",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "FreeToGame",
+    "slug": "freetogame",
+    "url": "https://www.freetogame.com/api/games",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$[0].id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://www.freetogame.com/api-doc",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Guild Wars 2 API",
+    "slug": "guildwars2",
+    "url": "https://api.guildwars2.com/v2/items?page=0&page_size=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$[0].id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://wiki.guildwars2.com/wiki/API",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Data Dragon (LoL)",
+    "slug": "ddragon-versions",
+    "url": "https://ddragon.leagueoflegends.com/api/versions.json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$[0]",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "yes",
+    "docs": "https://developer.riotgames.com/docs/lol",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Steam App Details",
+    "slug": "steam-appdetails",
+    "url": "https://store.steampowered.com/api/appdetails?appids=570",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.570.success",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "games",
+    "cors": "no",
+    "docs": "https://steamcommunity.com/dev",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Radio Browser",
+    "slug": "radio-browser",
+    "url": "https://de1.api.radio-browser.info/json/stations/topclick/1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$[0].name",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://api.radio-browser.info/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Mixcloud Search",
+    "slug": "mixcloud-search",
+    "url": "https://api.mixcloud.com/search/?q=jazz&type=cloudcast&limit=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "javascript",
+      "expectedJsonPath": "$.data",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "music",
+    "cors": "yes",
+    "docs": "https://www.mixcloud.com/developers/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "SMK Art Search",
+    "slug": "smk-art",
+    "url": "https://api.smk.dk/api/v1/art/search/?keys=*&page_size=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.items",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://api.smk.dk/documentation/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "V&A Museum Objects",
+    "slug": "vam-objects",
+    "url": "https://api.vam.ac.uk/v2/objects/search?q=chair&page_size=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.records",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://developers.vam.ac.uk/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Minneapolis Art Search",
+    "slug": "artsmia-search",
+    "url": "https://search.artsmia.org/cats",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.hits.hits[0]._id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "art-&-design",
+    "cors": "yes",
+    "docs": "https://github.com/artsmia",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Datamuse",
+    "slug": "datamuse",
+    "url": "https://api.datamuse.com/words?rel_syn=hot&max=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$[0].word",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "dictionaries",
+    "cors": "yes",
+    "docs": "https://www.datamuse.com/api/",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Color Pizza",
+    "slug": "colorpizza",
+    "url": "https://api.color.pizza/v1/00ff00",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.colors",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://github.com/meodai/color-api",
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/color.pizza/1.0.0/openapi.json"
+  },
+  {
+    "name": "The Color API",
+    "slug": "thecolorapi",
+    "url": "https://www.thecolorapi.com/id?hex=00ff00",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.hex.value",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://www.thecolorapi.com/docs",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Fontsource API",
+    "slug": "fontsource-fonts",
+    "url": "https://api.fontsource.org/v1/fonts",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$[0].id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://fontsource.org/docs/api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Google DNS-over-HTTPS",
+    "slug": "google-dns",
+    "url": "https://dns.google/resolve?name=example.com&type=A",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.Answer",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "tools",
+    "cors": "yes",
+    "docs": "https://developers.google.com/speed/public-dns/docs/dns-over-https",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Blockchain Ticker",
+    "slug": "blockchain-ticker",
+    "url": "https://blockchain.info/ticker?cors=true",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.USD",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "cryptocurrency",
+    "cors": "yes",
+    "docs": "https://www.blockchain.com/explorer/api",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "Internet Archive Search",
+    "slug": "archive-search",
+    "url": "https://archive.org/advancedsearch.php?q=collection%3Anasa&rows=1&output=json",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.response.docs",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "books",
+    "cors": "yes",
+    "docs": "https://archive.org/advancedsearch.php",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "wttr.in Weather",
+    "slug": "wttr-weather",
+    "url": "https://wttr.in/London?format=j1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedJsonPath": "$.current_condition",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "weather",
+    "cors": "yes",
+    "docs": "https://github.com/chubin/wttr.in",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "BART Route Info",
+    "slug": "bart-routes",
+    "url": "https://api.bart.gov/api/route.aspx?cmd=routeinfo&route=6&key=MW9S-E7SL-26DU-VV8V&json=y",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.root",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "transport",
+    "cors": "no",
+    "docs": "https://api.bart.gov/docs/overview/index.aspx",
+    "added": "2026-08-30"
+  },
+  {
+    "name": "DEV Community Articles",
+    "slug": "devto-articles",
+    "url": "https://dev.to/api/articles?per_page=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$[0].id",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "development",
+    "cors": "yes",
+    "docs": "https://developers.forem.com/api/v1",
+    "added": "2026-08-30",
+    "openapiUrl": "https://api.apis.guru/v2/specs/dev.to/1.0.0/openapi.json"
+  },
+  {
+    "name": "NVD CVE API",
+    "slug": "nvd-cve",
+    "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1",
+    "probe": {
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedContentType": "application/json",
+      "expectedJsonPath": "$.vulnerabilities",
+      "timeoutMs": 8000
+    },
+    "auth": "none",
+    "category": "security",
+    "cors": "yes",
+    "docs": "https://nvd.nist.gov/developers/vulnerabilities",
     "added": "2026-08-30"
   }
 ]

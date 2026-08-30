@@ -13,6 +13,8 @@ let historySummary = {};
 try { historySummary = JSON.parse(await fs.readFile(path.join(dataDir, "history-summary.json"), "utf8")); } catch {}
 let death = null;
 try { death = JSON.parse(await fs.readFile(path.join(dataDir, "death-report.json"), "utf8")); } catch {}
+let genDocs = {};
+try { genDocs = JSON.parse(await fs.readFile(path.join(dataDir, "generated-docs.json"), "utf8")); } catch {}
 const pct = Math.round(results.summary.ok/results.summary.total*100);
 const checked = new Date(results.checkedAt).toLocaleString();
 const byCat = {};
@@ -67,7 +69,12 @@ ${apis.map(api=>{
   const hist = historySummary[api.slug];
   const spark = hist?.sparkline || (r?.ok ? "\u2581\u2582\u2583\u2584\u2585\u2586\u2587\u2588".slice(0, Math.min(8, Math.ceil((r?.latencyMs||100)/250))) : "\u2581");
   const uptime = hist ? `${(hist.uptime30d*100).toFixed(1)}%` : "";
-  return `<tr data-cat="${esc(api.category)}" data-search="${esc(api.name+" "+api.slug+" "+api.category).toLowerCase()}"><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span></td><td>${r? (ok?`<span style="color:var(--ok)">\u25CF ${r.status}</span>`:`<span style="color:var(--bad)">\u25CF ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="${uptime} 30d ${spark}">${spark}</td><td><a href="${api.generatedDocs||api.docs}">Docs</a> <span class="badge">${ok?"live":"down"}</span></td><td><a href="${api.generatedDocs||api.docs}" class="badge">Try \u2192</a></td></tr>`;
+  const gen = genDocs[api.slug];
+  const docsCell = gen
+    ? `<a href="${gen}">View Docs</a> <span class="badge">${ok?"live":"down"}</span>`
+    : `<a href="${api.docs}">Docs</a> <span class="badge">${ok?"live":"down"}</span>`;
+  const tryCell = gen ? `<a href="${gen}" class="badge">Try It \u2192</a>` : `<a href="${api.docs}" class="badge">Try \u2192</a>`;
+  return `<tr data-cat="${esc(api.category)}" data-search="${esc(api.name+" "+api.slug+" "+api.category).toLowerCase()}"><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span></td><td>${r? (ok?`<span style="color:var(--ok)">\u25CF ${r.status}</span>`:`<span style="color:var(--bad)">\u25CF ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="${uptime} 30d ${spark}">${spark}</td><td>${docsCell}</td><td>${tryCell}</td></tr>`;
 }).join("")}
 </tbody></table></div></section>
 <p style="color:var(--muted);font-size:13px;margin:12px 2px">Tip: <code>npx apidocs submit</code> reads your <code>openapi.yaml</code> and opens a PR — directory grows without scraping.</p>

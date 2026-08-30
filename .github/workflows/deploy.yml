@@ -29,6 +29,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Build docs
         run: node packages/docs/src/cli/index.js build --input ./examples/petstore.yaml --output ./api-docs
+      - name: Rebuild search index (lunr + Pagefind via Node API)
+        run: node packages/docs/src/search/build-index.mjs ./api-docs
+      - name: Build per-slug directory docs (openapiUrl entries)
+        run: node packages/directory/scripts/build-docs.mjs
       - name: Build beautiful directory
         run: node packages/directory/scripts/build-web.mjs
       - uses: actions/configure-pages@v4

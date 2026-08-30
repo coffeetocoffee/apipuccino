@@ -6,11 +6,11 @@
 
 **Free, self-verifying API directory + offline OpenAPI docs generator.**
 
-[![Live](https://img.shields.io/badge/500%20APIs-verified-brightgreen?style=flat-square)](packages/directory/data/results.json) [![Check](https://img.shields.io/badge/health-nightly-blue?style=flat-square)](#verification-l0-l3) [![MIT](https://img.shields.io/badge/license-MIT-black?style=flat-square)](#free-forever) [![CC0](https://img.shields.io/badge/data-CC0-lightgrey?style=flat-square)](#free-forever) [![Node](https://img.shields.io/badge/node-%3E%3D20-339933?style=flat-square)](#quick-start) [![pnpm](https://img.shields.io/badge/pnpm-9-F69220?style=flat-square)](#quick-start)
+[![Live](https://img.shields.io/badge/550%20APIs-verified-brightgreen?style=flat-square)](packages/directory/data/results.json) [![Check](https://img.shields.io/badge/health-nightly-blue?style=flat-square)](#verification-l0-l3) [![MIT](https://img.shields.io/badge/license-MIT-black?style=flat-square)](#free-forever) [![CC0](https://img.shields.io/badge/data-CC0-lightgrey?style=flat-square)](#free-forever) [![Node](https://img.shields.io/badge/node-%3E%3D20-339933?style=flat-square)](#quick-start) [![pnpm](https://img.shields.io/badge/pnpm-9-F69220?style=flat-square)](#quick-start)
 
 **`apipuccino`** (directory) + **`apidocs`** (docs) → one flywheel, zero servers.
 
-[🎯 Browse 500 Live APIs](#browse) · [📚 Demo Docs](./api-docs/) · [⚡ Quick Start](#quick-start) · [🤝 Submit Yours](#submit)
+[🎯 Browse 550 Live APIs](#browse) · [📚 Demo Docs](./api-docs/) · [⚡ Quick Start](#quick-start) · [🤝 Submit Yours](#submit)
 
 </div>
 
@@ -52,7 +52,7 @@ npx apidocs build  ──►  prompt: submit?  ──►  directory grows  ─�
 
 pnpm install
 
-# 2. Directory — verify & check (500 APIs, ~2min)
+# 2. Directory — verify & check (550 APIs, ~3min)
 node packages/directory/scripts/verify.mjs   # zod validation
 node packages/directory/scripts/check.mjs    # L0/L1 + p-limit 5 + history/*.jsonl
 node packages/directory/scripts/history-graph.mjs
@@ -95,7 +95,7 @@ L3  openapiUrl reachable + ajv validate (phase 3)
 
 **Flow:** `cron 03:00 UTC` · `p-limit 5` · jitter `800-1600ms` · UA `ApipuccinoBot/2.0` · respect `Retry-After` · fail → re-probe Cloudflare Worker (`packages/directory/worker/index.js:8`) → both fail `⇒ consecutiveFailures++` → `≥3 days ⇒ Death Report issue` → pass `⇒ reset`. Commit only if `summary` changed. History appends to `history/YYYY-MM-DD.jsonl`, not git bloat.
 
-Current: **500 APIs across 252 hosts** — see `packages/directory/data/results.json:3`, sparkline from `history-summary.json:1`, drift from `drift-report.json:1`.
+Current: **550 APIs across 303 hosts (543/550 live — 98.7%)** — see `packages/directory/data/results.json:3`, sparkline from `history-summary.json:1`, drift from `drift-report.json:1`.
 
 ---
 
@@ -104,7 +104,7 @@ Current: **500 APIs across 252 hosts** — see `packages/directory/data/results.
 ```
 apipuccino/
 ├── packages/directory/data/{apis.json, results.json, history/*.jsonl}
-├── packages/directory/scripts/{check.mjs, verify.mjs, build-web.mjs, history-graph.mjs}
+├── packages/directory/scripts/{check.mjs, verify.mjs, build-docs.mjs, build-web.mjs, history-graph.mjs}
 ├── packages/directory/worker/{index.js, wrangler.toml}   # CF secondary probe
 ├── packages/docs/src/{cli, parser, generator, search, themes, playground, pdf, utils}
 ├── packages/docs/themes/{default,dark,monokai,nord}.css + print.css

@@ -18,6 +18,7 @@ const ProbeSchema = zod.object({
   expectedStatus: zod.number().int().min(100).max(599),
   expectedContentType: zod.string().optional(),
   expectedJsonPath: zod.string().optional(),
+  body: zod.string().optional(),
   timeoutMs: zod.number().int().min(1000).max(30000).default(8000),
 });
 
