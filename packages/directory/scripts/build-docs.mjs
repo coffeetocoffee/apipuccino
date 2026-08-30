@@ -2,7 +2,8 @@
 /**
  * build-docs.mjs — per-slug offline docs for directory entries with openapiUrl
  * spec URL -> parseSpec -> generatePages -> dist/docs/<slug>/ (+ lunr search data)
- * Writes packages/directory/data/generated-docs.json mapping { slug: "docs/<slug>/" }
+ * Writes packages/directory/data/generated-docs.json mapping { slug: { href, try, pages } }
+ * Footer embeds static live+30d badge (results.json + history-summary.json); [Try It] deep-links #try-it
  * Run from repo root: node packages/directory/scripts/build-docs.mjs
  */
 import fs from "node:fs/promises";
@@ -17,6 +18,10 @@ const APIS_JSON = path.join(dataDir, "apis.json");
 
 const apis = JSON.parse(await fs.readFile(APIS_JSON, "utf8"));
 const targets = apis.filter(a => a.openapiUrl);
+// live status (results.json) + 30d uptime (history-summary.json) for static badge embedding
+let bySlug = {}, uptime = {};
+try { bySlug = Object.fromEntries(JSON.parse(await fs.readFile(path.join(dataDir, "results.json"), "utf8")).results.map(r=>[r.slug,r])); } catch {}
+try { uptime = JSON.parse(await fs.readFile(path.join(dataDir, "history-summary.json"), "utf8")); } catch {}
 console.log(`build-docs: ${targets.length} entries with openapiUrl`);
 
 const results = [];
@@ -40,11 +45,17 @@ async function buildOne(api) {
     await fs.mkdir(path.dirname(tmp), { recursive: true });
     await fs.writeFile(tmp, normalized, "utf8");
     const spec = await parseSpec(tmp);
-    await generatePages(spec, { output: out, theme: "default" });
+    const r = bySlug[api.slug];
+    await generatePages(spec, {
+      output: out,
+      theme: "default",
+      slug: api.slug, // directory slug -> data-badge matches results.json
+      badge: { ok: r?.ok, status: r?.status, latencyMs: r?.latencyMs, uptime30d: uptime[api.slug]?.uptime30d },
+    });
     const data = await buildLunrData(out);
     await fs.writeFile(path.join(out, "search-index.json"), JSON.stringify(data), "utf8");
     await vendorLunr(out);
-    results.push({ slug: api.slug, pages: data.docs.length });
+    results.push({ slug: api.slug, pages: data.docs.length, try: `docs/${api.slug}/#try-it` });
     console.log(`✓ ${api.slug} — ${data.docs.length} pages`);
   } catch (e) {
     console.log(`✗ ${api.slug} — ${e.message?.slice(0, 100)}`);
@@ -65,7 +76,7 @@ const workers = Array.from({ length: 4 }, async () => {
 await Promise.all(workers);
 
 const mapping = {};
-for (const r of results) mapping[r.slug] = `docs/${r.slug}/`;
+for (const r of results) mapping[r.slug] = { href: `docs/${r.slug}/`, try: r.try, pages: r.pages };
 await fs.writeFile(path.join(dataDir, "generated-docs.json"), JSON.stringify(mapping, null, 2) + "\n", "utf8");
 await fs.rm(path.join(root, "dist", "docs", "_specs"), { recursive: true, force: true }); // temp spec files
 console.log(`\nbuild-docs: ${results.length}/${targets.length} generated → dist/docs/ (mapping: data/generated-docs.json)`);

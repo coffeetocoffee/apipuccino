@@ -18,3 +18,15 @@ describe("results.json shape", () => {
     expect(r.summary).toHaveProperty("total");
   });
 });
+
+describe("generated-docs.json shape", () => {
+  it("maps slug -> {href, try, pages} with #try-it deep-link", async () => {
+    const g = JSON.parse(await fs.readFile(new URL("../data/generated-docs.json", import.meta.url), "utf8"));
+    expect(Object.keys(g).length).toBeGreaterThan(0);
+    for (const [slug, v] of Object.entries(g)) {
+      expect(v.href).toBe(`docs/${slug}/`);
+      expect(v.try).toMatch(/^docs\/[a-z0-9-]+\/#try-it$/);
+      expect(v.pages).toBeGreaterThanOrEqual(1);
+    }
+  });
+});

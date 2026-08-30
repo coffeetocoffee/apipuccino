@@ -1,39 +1,187 @@
 {
-  "collegescorecard-1": "docs/collegescorecard-1/",
-  "dnd5e-abilities": "docs/dnd5e-abilities/",
-  "dnd-barbarian": "docs/dnd-barbarian/",
-  "dnd-spell": "docs/dnd-spell/",
-  "exchangerate-api-usd": "docs/exchangerate-api-usd/",
-  "github-api": "docs/github-api/",
-  "github-emojis": "docs/github-emojis/",
-  "github-node": "docs/github-node/",
-  "github-repo": "docs/github-repo/",
-  "httpbin": "docs/httpbin/",
-  "httpbin-anything": "docs/httpbin-anything/",
-  "httpbin-ip": "docs/httpbin-ip/",
-  "httpbin-json": "docs/httpbin-json/",
-  "image-charts": "docs/image-charts/",
-  "imagecharts-line": "docs/imagecharts-line/",
-  "imagecharts-qr": "docs/imagecharts-qr/",
-  "portfolio-optimizer": "docs/portfolio-optimizer/",
-  "quickchart": "docs/quickchart/",
-  "quickchart-pie": "docs/quickchart-pie/",
-  "quickchart-qr": "docs/quickchart-qr/",
-  "tvmaze": "docs/tvmaze/",
-  "stackexchange-tags": "docs/stackexchange-tags/",
-  "stackexchange-questions": "docs/stackexchange-questions/",
-  "stackexchange-qs": "docs/stackexchange-qs/",
-  "tvmaze-episode": "docs/tvmaze-episode/",
-  "tvmaze-people": "docs/tvmaze-people/",
-  "tvmaze-search": "docs/tvmaze-search/",
-  "europepmc-covid": "docs/europepmc-covid/",
-  "apis-guru-list": "docs/apis-guru-list/",
-  "openf1-drivers": "docs/openf1-drivers/",
-  "xkcd-latest": "docs/xkcd-latest/",
-  "weathergov-points": "docs/weathergov-points/",
-  "languagetool-langs": "docs/languagetool-langs/",
-  "colorpizza": "docs/colorpizza/",
-  "tfl-line-modes": "docs/tfl-line-modes/",
-  "devto-articles": "docs/devto-articles/",
-  "gitlab-gitlab": "docs/gitlab-gitlab/"
+  "collegescorecard-1": {
+    "href": "docs/collegescorecard-1/",
+    "try": "docs/collegescorecard-1/#try-it",
+    "pages": 4
+  },
+  "dnd5e-abilities": {
+    "href": "docs/dnd5e-abilities/",
+    "try": "docs/dnd5e-abilities/#try-it",
+    "pages": 48
+  },
+  "dnd-spell": {
+    "href": "docs/dnd-spell/",
+    "try": "docs/dnd-spell/#try-it",
+    "pages": 48
+  },
+  "dnd-barbarian": {
+    "href": "docs/dnd-barbarian/",
+    "try": "docs/dnd-barbarian/#try-it",
+    "pages": 48
+  },
+  "exchangerate-api-usd": {
+    "href": "docs/exchangerate-api-usd/",
+    "try": "docs/exchangerate-api-usd/#try-it",
+    "pages": 2
+  },
+  "github-node": {
+    "href": "docs/github-node/",
+    "try": "docs/github-node/#try-it",
+    "pages": 30
+  },
+  "github-api": {
+    "href": "docs/github-api/",
+    "try": "docs/github-api/#try-it",
+    "pages": 30
+  },
+  "github-emojis": {
+    "href": "docs/github-emojis/",
+    "try": "docs/github-emojis/#try-it",
+    "pages": 30
+  },
+  "httpbin": {
+    "href": "docs/httpbin/",
+    "try": "docs/httpbin/#try-it",
+    "pages": 53
+  },
+  "github-repo": {
+    "href": "docs/github-repo/",
+    "try": "docs/github-repo/#try-it",
+    "pages": 30
+  },
+  "httpbin-anything": {
+    "href": "docs/httpbin-anything/",
+    "try": "docs/httpbin-anything/#try-it",
+    "pages": 53
+  },
+  "httpbin-ip": {
+    "href": "docs/httpbin-ip/",
+    "try": "docs/httpbin-ip/#try-it",
+    "pages": 53
+  },
+  "image-charts": {
+    "href": "docs/image-charts/",
+    "try": "docs/image-charts/#try-it",
+    "pages": 3
+  },
+  "imagecharts-line": {
+    "href": "docs/imagecharts-line/",
+    "try": "docs/imagecharts-line/#try-it",
+    "pages": 3
+  },
+  "imagecharts-qr": {
+    "href": "docs/imagecharts-qr/",
+    "try": "docs/imagecharts-qr/#try-it",
+    "pages": 3
+  },
+  "httpbin-json": {
+    "href": "docs/httpbin-json/",
+    "try": "docs/httpbin-json/#try-it",
+    "pages": 53
+  },
+  "quickchart-pie": {
+    "href": "docs/quickchart-pie/",
+    "try": "docs/quickchart-pie/#try-it",
+    "pages": 3
+  },
+  "quickchart": {
+    "href": "docs/quickchart/",
+    "try": "docs/quickchart/#try-it",
+    "pages": 3
+  },
+  "quickchart-qr": {
+    "href": "docs/quickchart-qr/",
+    "try": "docs/quickchart-qr/#try-it",
+    "pages": 3
+  },
+  "portfolio-optimizer": {
+    "href": "docs/portfolio-optimizer/",
+    "try": "docs/portfolio-optimizer/#try-it",
+    "pages": 84
+  },
+  "tvmaze": {
+    "href": "docs/tvmaze/",
+    "try": "docs/tvmaze/#try-it",
+    "pages": 35
+  },
+  "stackexchange-tags": {
+    "href": "docs/stackexchange-tags/",
+    "try": "docs/stackexchange-tags/#try-it",
+    "pages": 125
+  },
+  "stackexchange-qs": {
+    "href": "docs/stackexchange-qs/",
+    "try": "docs/stackexchange-qs/#try-it",
+    "pages": 125
+  },
+  "tvmaze-episode": {
+    "href": "docs/tvmaze-episode/",
+    "try": "docs/tvmaze-episode/#try-it",
+    "pages": 35
+  },
+  "stackexchange-questions": {
+    "href": "docs/stackexchange-questions/",
+    "try": "docs/stackexchange-questions/#try-it",
+    "pages": 125
+  },
+  "tvmaze-search": {
+    "href": "docs/tvmaze-search/",
+    "try": "docs/tvmaze-search/#try-it",
+    "pages": 35
+  },
+  "europepmc-covid": {
+    "href": "docs/europepmc-covid/",
+    "try": "docs/europepmc-covid/#try-it",
+    "pages": 14
+  },
+  "tvmaze-people": {
+    "href": "docs/tvmaze-people/",
+    "try": "docs/tvmaze-people/#try-it",
+    "pages": 35
+  },
+  "apis-guru-list": {
+    "href": "docs/apis-guru-list/",
+    "try": "docs/apis-guru-list/#try-it",
+    "pages": 8
+  },
+  "openf1-drivers": {
+    "href": "docs/openf1-drivers/",
+    "try": "docs/openf1-drivers/#try-it",
+    "pages": 11
+  },
+  "weathergov-points": {
+    "href": "docs/weathergov-points/",
+    "try": "docs/weathergov-points/#try-it",
+    "pages": 116
+  },
+  "languagetool-langs": {
+    "href": "docs/languagetool-langs/",
+    "try": "docs/languagetool-langs/#try-it",
+    "pages": 6
+  },
+  "colorpizza": {
+    "href": "docs/colorpizza/",
+    "try": "docs/colorpizza/#try-it",
+    "pages": 5
+  },
+  "tfl-line-modes": {
+    "href": "docs/tfl-line-modes/",
+    "try": "docs/tfl-line-modes/#try-it",
+    "pages": 85
+  },
+  "xkcd-latest": {
+    "href": "docs/xkcd-latest/",
+    "try": "docs/xkcd-latest/#try-it",
+    "pages": 3
+  },
+  "gitlab-gitlab": {
+    "href": "docs/gitlab-gitlab/",
+    "try": "docs/gitlab-gitlab/#try-it",
+    "pages": 359
+  },
+  "devto-articles": {
+    "href": "docs/devto-articles/",
+    "try": "docs/devto-articles/#try-it",
+    "pages": 36
+  }
 }

@@ -5,7 +5,7 @@
 <pre class="sample curl"><code><%= samples.curl %></code></pre>
 <pre class="sample js"><code><%= samples.js %></code></pre>
 <pre class="sample python"><code><%= samples.python %></code></pre>
-<section class="playground" data-try-it data-method="<%= method %>" data-url="<%= servers[0]?.url || '' %><%= path %>">
+<section class="playground" <%- anchor ? `id="${anchor}"` : "" %> data-try-it data-method="<%= method %>" data-url="<%= servers[0]?.url || '' %><%= path %>">
 <h3>Try It</h3>
 <label>Auth <input data-auth placeholder="Bearer …"></label>
 <button data-send>Send</button>

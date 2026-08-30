@@ -22,6 +22,7 @@ for(const a of apis) byCat[a.category] = (byCat[a.category]||0)+1;
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
 const catChips = Object.entries(byCat).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<a href="#browse" class="cat" data-cat="${esc(c)}" title="Filter by ${esc(c)}">${c} ${n}</a>`).join(" ");
 const topHistory = Object.entries(historySummary).sort((a,b)=>b[1].uptime30d - a[1].uptime30d).slice(0,5);
+const docsCount = apis.filter(a => genDocs[a.slug]).length;
 
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apipuccino — Nobody lists dead APIs.</title><meta name="description" content="Nobody lists dead APIs. Free, self-verifying directory (${results.summary.ok}/${results.summary.total} live) + offline docs."><style>
 :root{--bg:#fcfcf9;--fg:#0f172a;--muted:#64748b;--border:#e2e8f0;--card:#fff;--accent:#0ea5e9;--accent-2:#8b5cf6;--ok:#16a34a;--bad:#dc2626;--radius:16px;--shadow:0 8px 30px rgba(15,23,42,.06)}
@@ -49,7 +50,7 @@ td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:middle
 tr:hover td{background:color-mix(in srgb, var(--accent) 6%, var(--card))}
 code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;padding:2px 6px;border-radius:6px;background:var(--bg);border:1px solid var(--border)}
 .badge{font-size:11px;padding:4px 8px;border-radius:999px;background:var(--bg);border:1px solid var(--border)}
-.cat{font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:2px 6px;border-radius:999px;cursor:pointer;transition:all .15s}
+.cat{font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:2px 6px;border-radius:999px;cursor:pointer;transition:all .15s;background:transparent;font-family:inherit}
 .cat:hover{text-decoration:none;color:var(--accent);border-color:var(--accent)}
 .cat.on{background:var(--accent);border-color:var(--accent);color:#fff}
 footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
@@ -62,25 +63,27 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 <div class="cta"><a class="btn" href="#browse">Browse APIs</a><a class="btn sec" href="https://github.com/coffeetocoffee/apipuccino#quick-start">npx apidocs build</a></div></section>
 ${death?.deaths?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fef2f2;border-color:#dc2626"><b>\u25CF Death Report (${death.deaths.length})</b> — failing \u22653 days: ${death.deaths.map(d=>`<code>${d.slug}</code>`).join(", ")}</section>` : "" }
 <section class="card" style="margin:12px 0;padding:14px"><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><b>Categories</b> <span style="color:var(--muted);font-size:11px">(click to filter — click again to clear)</span>: ${catChips}</div>${topHistory.length ? `<div style="margin-top:10px;color:var(--muted);font-size:12px">Top 30d uptime: ${topHistory.map(([s,h])=>`<code>${s}</code> ${(h.uptime30d*100).toFixed(0)}% ${h.sparkline}`).join(" · ")}</div>` : ""}<details style="margin-top:8px"><summary style="cursor:pointer;color:var(--accent)">History graph (30d)</summary><pre style="overflow:auto;font-size:11px;background:var(--bg);padding:8px;border-radius:8px">${Object.entries(historySummary).slice(0,12).map(([s,h])=>`${s.padEnd(22)} ${h.sparkline} ${(h.uptime30d*100).toFixed(1)}% avg ${h.avgLatencyMs||0}ms`).join("\n")}</pre><a href="./history-summary.json" style="font-size:12px">→ full history-summary.json</a></details></section>
-<section id="browse" class="card"><div class="toolbar"><label class="search">\uD83D\uDD0D <input id="q" placeholder="Search APIs (name, category, slug)…"><span style="color:var(--muted);font-size:13px">${results.summary.total} APIs</span></label><span style="color:var(--muted);font-size:13px"><a href="https://github.com/coffeetocoffee/apipuccino/actions">Health Check</a> \u00B7 <a href="./api-docs/">Demo</a> \u00B7 <a href="./history-summary.json">History</a></span></div>
+<section id="browse" class="card"><div class="toolbar"><label class="search">\uD83D\uDD0D <input id="q" placeholder="Search APIs (name, category, slug)…"><span style="color:var(--muted);font-size:13px">${results.summary.total} APIs</span></label><span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button type="button" id="docs-chip" class="cat" title="Show only entries with generated offline docs">\uD83D\uDCDA docs ${docsCount}</button><span style="color:var(--muted);font-size:13px"><a href="https://github.com/coffeetocoffee/apipuccino/actions">Health Check</a> \u00B7 <a href="./api-docs/">Demo</a> \u00B7 <a href="./history-summary.json">History</a></span></span></div>
 <div style="overflow:auto"><table><thead><tr><th>API</th><th>Status</th><th>Latency</th><th>Sparkline</th><th>Docs</th><th>Try</th></tr></thead><tbody id="tbody">
 ${apis.map(api=>{
   const r=bySlug[api.slug]; const ok=r?.ok; const lat=r?.latencyMs?`${r.latencyMs}ms`:"—";
   const hist = historySummary[api.slug];
   const spark = hist?.sparkline || (r?.ok ? "\u2581\u2582\u2583\u2584\u2585\u2586\u2587\u2588".slice(0, Math.min(8, Math.ceil((r?.latencyMs||100)/250))) : "\u2581");
   const uptime = hist ? `${(hist.uptime30d*100).toFixed(1)}%` : "";
-  const gen = genDocs[api.slug];
-  const docsCell = gen
-    ? `<a href="${gen}">View Docs</a> <span class="badge">${ok?"live":"down"}</span>`
+  const gen = genDocs[api.slug]; // {href, try, pages} or legacy "docs/<slug>/"
+  const genHref = typeof gen === "string" ? gen : gen?.href;
+  const genTry = (typeof gen === "string" ? `${gen}#try-it` : gen?.try) || (genHref ? `${genHref}#try-it` : null);
+  const docsCell = genHref
+    ? `<a href="${genHref}">View Docs</a> <span class="badge">${ok?"live":"down"}</span>`
     : `<a href="${api.docs}">Docs</a> <span class="badge">${ok?"live":"down"}</span>`;
-  const tryCell = gen ? `<a href="${gen}" class="badge">Try It \u2192</a>` : `<a href="${api.docs}" class="badge">Try \u2192</a>`;
-  return `<tr data-cat="${esc(api.category)}" data-search="${esc(api.name+" "+api.slug+" "+api.category).toLowerCase()}"><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span></td><td>${r? (ok?`<span style="color:var(--ok)">\u25CF ${r.status}</span>`:`<span style="color:var(--bad)">\u25CF ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="${uptime} 30d ${spark}">${spark}</td><td>${docsCell}</td><td>${tryCell}</td></tr>`;
+  const tryCell = genTry ? `<a href="${genTry}" class="badge" title="Try It playground — first endpoint">Try It \u2192</a>` : `<a href="${api.docs}" class="badge">Try \u2192</a>`;
+  return `<tr data-cat="${esc(api.category)}" data-search="${esc(api.name+" "+api.slug+" "+api.category).toLowerCase()}"${genHref?` data-docs="1"`:""}><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span>${genHref?` <a href="${genTry}" class="badge" style="color:var(--accent-2)" title="Generated offline docs">\uD83D\uDCDA docs</a>`:""}</td><td>${r? (ok?`<span style="color:var(--ok)">\u25CF ${r.status}</span>`:`<span style="color:var(--bad)">\u25CF ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="${uptime} 30d ${spark}">${spark}</td><td>${docsCell}</td><td>${tryCell}</td></tr>`;
 }).join("")}
 </tbody></table></div></section>
 <p style="color:var(--muted);font-size:13px;margin:12px 2px">Tip: <code>npx apidocs submit</code> reads your <code>openapi.yaml</code> and opens a PR — directory grows without scraping.</p>
 <footer>Generated by <code>npx apidocs build</code> — Free Forever MIT+CC0 — <a href="https://github.com/coffeetocoffee/apipuccino">coffeetocoffee/apipuccino</a></footer>
 </main>
-<script>const q=document.getElementById('q'),rows=[...document.querySelectorAll('#tbody tr')],chips=[...document.querySelectorAll('a.cat[data-cat]')];let activeCat=null;function apply(){const t=q.value.trim().toLowerCase();rows.forEach(r=>{const okT=!t||r.dataset.search.includes(t);const okC=!activeCat||r.dataset.cat===activeCat;r.style.display=(okT&&okC)?'':'none'})}q.addEventListener('input',apply);chips.forEach(ch=>ch.addEventListener('click',()=>{const c=ch.dataset.cat;activeCat=(activeCat===c)?null:c;chips.forEach(x=>x.classList.toggle('on',x.dataset.cat===activeCat));apply()}));</script>
+<script>const q=document.getElementById('q'),rows=[...document.querySelectorAll('#tbody tr')],chips=[...document.querySelectorAll('a.cat[data-cat]')],docsChip=document.getElementById('docs-chip');let activeCat=null,docsOnly=false;function apply(){const t=q.value.trim().toLowerCase();rows.forEach(r=>{const okT=!t||r.dataset.search.includes(t);const okC=!activeCat||r.dataset.cat===activeCat;const okD=!docsOnly||r.dataset.docs==='1';r.style.display=(okT&&okC&&okD)?'':'none'})}q.addEventListener('input',apply);chips.forEach(ch=>ch.addEventListener('click',()=>{const c=ch.dataset.cat;activeCat=(activeCat===c)?null:c;chips.forEach(x=>x.classList.toggle('on',x.dataset.cat===activeCat));apply()}));if(docsChip)docsChip.addEventListener('click',()=>{docsOnly=!docsOnly;docsChip.classList.toggle('on',docsOnly);apply()});</script>
 </body></html>`;
 
 const dist = path.join(root, "dist");

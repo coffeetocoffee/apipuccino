@@ -25,11 +25,11 @@ function sampleFor(op, path, method, servers) {
   };
 }
 
-function playgroundForm(op, path, method, servers) {
+function playgroundForm(op, path, method, servers, anchor) {
   const base = servers?.[0]?.url || "";
   const params = op.parameters || [];
   const paramInputs = params.map(p => `<label>${p.name} (${p.in}) <input data-param="${p.name}" data-in="${p.in}" placeholder="${p.schema?.example ?? ""}" ${p.required?"required":""}></label>`).join("");
-  return `<section class="playground" data-try-it data-method="${method}" data-path="${path}" data-base="${base}">
+  return `<section class="playground" ${anchor ? `id="${anchor}" ` : ""}data-try-it data-method="${method}" data-path="${path}" data-base="${base}">
 <h3>Try It (offline-first)</h3>
 <div class="params">${paramInputs || "<em>no params</em>"}</div>
 <label>Auth <input data-auth placeholder="Bearer <token>"></label>
@@ -47,6 +47,14 @@ export async function generatePages(spec, cfg) {
   const nav = extractNavigation(pages);
   const servers = spec.servers || [];
   const slug = (spec.info?.title || "api").toLowerCase().replace(/[^a-z0-9]+/g,"-");
+  // directory slug (cfg.slug) wins for badge lookup in results.json; fall back to title-derived
+  const badgeSlug = cfg.slug || slug;
+  // static badge embedded at build time (live status + 30d uptime) — offline-first, badge.js refreshes at runtime
+  const b = cfg.badge || {};
+  const badgeHtml = b.ok == null ? ""
+    : b.ok
+      ? `<span style="color:var(--ok,#16a34a);font-weight:600">\u25CF Live ${b.status ?? 200}\u2014 ${(b.uptime30d ?? 1) > 0 ? `${(b.uptime30d*100).toFixed(1)}% 30d` : "new"}</span>`
+      : `<span style="color:var(--bad,#dc2626);font-weight:600">\u25CF Down ${b.status ?? ""}\u2014 ${b.uptime30d ? `${(b.uptime30d*100).toFixed(1)}% 30d` : "failing"}</span>`;
 
   // Try EJS render if available, else fallback
   let themeToggleInline = `(()=>{const t=localStorage.getItem("apipuccino-theme")|| (matchMedia("(prefers-color-scheme:dark)").matches?"dark":"default"); document.documentElement.dataset.theme=t;})();`;
@@ -56,27 +64,29 @@ export async function generatePages(spec, cfg) {
     const { buildVersionOptions } = await import("../utils/version-switcher.js");
     versionOptions = buildVersionOptions(cfg);
   } catch {}
+  // per-slug builds have one input -> show current spec version as a static label in the switcher
+  if (!versionOptions && spec.info?.version) versionOptions = `<option selected disabled>v${spec.info.version}</option>`;
 
   // Read EJS templates if present
   let useEjs = false, ejs, baseEjs, endpointEjs;
   try { ejs = (await import("ejs")).default; baseEjs = await fs.readFile(path.resolve("packages/docs/templates/base.ejs"),"utf8"); endpointEjs = await fs.readFile(path.resolve("packages/docs/templates/endpoint.ejs"),"utf8"); useEjs = true; } catch {}
 
   // Build main content with per-endpoint sections + playground + samples
-  const content = pages.map(p => {
+  const content = pages.map((p, i) => {
     const samples = sampleFor(p.operation, p.path, p.method, servers);
-    const playground = playgroundForm(p.operation, p.path, p.method, servers);
+    const playground = playgroundForm(p.operation, p.path, p.method, servers, i === 0 ? "try-it" : null);
     if (useEjs) {
-      try { return ejs.render(endpointEjs, { path: p.path, method: p.method, operation: p.operation, servers, samples }); } catch {}
+      try { return ejs.render(endpointEjs, { path: p.path, method: p.method, operation: p.operation, servers, samples, anchor: i === 0 ? "try-it" : null }); } catch {}
     }
     return `<article class="endpoint"><h2><span class="method-${p.method.toLowerCase()}">${p.method}</span> ${p.path}</h2><p>${p.operation.summary||""}</p><h3>Samples</h3><pre><code>${samples.curl}</code></pre><pre><code>${samples.js}</code></pre><pre><code>${samples.python}</code></pre>${playground}</article>`;
   }).join("\n");
 
   let html;
   if (useEjs) {
-    try { html = ejs.render(baseEjs, { info: spec.info, theme: cfg.theme||"default", basePath: "./", slug, sidebar: sidebarHtml, content: content + `<div id="search"></div>`, themeToggleInline, versionOptions }); } catch { useEjs = false; }
+    try { html = ejs.render(baseEjs, { info: spec.info, theme: cfg.theme||"default", basePath: "./", slug, badgeSlug, badgeHtml, tryIt: pages.length > 0, sidebar: sidebarHtml, content: content + `<div id="search"></div>`, themeToggleInline, versionOptions }); } catch { useEjs = false; }
   }
   if (!useEjs) {
-    html = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${spec.info?.title||"API Docs"}</title><link rel="stylesheet" href="./themes/${cfg.theme||"default"}.css"><link rel="stylesheet" href="./print.css" media="print"><script>${themeToggleInline}</script></head><body data-theme="${cfg.theme||"default"}"><header class="no-print"><button id="theme-toggle">Toggle</button> <select id="version-switcher">${versionOptions}</select></header><nav>${sidebarHtml}</nav><main><h1>${spec.info?.title||""} <small>${spec.info?.version||""}</small></h1><p>${spec.info?.description||""}</p><div id="search"></div>${content}</main><footer>Verified by <a href="https://github.com/coffeetocoffee/apipuccino">Apipuccino</a> — <span data-badge="${slug}">loading badge…</span> <img data-shield alt="badge" src="https://img.shields.io/badge/live-brightgreen"></footer><script src="./badge.js"></script><script src="./playground.js"></script><script src="./search.js"></script><script src="./theme-toggle.js"></script></body></html>`;
+    html = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${spec.info?.title||"API Docs"}</title><link rel="stylesheet" href="./themes/${cfg.theme||"default"}.css"><link rel="stylesheet" href="./print.css" media="print"><script>${themeToggleInline}</script></head><body data-theme="${cfg.theme||"default"}"><header class="no-print"><button id="theme-toggle">Toggle</button>${versionOptions ? ` <select id="version-switcher">${versionOptions}</select>` : ""}</header><nav>${sidebarHtml}</nav><main><h1>${spec.info?.title||""} <small>${spec.info?.version||""}</small></h1><p>${spec.info?.description||""}</p><div id="search"></div>${content}</main><footer>Verified by <a href="https://github.com/coffeetocoffee/apipuccino">Apipuccino</a> — ${badgeHtml} <span data-badge="${badgeSlug}">loading badge…</span> <img data-shield alt="badge" src="https://img.shields.io/badge/live-brightgreen">${pages.length ? ` — <a href="#try-it">Try It</a>` : ""}</footer><script src="./badge.js"></script><script src="./playground.js"></script><script src="./search.js"></script><script src="./theme-toggle.js"></script></body></html>`;
   }
   await fs.writeFile(path.join(out, "index.html"), html, "utf8");
 
@@ -87,7 +97,7 @@ export async function generatePages(spec, cfg) {
     await fs.mkdir(dir, { recursive: true });
     const samples = sampleFor(p.operation, p.path, p.method, servers);
     const playground = playgroundForm(p.operation, p.path, p.method, servers);
-    const epHtml = useEjs ? ejs.render(endpointEjs, { path: p.path, method: p.method, operation: p.operation, servers, samples }) + playground : `<h2>${p.method} ${p.path}</h2><pre>${samples.curl}</pre>${playground}`;
+    const epHtml = useEjs ? ejs.render(endpointEjs, { path: p.path, method: p.method, operation: p.operation, servers, samples, anchor: null }) + playground : `<h2>${p.method} ${p.path}</h2><pre>${samples.curl}</pre>${playground}`;
     await fs.writeFile(path.join(dir, `${p.operation.operationId||p.path.replace(/[^a-z0-9]/gi,'-')}.html`), epHtml, "utf8");
   }
 
