@@ -1,6 +1,6 @@
 {
   "name": "@apipuccino/docs",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "Apipuccino apidocs — offline-first OpenAPI docs generator (Printing-Press killer)",
   "type": "module",
   "license": "MIT",

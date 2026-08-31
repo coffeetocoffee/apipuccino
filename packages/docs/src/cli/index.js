@@ -5,7 +5,7 @@ import path from "node:path";
 import fs from "node:fs/promises";
 
 const program = new Command();
-program.name("apidocs").description("Apipuccino apidocs — offline OpenAPI docs generator").version("3.3.0");
+program.name("apidocs").description("Apipuccino apidocs — offline OpenAPI docs generator").version("3.4.0");
 
 program.command("init").description("scaffold apidocs.config.js + example openapi.yaml").action(async () => {
   const cfg = `/** @type {import('@apipuccino/docs').ApidocsConfig} */\nexport default { input: "./openapi.yaml", output: "./api-docs", theme: "default" };\n`;
