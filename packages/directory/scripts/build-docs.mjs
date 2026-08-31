@@ -50,7 +50,7 @@ async function buildOne(api) {
       output: out,
       theme: "default",
       slug: api.slug, // directory slug -> data-badge matches results.json
-      badge: { ok: r?.ok, status: r?.status, latencyMs: r?.latencyMs, uptime30d: uptime[api.slug]?.uptime30d },
+      badge: { ok: r?.ok, status: r?.status, latencyMs: r?.latencyMs, uptime30d: uptime[api.slug]?.uptime30d, last30: uptime[api.slug]?.last30, sparkline: uptime[api.slug]?.sparkline },
     });
     const data = await buildLunrData(out);
     await fs.writeFile(path.join(out, "search-index.json"), JSON.stringify(data), "utf8");

@@ -67,9 +67,19 @@ export async function generatePages(spec, cfg) {
   // per-slug builds have one input -> show current spec version as a static label in the switcher
   if (!versionOptions && spec.info?.version) versionOptions = `<option selected disabled>v${spec.info.version}</option>`;
 
+  // Inline SVG sparkline from last30 (1/0 array) — offline-first footer graphic
+  function sparkSvg(last30, uptime30d) {
+    if (!Array.isArray(last30) || !last30.length) return "";
+    const step = 4, w = last30.length * step, h = 16;
+    const rects = last30.map((v,i)=>`<rect x="${i*step}" y="2" width="3" height="12" rx="1" fill="${v ? "var(--ok,#16a34a)" : "var(--bad,#dc2626)"}"></rect>`).join("");
+    const label = uptime30d != null ? `${(uptime30d*100).toFixed(0)}% 30d` : "uptime";
+    return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}" style="vertical-align:middle">${rects}</svg>`;
+  }
+  const sparkSvgHtml = b.last30 ? sparkSvg(b.last30, b.uptime30d) : (b.sparkline ? `<span class="spark">${b.sparkline}</span>` : "");
+
   // Read EJS templates if present
-  let useEjs = false, ejs, baseEjs, endpointEjs;
-  try { ejs = (await import("ejs")).default; baseEjs = await fs.readFile(path.resolve("packages/docs/templates/base.ejs"),"utf8"); endpointEjs = await fs.readFile(path.resolve("packages/docs/templates/endpoint.ejs"),"utf8"); useEjs = true; } catch {}
+  let useEjs = false, ejs, baseEjs, endpointEjs, sidebarEjs;
+  try { ejs = (await import("ejs")).default; baseEjs = await fs.readFile(path.resolve("packages/docs/templates/base.ejs"),"utf8"); endpointEjs = await fs.readFile(path.resolve("packages/docs/templates/endpoint.ejs"),"utf8"); sidebarEjs = await fs.readFile(path.resolve("packages/docs/templates/partials/sidebar.ejs"),"utf8"); useEjs = true; } catch {}
 
   // Build main content with per-endpoint sections + playground + samples
   const content = pages.map((p, i) => {
@@ -83,22 +93,34 @@ export async function generatePages(spec, cfg) {
 
   let html;
   if (useEjs) {
-    try { html = ejs.render(baseEjs, { info: spec.info, theme: cfg.theme||"default", basePath: "./", slug, badgeSlug, badgeHtml, tryIt: pages.length > 0, sidebar: sidebarHtml, content: content + `<div id="search"></div>`, themeToggleInline, versionOptions }); } catch { useEjs = false; }
+    try { html = ejs.render(baseEjs, { info: spec.info, theme: cfg.theme||"default", basePath: "./", slug, badgeSlug, badgeHtml, sparkSvg: sparkSvgHtml, tryIt: pages.length > 0, sidebar: sidebarHtml, content: content + `<div id="search"></div>`, themeToggleInline, versionOptions }); } catch { useEjs = false; }
   }
   if (!useEjs) {
     html = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${spec.info?.title||"API Docs"}</title><link rel="stylesheet" href="./themes/${cfg.theme||"default"}.css"><link rel="stylesheet" href="./print.css" media="print"><script>${themeToggleInline}</script></head><body data-theme="${cfg.theme||"default"}"><header class="no-print"><button id="theme-toggle">Toggle</button>${versionOptions ? ` <select id="version-switcher">${versionOptions}</select>` : ""}</header><nav>${sidebarHtml}</nav><main><h1>${spec.info?.title||""} <small>${spec.info?.version||""}</small></h1><p>${spec.info?.description||""}</p><div id="search"></div>${content}</main><footer>Verified by <a href="https://github.com/coffeetocoffee/apipuccino">Apipuccino</a> — ${badgeHtml} <span data-badge="${badgeSlug}">loading badge…</span> <img data-shield alt="badge" src="https://img.shields.io/badge/live-brightgreen">${pages.length ? ` — <a href="#try-it">Try It</a>` : ""}</footer><script src="./badge.js"></script><script src="./playground.js"></script><script src="./search.js"></script><script src="./theme-toggle.js"></script></body></html>`;
   }
   await fs.writeFile(path.join(out, "index.html"), html, "utf8");
 
-  // Also write per-endpoint files (endpoint/ + schemas/)
+  // Also write per-endpoint files as full styled pages (one level deeper -> basePath "../")
   for (const p of pages) {
     const tag = (p.tags?.[0] || "default");
     const dir = path.join(out, "endpoints", tag);
     await fs.mkdir(dir, { recursive: true });
     const samples = sampleFor(p.operation, p.path, p.method, servers);
-    const playground = playgroundForm(p.operation, p.path, p.method, servers);
-    const epHtml = useEjs ? ejs.render(endpointEjs, { path: p.path, method: p.method, operation: p.operation, servers, samples, anchor: null }) + playground : `<h2>${p.method} ${p.path}</h2><pre>${samples.curl}</pre>${playground}`;
-    await fs.writeFile(path.join(dir, `${p.operation.operationId||p.path.replace(/[^a-z0-9]/gi,'-')}.html`), epHtml, "utf8");
+    if (useEjs) {
+      const epFragment = ejs.render(endpointEjs, { path: p.path, method: p.method, operation: p.operation, servers, samples, anchor: "try-it" });
+      const epSidebar = ejs.render(sidebarEjs, { navigation: nav, basePath: "../" });
+      const epHtml = ejs.render(baseEjs, {
+        info: spec.info, theme: cfg.theme||"default", basePath: "../",
+        slug, badgeSlug, badgeHtml, sparkSvg: sparkSvgHtml, tryIt: true,
+        sidebar: epSidebar, content: epFragment + `<div id="search"></div>`,
+        themeToggleInline, versionOptions,
+      });
+      await fs.writeFile(path.join(dir, `${p.operation.operationId||p.path.replace(/[^a-z0-9]/gi,'-')}.html`), epHtml, "utf8");
+    } else {
+      const playlist = playgroundForm(p.operation, p.path, p.method, servers);
+      const epHtml = `<article><h2>${p.method} ${p.path}</h2><pre>${samples.curl}</pre>${playlist}</article>`;
+      await fs.writeFile(path.join(dir, `${p.operation.operationId||p.path.replace(/[^a-z0-9]/gi,'-')}.html`), epHtml, "utf8");
+    }
   }
 
   // Copy static assets (playground.js, badge.js, search.js, theme-toggle.js, print.css)

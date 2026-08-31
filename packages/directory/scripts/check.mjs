@@ -21,7 +21,8 @@ const CONCURRENCY = 5;
 const JITTER_MIN = 800;
 const JITTER_MAX = 1600;
 const UA = "ApipuccinoBot/2.0 (+https://github.com/coffeetocoffee/apipuccino)";
-const CF_WORKER_URL = process.env.CF_WORKER_URL || ""; // e.g. https://apipuccino-probe.workers.dev/?url=
+// e.g. https://apipuccino-probe.workers.dev/?url= — comma-separated for multiple regions (dual-region re-probe)
+const CF_WORKER_URL = (process.env.CF_WORKER_URL || "").split(",").map(s => s.trim()).filter(Boolean);
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 function jitter() { return JITTER_MIN + Math.random() * (JITTER_MAX - JITTER_MIN); }
@@ -198,18 +199,24 @@ if (api.openapiUrl) {
 
   const latencyMs = Date.now() - start;
 
-  // Secondary probe via CF Worker on failure (dual-region verification)
-  if (!ok && CF_WORKER_URL) {
-    try {
-      const cfRes = await fetch(`${CF_WORKER_URL}${encodeURIComponent(url)}`, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(8000) });
-      if (cfRes.ok) {
-        // If CF succeeds, treat as flake — keep ok=false but note,实际 we downgrade failure
-        // Per plan: only if BOTH fail => consecutiveFailures++
-        // Here we mark as recovered to avoid false death
-        error = `primary failed (${error}), CF probe passed — likely runner region issue`;
-        ok = true; // don't penalize
-      }
-    } catch { /* CF also failed — confirm failure */ }
+  // Secondary probe via CF Worker(s) on failure (multi-region verification)
+  // Supports multiple regions via comma-separated CF_WORKER_URL (still works with a single URL).
+  // Per plan: only if ALL regions fail => consecutiveFailures++ (i.e. flip ok only if any region passes).
+  if (!ok && CF_WORKER_URL.length) {
+    let cfPassed = false, cfError = "";
+    for (const region of CF_WORKER_URL) {
+      try {
+        const cfRes = await fetch(`${region}${encodeURIComponent(url)}`, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(8000) });
+        if (cfRes.ok) { cfPassed = true; break; }
+        cfError = `CF ${region} returned ${cfRes.status}`;
+      } catch (e) { cfError = `CF ${region} failed ${e.message}`; }
+    }
+    if (cfPassed) {
+      error = `primary failed (${error}), CF probe(s) passed — likely runner region issue`;
+      ok = true; // don't penalize
+    } else if (cfError) {
+      error = `${error} | CF re-probe also failed (${cfError})`;
+    }
   }
 
   // consecutiveFailures = consecutive trailing DAYS failed (AGENTS.md: >=3 days => Death Report).
