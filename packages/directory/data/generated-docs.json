@@ -2,186 +2,223 @@
   "collegescorecard-1": {
     "href": "docs/collegescorecard-1/",
     "try": "docs/collegescorecard-1/#try-it",
-    "pages": 4
-  },
-  "dnd5e-abilities": {
-    "href": "docs/dnd5e-abilities/",
-    "try": "docs/dnd5e-abilities/#try-it",
-    "pages": 48
+    "pages": 4,
+    "changelog": null
   },
   "dnd-spell": {
     "href": "docs/dnd-spell/",
     "try": "docs/dnd-spell/#try-it",
-    "pages": 48
+    "pages": 48,
+    "changelog": null
   },
   "dnd-barbarian": {
     "href": "docs/dnd-barbarian/",
     "try": "docs/dnd-barbarian/#try-it",
-    "pages": 48
+    "pages": 48,
+    "changelog": null
+  },
+  "dnd5e-abilities": {
+    "href": "docs/dnd5e-abilities/",
+    "try": "docs/dnd5e-abilities/#try-it",
+    "pages": 49,
+    "changelog": null
   },
   "exchangerate-api-usd": {
     "href": "docs/exchangerate-api-usd/",
     "try": "docs/exchangerate-api-usd/#try-it",
-    "pages": 2
-  },
-  "github-node": {
-    "href": "docs/github-node/",
-    "try": "docs/github-node/#try-it",
-    "pages": 30
+    "pages": 2,
+    "changelog": null
   },
   "github-api": {
     "href": "docs/github-api/",
     "try": "docs/github-api/#try-it",
-    "pages": 30
+    "pages": 30,
+    "changelog": null
+  },
+  "github-node": {
+    "href": "docs/github-node/",
+    "try": "docs/github-node/#try-it",
+    "pages": 30,
+    "changelog": null
   },
   "github-emojis": {
     "href": "docs/github-emojis/",
     "try": "docs/github-emojis/#try-it",
-    "pages": 30
-  },
-  "httpbin": {
-    "href": "docs/httpbin/",
-    "try": "docs/httpbin/#try-it",
-    "pages": 53
+    "pages": 30,
+    "changelog": null
   },
   "github-repo": {
     "href": "docs/github-repo/",
     "try": "docs/github-repo/#try-it",
-    "pages": 30
+    "pages": 30,
+    "changelog": null
   },
   "httpbin-anything": {
     "href": "docs/httpbin-anything/",
     "try": "docs/httpbin-anything/#try-it",
-    "pages": 53
+    "pages": 53,
+    "changelog": null
+  },
+  "httpbin": {
+    "href": "docs/httpbin/",
+    "try": "docs/httpbin/#try-it",
+    "pages": 53,
+    "changelog": null
   },
   "httpbin-ip": {
     "href": "docs/httpbin-ip/",
     "try": "docs/httpbin-ip/#try-it",
-    "pages": 53
-  },
-  "image-charts": {
-    "href": "docs/image-charts/",
-    "try": "docs/image-charts/#try-it",
-    "pages": 3
-  },
-  "imagecharts-line": {
-    "href": "docs/imagecharts-line/",
-    "try": "docs/imagecharts-line/#try-it",
-    "pages": 3
-  },
-  "imagecharts-qr": {
-    "href": "docs/imagecharts-qr/",
-    "try": "docs/imagecharts-qr/#try-it",
-    "pages": 3
+    "pages": 53,
+    "changelog": null
   },
   "httpbin-json": {
     "href": "docs/httpbin-json/",
     "try": "docs/httpbin-json/#try-it",
-    "pages": 53
+    "pages": 53,
+    "changelog": null
   },
-  "quickchart-pie": {
-    "href": "docs/quickchart-pie/",
-    "try": "docs/quickchart-pie/#try-it",
-    "pages": 3
+  "image-charts": {
+    "href": "docs/image-charts/",
+    "try": "docs/image-charts/#try-it",
+    "pages": 3,
+    "changelog": null
   },
-  "quickchart": {
-    "href": "docs/quickchart/",
-    "try": "docs/quickchart/#try-it",
-    "pages": 3
+  "imagecharts-line": {
+    "href": "docs/imagecharts-line/",
+    "try": "docs/imagecharts-line/#try-it",
+    "pages": 3,
+    "changelog": null
   },
-  "quickchart-qr": {
-    "href": "docs/quickchart-qr/",
-    "try": "docs/quickchart-qr/#try-it",
-    "pages": 3
+  "imagecharts-qr": {
+    "href": "docs/imagecharts-qr/",
+    "try": "docs/imagecharts-qr/#try-it",
+    "pages": 3,
+    "changelog": null
   },
   "portfolio-optimizer": {
     "href": "docs/portfolio-optimizer/",
     "try": "docs/portfolio-optimizer/#try-it",
-    "pages": 84
+    "pages": 84,
+    "changelog": null
+  },
+  "quickchart": {
+    "href": "docs/quickchart/",
+    "try": "docs/quickchart/#try-it",
+    "pages": 3,
+    "changelog": null
+  },
+  "quickchart-pie": {
+    "href": "docs/quickchart-pie/",
+    "try": "docs/quickchart-pie/#try-it",
+    "pages": 3,
+    "changelog": null
+  },
+  "quickchart-qr": {
+    "href": "docs/quickchart-qr/",
+    "try": "docs/quickchart-qr/#try-it",
+    "pages": 3,
+    "changelog": null
   },
   "tvmaze": {
     "href": "docs/tvmaze/",
     "try": "docs/tvmaze/#try-it",
-    "pages": 35
-  },
-  "stackexchange-tags": {
-    "href": "docs/stackexchange-tags/",
-    "try": "docs/stackexchange-tags/#try-it",
-    "pages": 125
+    "pages": 35,
+    "changelog": null
   },
   "stackexchange-qs": {
     "href": "docs/stackexchange-qs/",
     "try": "docs/stackexchange-qs/#try-it",
-    "pages": 125
-  },
-  "tvmaze-episode": {
-    "href": "docs/tvmaze-episode/",
-    "try": "docs/tvmaze-episode/#try-it",
-    "pages": 35
+    "pages": 125,
+    "changelog": null
   },
   "stackexchange-questions": {
     "href": "docs/stackexchange-questions/",
     "try": "docs/stackexchange-questions/#try-it",
-    "pages": 125
+    "pages": 125,
+    "changelog": null
   },
-  "tvmaze-search": {
-    "href": "docs/tvmaze-search/",
-    "try": "docs/tvmaze-search/#try-it",
-    "pages": 35
+  "stackexchange-tags": {
+    "href": "docs/stackexchange-tags/",
+    "try": "docs/stackexchange-tags/#try-it",
+    "pages": 125,
+    "changelog": null
+  },
+  "tvmaze-episode": {
+    "href": "docs/tvmaze-episode/",
+    "try": "docs/tvmaze-episode/#try-it",
+    "pages": 35,
+    "changelog": null
   },
   "europepmc-covid": {
     "href": "docs/europepmc-covid/",
     "try": "docs/europepmc-covid/#try-it",
-    "pages": 14
+    "pages": 14,
+    "changelog": null
   },
   "tvmaze-people": {
     "href": "docs/tvmaze-people/",
     "try": "docs/tvmaze-people/#try-it",
-    "pages": 35
+    "pages": 35,
+    "changelog": null
   },
-  "apis-guru-list": {
-    "href": "docs/apis-guru-list/",
-    "try": "docs/apis-guru-list/#try-it",
-    "pages": 8
-  },
-  "openf1-drivers": {
-    "href": "docs/openf1-drivers/",
-    "try": "docs/openf1-drivers/#try-it",
-    "pages": 11
-  },
-  "weathergov-points": {
-    "href": "docs/weathergov-points/",
-    "try": "docs/weathergov-points/#try-it",
-    "pages": 116
-  },
-  "languagetool-langs": {
-    "href": "docs/languagetool-langs/",
-    "try": "docs/languagetool-langs/#try-it",
-    "pages": 6
-  },
-  "colorpizza": {
-    "href": "docs/colorpizza/",
-    "try": "docs/colorpizza/#try-it",
-    "pages": 5
-  },
-  "tfl-line-modes": {
-    "href": "docs/tfl-line-modes/",
-    "try": "docs/tfl-line-modes/#try-it",
-    "pages": 85
+  "tvmaze-search": {
+    "href": "docs/tvmaze-search/",
+    "try": "docs/tvmaze-search/#try-it",
+    "pages": 35,
+    "changelog": null
   },
   "xkcd-latest": {
     "href": "docs/xkcd-latest/",
     "try": "docs/xkcd-latest/#try-it",
-    "pages": 3
+    "pages": 3,
+    "changelog": null
   },
-  "gitlab-gitlab": {
-    "href": "docs/gitlab-gitlab/",
-    "try": "docs/gitlab-gitlab/#try-it",
-    "pages": 359
+  "apis-guru-list": {
+    "href": "docs/apis-guru-list/",
+    "try": "docs/apis-guru-list/#try-it",
+    "pages": 8,
+    "changelog": null
+  },
+  "openf1-drivers": {
+    "href": "docs/openf1-drivers/",
+    "try": "docs/openf1-drivers/#try-it",
+    "pages": 11,
+    "changelog": null
+  },
+  "weathergov-points": {
+    "href": "docs/weathergov-points/",
+    "try": "docs/weathergov-points/#try-it",
+    "pages": 116,
+    "changelog": null
+  },
+  "languagetool-langs": {
+    "href": "docs/languagetool-langs/",
+    "try": "docs/languagetool-langs/#try-it",
+    "pages": 6,
+    "changelog": null
+  },
+  "colorpizza": {
+    "href": "docs/colorpizza/",
+    "try": "docs/colorpizza/#try-it",
+    "pages": 5,
+    "changelog": null
   },
   "devto-articles": {
     "href": "docs/devto-articles/",
     "try": "docs/devto-articles/#try-it",
-    "pages": 36
+    "pages": 36,
+    "changelog": null
+  },
+  "tfl-line-modes": {
+    "href": "docs/tfl-line-modes/",
+    "try": "docs/tfl-line-modes/#try-it",
+    "pages": 85,
+    "changelog": null
+  },
+  "gitlab-gitlab": {
+    "href": "docs/gitlab-gitlab/",
+    "try": "docs/gitlab-gitlab/#try-it",
+    "pages": 359,
+    "changelog": null
   }
 }

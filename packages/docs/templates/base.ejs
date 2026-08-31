@@ -11,7 +11,7 @@
 <header class="no-print"><button id="theme-toggle">Toggle theme</button><% if (versionOptions) { %> <select id="version-switcher"><%- versionOptions %></select><% } %></header>
 <nav><%- sidebar %></nav>
 <main><%- content %></main>
-<footer>Verified by <a href="https://github.com/coffeetocoffee/apipuccino">Apipuccino</a> — <%- badgeHtml %> <%- sparkSvg || "" %> <span data-badge="<%= badgeSlug || slug %>">loading badge…</span> <img data-shield alt="status badge" src="https://img.shields.io/badge/live-brightgreen"><% if (typeof tryIt !== "undefined" && tryIt) { %> — <a href="#try-it">Try It</a><% } %> — <a href="<%= basePath %>search-index.json">search</a></footer>
+<footer>Verified by <a href="https://github.com/coffeetocoffee/apipuccino">Apipuccino</a> — <%- badgeHtml %> <%- sparkSvg || "" %> <span data-badge="<%= badgeSlug || slug %>">loading badge…</span> <img data-shield alt="status badge" src="https://img.shields.io/badge/live-brightgreen"><% if (typeof tryIt !== "undefined" && tryIt) { %> — <a href="#try-it">Try It</a><% } %><% if (typeof changelog !== "undefined" && changelog) { %> — <a href="<%= basePath %>changelog.html">Changelog</a><% } %> — <a href="<%= basePath %>search-index.json">search</a></footer>
 <script src="<%= basePath %>badge.js"></script>
 <script src="<%= basePath %>playground.js"></script>
 <script src="<%= basePath %>search.js"></script>

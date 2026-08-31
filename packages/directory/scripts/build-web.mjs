@@ -17,6 +17,18 @@ let genDocs = {};
 try { genDocs = JSON.parse(await fs.readFile(path.join(dataDir, "generated-docs.json"), "utf8")); } catch {}
 let drift = null;
 try { drift = JSON.parse(await fs.readFile(path.join(dataDir, "drift-report.json"), "utf8")); } catch {}
+// Breaking changes in the last 7 days (from changelog/*.jsonl) for the weekly digest card
+let breakingWeek = [];
+try {
+  const cdir = path.join(dataDir, "changelog");
+  const cfiles = await fs.readdir(cdir);
+  const since = Date.now() - 7 * 864e5;
+  for (const f of cfiles.filter(x => x.endsWith(".jsonl"))) {
+    const slug = f.replace(/\.jsonl$/, "");
+    const lines = (await fs.readFile(path.join(cdir, f), "utf8")).trim().split("\n").filter(Boolean);
+    for (const l of lines) { try { const e = JSON.parse(l); if (e.severity === "breaking" && new Date(e.date).getTime() >= since) breakingWeek.push({ slug, ...e }); } catch {} }
+  }
+} catch {}
 const pct = Math.round(results.summary.ok/results.summary.total*100);
 const checked = new Date(results.checkedAt).toLocaleString();
 const byCat = {};
@@ -73,6 +85,7 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 <div class="cta"><a class="btn" href="#browse">Browse APIs</a><a class="btn sec" href="https://github.com/coffeetocoffee/apipuccino#quick-start">npx apidocs build</a></div></section>
 ${death?.deaths?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fef2f2;border-color:#dc2626"><b>\u25CF Death Report (${death.deaths.length})</b> — failing \u22653 days: ${death.deaths.map(d=>`<code>${d.slug}</code>`).join(", ")}</section>` : "" }
 ${drift?.drifts?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fffbeb;border-color:#d97706"><b>\u25CF Drift Alert (${drift.drifts.length})</b> — schema changed while live: ${drift.drifts.map(d=>{const g=genDocs[d.slug];const href=typeof g==="string"?g:g?.href;return `${href?`<a href="${href}">${d.slug}</a>`:`<code>${d.slug}</code>`} ${d.prevHash}\u2192${d.newHash}`;}).join(", ")}</section>` : "" }
+${breakingWeek.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fef2f2;border-color:#dc2626"><b>\u25CF Breaking changes this week (${breakingWeek.length})</b> — ${breakingWeek.slice(0,12).map(d=>{const g=genDocs[d.slug];const href=typeof g==="string"?g:g?.href;return `${href?`<a href="${href}changelog.html">${d.slug}</a>`:`<code>${d.slug}</code>`}${d.path?` <code>${d.path}</code>`:""} ${d.detail}`;}).join("; ")}</section>` : "" }
 <section class="card" style="margin:12px 0;padding:14px"><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><b>Categories</b> <span style="color:var(--muted);font-size:11px">(click to filter — click again to clear)</span>: ${catChips}</div>${topHistory.length ? `<div style="margin-top:10px;color:var(--muted);font-size:12px">Top 30d uptime: ${topHistory.map(([s,h])=>`<code>${s}</code> ${(h.uptime30d*100).toFixed(0)}% ${h.sparkline}`).join(" · ")}</div>` : ""}<details style="margin-top:8px"><summary style="cursor:pointer;color:var(--accent)">History graph (30d)</summary><pre style="overflow:auto;font-size:11px;background:var(--bg);padding:8px;border-radius:8px">${Object.entries(historySummary).slice(0,12).map(([s,h])=>`${s.padEnd(22)} ${h.sparkline} ${(h.uptime30d*100).toFixed(1)}% avg ${h.avgLatencyMs||0}ms`).join("\n")}</pre><a href="./history-summary.json" style="font-size:12px">→ full history-summary.json</a></details></section>
 <section id="browse" class="card"><div class="toolbar"><label class="search">\uD83D\uDD0D <input id="q" placeholder="Search APIs (name, category, slug)…"><span style="color:var(--muted);font-size:13px">${results.summary.total} APIs</span></label><span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button type="button" id="docs-chip" class="cat" title="Show only entries with generated offline docs">\uD83D\uDCDA docs ${docsCount}</button><span style="color:var(--muted);font-size:11px">Stability:</span><button type="button" class="cat stab" data-stab="stable">Stable</button><button type="button" class="cat stab" data-stab="evolving">Evolving</button><button type="button" class="cat stab" data-stab="volatile">Volatile</button><button type="button" class="cat stab" data-stab="unknown">Unknown</button><span style="color:var(--muted);font-size:13px"><a href="https://github.com/coffeetocoffee/apipuccino/actions">Health Check</a> \u00B7 <a href="./api-docs/">Demo</a> \u00B7 <a href="./history-summary.json">History</a></span></span></div>
 <div style="overflow:auto"><table><thead><tr><th>API</th><th>Status</th><th>Latency</th><th>Sparkline</th><th>Stability</th><th>Docs</th><th>Try</th></tr></thead><tbody id="tbody">
@@ -84,11 +97,12 @@ ${apis.map(api=>{
   const stab = hist?.stability || "unknown";
   const stabColor = stab==="stable"?"var(--ok)":stab==="evolving"?"#d97706":stab==="volatile"?"var(--bad)":"var(--muted)";
   const stabCell = `<span class="badge" style="color:${stabColor}">${stab}</span>`;
-  const gen = genDocs[api.slug]; // {href, try, pages} or legacy "docs/<slug>/"
+  const gen = genDocs[api.slug]; // {href, try, pages, changelog} or legacy "docs/<slug>/"
   const genHref = typeof gen === "string" ? gen : gen?.href;
   const genTry = (typeof gen === "string" ? `${gen}#try-it` : gen?.try) || (genHref ? `${genHref}#try-it` : null);
+  const genChangelog = (typeof gen === "object" && gen?.changelog) ? gen.changelog : null;
   const docsCell = genHref
-    ? `<a href="${genHref}">View Docs</a> <span class="badge">${ok?"live":"down"}</span>`
+    ? `<a href="${genHref}">View Docs</a> <span class="badge">${ok?"live":"down"}</span>${genChangelog ? ` <a href="${genChangelog}">Changelog</a>` : ""}`
     : `<a href="${api.docs}">Docs</a> <span class="badge">${ok?"live":"down"}</span>`;
   const tryCell = genTry ? `<a href="${genTry}" class="badge" title="Try It playground — first endpoint">Try It \u2192</a>` : `<a href="${api.docs}" class="badge">Try \u2192</a>`;
   return `<tr data-cat="${esc(api.category)}" data-search="${esc(api.name+" "+api.slug+" "+api.category).toLowerCase()}"${genHref?` data-docs="1"`:""} data-stability="${stab}"><td><a href="${api.docs}" style="font-weight:700">${api.name}</a><br><code>${api.slug}</code> <span class="cat">${api.category}</span>${genHref?` <a href="${genTry}" class="badge" style="color:var(--accent-2)" title="Generated offline docs">\uD83D\uDCDA docs</a>`:""}</td><td>${r? (ok?`<span style="color:var(--ok)">\u25CF ${r.status}</span>`:`<span style="color:var(--bad)">\u25CF ${r.status??"ERR"}</span>`):"—"}</td><td>${lat}</td><td title="${uptime} 30d ${spark}">${spark}</td><td>${stabCell}</td><td>${docsCell}</td><td>${tryCell}</td></tr>`;

@@ -93,7 +93,7 @@ export async function generatePages(spec, cfg) {
 
   let html;
   if (useEjs) {
-    try { html = ejs.render(baseEjs, { info: spec.info, theme: cfg.theme||"default", basePath: "./", slug, badgeSlug, badgeHtml, sparkSvg: sparkSvgHtml, tryIt: pages.length > 0, sidebar: sidebarHtml, content: content + `<div id="search"></div>`, themeToggleInline, versionOptions }); } catch { useEjs = false; }
+    try { html = ejs.render(baseEjs, { info: spec.info, theme: cfg.theme||"default", basePath: "./", slug, badgeSlug, badgeHtml, sparkSvg: sparkSvgHtml, changelog: !!cfg.changelogHref, tryIt: pages.length > 0, sidebar: sidebarHtml, content: content + `<div id="search"></div>`, themeToggleInline, versionOptions }); } catch { useEjs = false; }
   }
   if (!useEjs) {
     html = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${spec.info?.title||"API Docs"}</title><link rel="stylesheet" href="./themes/${cfg.theme||"default"}.css"><link rel="stylesheet" href="./print.css" media="print"><script>${themeToggleInline}</script></head><body data-theme="${cfg.theme||"default"}"><header class="no-print"><button id="theme-toggle">Toggle</button>${versionOptions ? ` <select id="version-switcher">${versionOptions}</select>` : ""}</header><nav>${sidebarHtml}</nav><main><h1>${spec.info?.title||""} <small>${spec.info?.version||""}</small></h1><p>${spec.info?.description||""}</p><div id="search"></div>${content}</main><footer>Verified by <a href="https://github.com/coffeetocoffee/apipuccino">Apipuccino</a> — ${badgeHtml} <span data-badge="${badgeSlug}">loading badge…</span> <img data-shield alt="badge" src="https://img.shields.io/badge/live-brightgreen">${pages.length ? ` — <a href="#try-it">Try It</a>` : ""}</footer><script src="./badge.js"></script><script src="./playground.js"></script><script src="./search.js"></script><script src="./theme-toggle.js"></script></body></html>`;
@@ -111,7 +111,7 @@ export async function generatePages(spec, cfg) {
       const epSidebar = ejs.render(sidebarEjs, { navigation: nav, basePath: "../" });
       const epHtml = ejs.render(baseEjs, {
         info: spec.info, theme: cfg.theme||"default", basePath: "../",
-        slug, badgeSlug, badgeHtml, sparkSvg: sparkSvgHtml, tryIt: true,
+        slug, badgeSlug, badgeHtml, sparkSvg: sparkSvgHtml, changelog: !!cfg.changelogHref, tryIt: true,
         sidebar: epSidebar, content: epFragment + `<div id="search"></div>`,
         themeToggleInline, versionOptions,
       });
@@ -134,4 +134,45 @@ export async function generatePages(spec, cfg) {
   try { const c = await fs.readFile(path.resolve("packages/docs/themes/print.css"),"utf8"); await fs.writeFile(path.join(out,"print.css"), c, "utf8"); } catch {}
 
   console.log(`  generated ${pages.length} endpoints to ${out}/index.html (+ per-endpoint files)`);
+}
+
+/**
+ * generateChangelog — Apipuccino Verified per-slug changelog page.
+ * Renders data/changelog/<slug>.jsonl (breaking/non_breaking/additive) into <output>/changelog.html
+ * using the same base.ejs shell + sidebar as the docs. cfg: { output, slug, title, theme, badge, entries }
+ */
+export async function generateChangelog(spec, cfg) {
+  const out = path.resolve(cfg.output);
+  await fs.mkdir(out, { recursive: true });
+  const slug = cfg.slug || (spec.info?.title || "api").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const entries = cfg.entries || [];
+  const byDate = {};
+  for (const e of entries) (byDate[e.date] ||= []).push(e);
+  const dates = Object.keys(byDate).sort().reverse();
+  const sevColor = s => s === "breaking" ? "var(--bad,#dc2626)" : s === "non_breaking" ? "#d97706" : "#16a34a";
+  const sevLabel = s => s === "non_breaking" ? "non-breaking" : s;
+  const content = `<h1>Changelog — ${cfg.title || spec.info?.title || "API"}</h1>
+<p style="color:var(--muted)">Breaking / non-breaking / additive changes detected in this API's OpenAPI spec by <a href="https://github.com/coffeetocoffee/apipuccino">Apipuccino Verified</a>. Offline-first, regenerated nightly.</p>
+${dates.map(d => `<section class="changelog-day"><h2>${d}</h2><ul class="changelog-list">${byDate[d].map(e => `<li><span class="badge" style="color:${sevColor(e.severity)};border-color:${sevColor(e.severity)}">${sevLabel(e.severity)}</span> ${e.path ? `<code>${e.path}</code> ` : ""}${e.detail}</li>`).join("")}</ul></section>`).join("")}`;
+
+  let ejs, baseEjs, sidebarEjs;
+  try {
+    ejs = (await import("ejs")).default;
+    baseEjs = await fs.readFile(path.resolve("packages/docs/templates/base.ejs"), "utf8");
+    sidebarEjs = await fs.readFile(path.resolve("packages/docs/templates/partials/sidebar.ejs"), "utf8");
+  } catch { return null; }
+  const nav = extractNavigation(extractPages(spec));
+  const sidebar = ejs.render(sidebarEjs, { navigation: nav, basePath: "./" });
+  const b = cfg.badge || {};
+  const badgeHtml = b.ok == null ? "" : b.ok
+    ? `<span style="color:var(--ok,#16a34a);font-weight:600">● Live ${b.status ?? 200} — ${(b.uptime30d ?? 1) > 0 ? `${(b.uptime30d*100).toFixed(1)}% 30d` : "new"}</span>`
+    : `<span style="color:var(--bad,#dc2626);font-weight:600">● Down ${b.status ?? ""}</span>`;
+  const themeToggleInline = `(()=>{const t=localStorage.getItem("apipuccino-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"default");document.documentElement.dataset.theme=t;})();`;
+  const html = ejs.render(baseEjs, {
+    info: { title: cfg.title || spec.info?.title }, theme: cfg.theme || "default", basePath: "./",
+    slug, badgeSlug: slug, badgeHtml, sparkSvg: "", changelog: true, tryIt: false, sidebar, content, themeToggleInline,
+    versionOptions: `<option selected disabled>v${spec.info?.version || ""}</option>`,
+  });
+  await fs.writeFile(path.join(out, "changelog.html"), html, "utf8");
+  return html;
 }

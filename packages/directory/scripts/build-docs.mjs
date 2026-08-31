@@ -30,7 +30,7 @@ async function buildOne(api) {
   const out = path.join(root, "dist", "docs", api.slug);
   try {
     const { parseSpec } = await import("../../docs/src/parser/index.js");
-    const { generatePages } = await import("../../docs/src/generator/index.js");
+    const { generatePages, generateChangelog } = await import("../../docs/src/generator/index.js");
     // fetch spec ourselves (UA + timeout), parseSpec from temp file — avoids URL/ref-parser quirks
     const res = await fetch(api.openapiUrl, { headers: { "User-Agent": "ApipuccinoBot/2.0 (+https://github.com/coffeetocoffee/apipuccino)" }, signal: AbortSignal.timeout(15000) });
     if (!res.ok) throw new Error(`spec HTTP ${res.status}`);
@@ -52,10 +52,26 @@ async function buildOne(api) {
       slug: api.slug, // directory slug -> data-badge matches results.json
       badge: { ok: r?.ok, status: r?.status, latencyMs: r?.latencyMs, uptime30d: uptime[api.slug]?.uptime30d, last30: uptime[api.slug]?.last30, sparkline: uptime[api.slug]?.sparkline },
     });
+    // Apipuccino Verified: per-slug /changelog.html from changelog/<slug>.jsonl (if any)
+    let changelogHref = null;
+    const clogFile = path.join(dataDir, "changelog", `${api.slug}.jsonl`);
+    try {
+      const clogText = await fs.readFile(clogFile, "utf8");
+      const entries = clogText.trim().split("\n").filter(Boolean).map(l => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
+      if (entries.length) {
+        await generateChangelog(spec, {
+          output: out, slug: api.slug, title: api.name, theme: "default",
+          badge: r ? { ok: r.ok, status: r.status, uptime30d: uptime[api.slug]?.uptime30d } : {},
+          entries,
+        });
+        changelogHref = `docs/${api.slug}/changelog.html`;
+        console.log(`  ✓ ${api.slug} changelog — ${entries.length} entries`);
+      }
+    } catch {}
     const data = await buildLunrData(out);
     await fs.writeFile(path.join(out, "search-index.json"), JSON.stringify(data), "utf8");
     await vendorLunr(out);
-    results.push({ slug: api.slug, pages: data.docs.length, try: `docs/${api.slug}/#try-it` });
+    results.push({ slug: api.slug, pages: data.docs.length, try: `docs/${api.slug}/#try-it`, changelog: changelogHref });
     console.log(`✓ ${api.slug} — ${data.docs.length} pages`);
   } catch (e) {
     console.log(`✗ ${api.slug} — ${e.message?.slice(0, 100)}`);
@@ -76,7 +92,7 @@ const workers = Array.from({ length: 4 }, async () => {
 await Promise.all(workers);
 
 const mapping = {};
-for (const r of results) mapping[r.slug] = { href: `docs/${r.slug}/`, try: r.try, pages: r.pages };
+for (const r of results) mapping[r.slug] = { href: `docs/${r.slug}/`, try: r.try, pages: r.pages, changelog: r.changelog };
 await fs.writeFile(path.join(dataDir, "generated-docs.json"), JSON.stringify(mapping, null, 2) + "\n", "utf8");
 await fs.rm(path.join(root, "dist", "docs", "_specs"), { recursive: true, force: true }); // temp spec files
 console.log(`\nbuild-docs: ${results.length}/${targets.length} generated → dist/docs/ (mapping: data/generated-docs.json)`);
