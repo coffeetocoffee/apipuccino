@@ -22,6 +22,14 @@ const checked = new Date(results.checkedAt).toLocaleString();
 const byCat = {};
 for(const a of apis) byCat[a.category] = (byCat[a.category]||0)+1;
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+// Inline SVG sparkline from last30 (1/0 array) — mirrors per-slug docs footer
+function sparkSvg(last30, uptime30d) {
+  if (!Array.isArray(last30) || !last30.length) return "";
+  const step = 4, w = last30.length * step, h = 14;
+  const rects = last30.map((v,i)=>`<rect x="${i*step}" y="1" width="3" height="12" rx="1" fill="${v ? "#16a34a" : "#dc2626"}"></rect>`).join("");
+  const label = uptime30d != null ? `${(uptime30d*100).toFixed(0)}% 30d` : "uptime";
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}" style="vertical-align:middle">${rects}</svg>`;
+}
 const catChips = Object.entries(byCat).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<a href="#browse" class="cat" data-cat="${esc(c)}" title="Filter by ${esc(c)}">${c} ${n}</a>`).join(" ");
 const topHistory = Object.entries(historySummary).sort((a,b)=>b[1].uptime30d - a[1].uptime30d).slice(0,5);
 const docsCount = apis.filter(a => genDocs[a.slug]).length;
@@ -71,7 +79,7 @@ ${drift?.drifts?.length ? `<section class="card" style="margin:12px 0;padding:14
 ${apis.map(api=>{
   const r=bySlug[api.slug]; const ok=r?.ok; const lat=r?.latencyMs?`${r.latencyMs}ms`:"—";
   const hist = historySummary[api.slug];
-  const spark = hist?.sparkline || (r?.ok ? "\u2581\u2582\u2583\u2584\u2585\u2586\u2587\u2588".slice(0, Math.min(8, Math.ceil((r?.latencyMs||100)/250))) : "\u2581");
+  const spark = hist?.last30 ? sparkSvg(hist.last30, hist.uptime30d) : (hist?.sparkline || (r?.ok ? "\u2581\u2582\u2583\u2584\u2585\u2586\u2587\u2588".slice(0, Math.min(8, Math.ceil((r?.latencyMs||100)/250))) : "\u2581"));
   const uptime = hist ? `${(hist.uptime30d*100).toFixed(1)}%` : "";
   const gen = genDocs[api.slug]; // {href, try, pages} or legacy "docs/<slug>/"
   const genHref = typeof gen === "string" ? gen : gen?.href;
