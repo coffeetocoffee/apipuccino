@@ -36,5 +36,12 @@ for (const [slug, v] of Object.entries(bySlug)) {
     sparkline: v.checks.map(c=> c ? "█" : "░").join(""),
   };
 }
+// Preserve Apipuccino Verified fields written by diff.mjs (not regenerated here)
+let existing = {};
+try { existing = JSON.parse(await fs.readFile(OUT, "utf8")); } catch {}
+const VERIFIED = ["stability", "breaking30d", "breaking90d", "lastBreak", "changelogCount"];
+for (const [slug, v] of Object.entries(existing)) {
+  if (summary[slug]) for (const k of VERIFIED) if (v[k] !== undefined) summary[slug][k] = v[k];
+}
 await fs.writeFile(OUT, JSON.stringify(summary, null, 2) + "\n", "utf8");
 console.log(`✓ history-summary.json — ${Object.keys(summary).length} slugs, ${last30.length} days`);

@@ -1,6 +1,6 @@
 {
   "name": "@apipuccino/shared",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "type": "module",
   "main": "./types.ts",
   "license": "MIT"

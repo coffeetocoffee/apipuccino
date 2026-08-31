@@ -33,6 +33,8 @@ jobs:
         run: node packages/docs/src/search/build-index.mjs ./api-docs
       - name: Build per-slug directory docs (openapiUrl entries)
         run: node packages/directory/scripts/build-docs.mjs
+      - name: Apipuccino Verified — semantic spec diff (drift -> changelog + Stability)
+        run: node packages/directory/scripts/diff.mjs
       - name: Build beautiful directory
         run: node packages/directory/scripts/build-web.mjs
       - uses: actions/configure-pages@v4
