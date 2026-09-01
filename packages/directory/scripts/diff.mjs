@@ -52,6 +52,32 @@ export function schemaSig(s) {
   const en = Array.isArray(s.enum) ? [...s.enum].sort().join(",") : "";
   return `${t}|${fmt}|${req}|${en}`;
 }
+
+// Recursive structural schema diff. Detects type/format/enum changes (breaking), required-ness
+// changes, and object property add/remove/recurse (additive / non-breaking / breaking).
+// Ignores noisy fields (description, example, nullable) to keep false positives low (Law #2).
+export function diffSchema(prev, curr, ctx = "") {
+  const c = [];
+  if (!prev && !curr) return c;
+  if (!prev && curr) { c.push({ severity: "additive", change: "schema_added", detail: `${ctx}schema added` }); return c; }
+  if (prev && !curr) { c.push({ severity: "breaking", change: "schema_removed", detail: `${ctx}schema removed` }); return c; }
+  if (prev.type !== curr.type) c.push({ severity: "breaking", change: "type_changed", detail: `${ctx}type ${prev.type || "?"} -> ${curr.type || "?"}` });
+  const pf = prev.format || "", cf = curr.format || "";
+  if (pf !== cf) c.push({ severity: "breaking", change: "format_changed", detail: `${ctx}format ${pf || "?"} -> ${cf || "?"}` });
+  const pe = (prev.enum || []).slice().sort().join(","), ce = (curr.enum || []).slice().sort().join(",");
+  if (pe !== ce) c.push({ severity: "breaking", change: "enum_changed", detail: `${ctx}enum changed` });
+  const pr = new Set(prev.required || []), cr = new Set(curr.required || []);
+  for (const k of pr) if (!cr.has(k)) c.push({ severity: "breaking", change: "required_removed", detail: `${ctx}required ${k} removed` });
+  for (const k of cr) if (!pr.has(k)) c.push({ severity: "additive", change: "required_added", detail: `${ctx}required ${k} added` });
+  const pp = prev.properties || {}, cp = curr.properties || {};
+  for (const k of Object.keys(pp)) if (!(k in cp)) c.push({ severity: pr.has(k) ? "breaking" : "non_breaking", change: "property_removed", detail: `${ctx}property ${k} removed` });
+  for (const k of Object.keys(cp)) {
+    if (!(k in pp)) c.push({ severity: cr.has(k) ? "breaking" : "additive", change: "property_added", detail: `${ctx}property ${k} added${cr.has(k) ? " (required)" : ""}` });
+    else for (const sc of diffSchema(pp[k], cp[k], `${ctx}${k}.`)) c.push(sc);
+  }
+  if (prev.items || curr.items) for (const sc of diffSchema(prev.items || null, curr.items || null, `${ctx}items.`)) c.push(sc);
+  return c;
+}
 function bodySchema(op) {
   const rb = op.requestBody || op.requestBody;
   if (!rb) return null;
@@ -71,17 +97,17 @@ export function diffOp(prevOp, currOp) {
   for (const k of Object.keys(pp)) if (!cp[k]) c.push({ severity: pp[k].required ? "breaking" : "non_breaking", change: "removed_param", detail: `param ${k} removed` });
   for (const k of Object.keys(cp)) {
     if (!pp[k]) c.push({ severity: cp[k].required ? "breaking" : "additive", change: "added_param", detail: `param ${k} added${cp[k].required ? " (required)" : ""}` });
-    else if (schemaSig(pp[k].schema) !== schemaSig(cp[k].schema)) c.push({ severity: "breaking", change: "param_type_changed", detail: `param ${k} type changed` });
+    else for (const sc of diffSchema(pp[k].schema, cp[k].schema, `param ${k} `)) c.push(sc);
   }
   const pb = bodySchema(prevOp), cb = bodySchema(currOp);
   if (pb && !cb) c.push({ severity: "non_breaking", change: "removed_request_body", detail: "requestBody removed" });
   if (!pb && cb) c.push({ severity: (cb.required !== false) ? "breaking" : "additive", change: "added_request_body", detail: `requestBody added${cb.required !== false ? " (required)" : ""}` });
-  if (pb && cb && schemaSig(pb) !== schemaSig(cb)) c.push({ severity: "breaking", change: "request_body_changed", detail: "requestBody schema changed" });
+  if (pb && cb) for (const sc of diffSchema(pb, cb, "requestBody ")) c.push(sc);
   const pr = prevOp.responses || {}, cr = currOp.responses || {};
   for (const code of Object.keys(pr)) if (!cr[code]) c.push({ severity: "breaking", change: "removed_response", detail: `response ${code} removed` });
   for (const code of Object.keys(cr)) {
     if (!pr[code]) c.push({ severity: "additive", change: "added_response", detail: `response ${code} added` });
-    else if (schemaSig(respSchema(pr[code])) !== schemaSig(respSchema(cr[code]))) c.push({ severity: "non_breaking", change: "response_changed", detail: `response ${code} schema changed` });
+    else for (const sc of diffSchema(respSchema(pr[code]), respSchema(cr[code]), `response ${code} `)) c.push(sc);
   }
   return c;
 }

@@ -81,7 +81,7 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 <header><div class="wrap nav"><div class="brand"><span class="dot"></span><b>Apipuccino</b> <span style="color:var(--muted);font-weight:600">· Nobody lists dead APIs.</span></div><div style="display:flex;gap:14px"><a href="https://github.com/coffeetocoffee/apipuccino">GitHub</a><a href="./api-docs/" style="font-weight:700">Docs →</a></div></div></header>
 <main class="wrap">
 <section class="hero"><h1>Nobody lists <span>dead APIs.</span></h1><p>Free, self-verifying directory (${results.summary.ok}/${results.summary.total} live, nightly L0-L3 checks + drift alerts) + offline OpenAPI docs generator. Pagefind search, Try-It playground, 4 themes. MIT+CC0, zero-cost.</p>
-<div class="stats"><span class="pill">● ${results.summary.ok}/${results.summary.total} live — ${pct}%</span><span class="pill">Last checked ${checked}</span><span class="pill">Pagefind + offline</span><span class="pill">MIT+CC0</span></div>
+<div class="stats"><span class="pill">● ${results.summary.ok}/${results.summary.total} live — ${pct}%</span><span class="pill">🛡️ Apipuccino Verified</span><span class="pill">Last checked ${checked}</span><span class="pill">Pagefind + offline</span><span class="pill">MIT+CC0</span></div>
 <div class="cta"><a class="btn" href="#browse">Browse APIs</a><a class="btn sec" href="https://github.com/coffeetocoffee/apipuccino#quick-start">npx apidocs build</a></div></section>
 ${death?.deaths?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fef2f2;border-color:#dc2626"><b>\u25CF Death Report (${death.deaths.length})</b> — failing \u22653 days: ${death.deaths.map(d=>`<code>${d.slug}</code>`).join(", ")}</section>` : "" }
 ${drift?.drifts?.length ? `<section class="card" style="margin:12px 0;padding:14px;background:#fffbeb;border-color:#d97706"><b>\u25CF Drift Alert (${drift.drifts.length})</b> — schema changed while live: ${drift.drifts.map(d=>{const g=genDocs[d.slug];const href=typeof g==="string"?g:g?.href;return `${href?`<a href="${href}">${d.slug}</a>`:`<code>${d.slug}</code>`} ${d.prevHash}\u2192${d.newHash}`;}).join(", ")}</section>` : "" }
@@ -96,7 +96,7 @@ ${apis.map(api=>{
   const uptime = hist ? `${(hist.uptime30d*100).toFixed(1)}%` : "";
   const stab = hist?.stability || "unknown";
   const stabColor = stab==="stable"?"var(--ok)":stab==="evolving"?"#d97706":stab==="volatile"?"var(--bad)":"var(--muted)";
-  const stabCell = `<span class="badge" style="color:${stabColor}">${stab}</span>`;
+  const stabCell = stab==="unknown" ? `<span class="badge" style="color:${stabColor}">unknown</span>` : `<span class="badge" style="color:${stabColor}">🛡️ ${stab}</span>`;
   const gen = genDocs[api.slug]; // {href, try, pages, changelog} or legacy "docs/<slug>/"
   const genHref = typeof gen === "string" ? gen : gen?.href;
   const genTry = (typeof gen === "string" ? `${gen}#try-it` : gen?.try) || (genHref ? `${genHref}#try-it` : null);
@@ -121,4 +121,11 @@ await fs.writeFile(path.join(dist, "index.html"), html, "utf8");
 const apiDocsSrc = path.join(root, "api-docs");
 const apiDocsDest = path.join(dist, "api-docs");
 await fs.cp(apiDocsSrc, apiDocsDest, { recursive: true }).catch(()=>{});
+// Publish public data + static widget assets to the Pages bundle (CORS-friendly, offline-first).
+// Required so the embeddable Verified widget (and badge.js) can fetch results.json/history-summary.json
+// cross-origin from any site (GitHub Pages serves these with Access-Control-Allow-Origin: *).
+await fs.copyFile(path.join(dataDir, "results.json"), path.join(dist, "results.json")).catch(()=>{});
+await fs.copyFile(path.join(dataDir, "history-summary.json"), path.join(dist, "history-summary.json")).catch(()=>{});
+const staticSrc = path.resolve(__dirname, "../../docs/static");
+await fs.cp(staticSrc, path.join(dist, "static"), { recursive: true }).catch(()=>{});
 console.log(`✓ dist/index.html + api-docs → ${dist} (${apis.length} APIs, ${results.summary.ok}/${results.summary.total})`);

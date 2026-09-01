@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apipuccino Verified — embeddable widget demo</title>
+  <style>body{font-family:ui-sans-serif,Segoe UI,Roboto,Arial;max-width:720px;margin:40px auto;padding:0 20px;line-height:1.6}
+  code{background:#f1f5f9;padding:2px 6px;border-radius:6px;font-size:13px}
+  pre{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:10px;overflow:auto;font-size:13px}</style>
+</head>
+<body>
+  <h1>🛡️ Apipuccino Verified — embeddable widget</h1>
+  <p>Paste this snippet into your API's docs or README to show a live, offline-first Verified badge:</p>
+  <pre>&lt;script src="https://coffeetocoffee.github.io/apipuccino/static/widget.js"
+        data-slug="advice-slip"&gt;&lt;/script&gt;</pre>
+  <p>JS blocked? Show a static SVG fallback instead:</p>
+  <pre>&lt;a href="https://coffeetocoffee.github.io/apipuccino/"&gt;
+  &lt;img src="https://coffeetocoffee.github.io/apipuccino/static/verified-badge.svg"
+       alt="Apipuccino Verified" width="172" height="20"&gt;
+&lt;/a&gt;</pre>
+  <h2>Live preview</h2>
+  <p><script src="./widget.js" data-slug="advice-slip"></script></p>
+  <p><script src="./widget.js" data-slug="advice-slip" data-theme="dark"></script></p>
+  <p>Replace <code>data-slug</code> with any API slug from the <a href="https://coffeetocoffee.github.io/apipuccino/">directory</a>.</p>
+</body>
+</html>

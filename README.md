@@ -37,10 +37,28 @@ npx apidocs build  ──►  prompt: submit?  ──►  directory grows  ─�
 | **Verified Badge** | static | `API Live: 200 OK — 2m ago | 99.2% 30d` |
 | **Try-It Playground** | none | vanilla 5kb, CORS→curl fallback |
 | **Drift Alert** | none | `contentHash` detects breaking changes |
+| **Apipuccino Verified** | none | per-API **Stability** (Stable/Evolving/Volatile) + semantic breaking-change diff + per-slug changelog |
 | **Search on GH Pages** | server needed | Pagefind + lunr fallback |
 | **One-Command Submit** | manual PR | `npx apidocs submit` |
 | **PDF that works** | heavy | `print.css` default, optional `puppeteer-core` |
 | **Versioned + Timeline** | single | `v1/v2/v3` switcher + sparkline `████░` |
+
+---
+
+### 🛡️ Apipuccino Verified
+
+> The leap from *"Is this API alive?"* to *"Is it safe to build on?"* — a question no free directory answers.
+
+Every API with an `openapiUrl` is diffed nightly against its last-known spec. Each change is
+classified **breaking · non-breaking · additive**, which feeds:
+
+- **Stability rating** — `Stable` / `Evolving` / `Volatile`, from breaking-change frequency over 30d & 90d windows.
+- **Per-API changelog** — dated changes with severity chips (`docs/<slug>/changelog.html`, offline, Pagefind-indexed).
+- **Weekly digest** — "Breaking changes this week (N)" card linking to the affected changelogs.
+
+It's verification, not opinion: pure Node, no external diff service, no new Action minutes
+(diff only runs on slugs that drifted). See `packages/directory/scripts/diff.mjs` and the
+changelog logs in `packages/directory/data/changelog/*.jsonl`.
 
 ---
 
@@ -144,6 +162,28 @@ Every directory entry shows **View Docs · Badge · Try It** — your docs becom
 
 ---
 
+### 🧩 Embed the Verified badge (Runner A)
+
+Put a live, offline-first "Apipuccino Verified" badge on your own API docs or README:
+
+```html
+<script src="https://coffeetocoffee.github.io/apipuccino/static/widget.js" data-slug="advice-slip"></script>
+```
+
+If JS is blocked, use the static SVG fallback:
+
+```html
+<a href="https://coffeetocoffee.github.io/apipuccino/">
+  <img src="https://coffeetocoffee.github.io/apipuccino/static/verified-badge.svg" alt="Apipuccino Verified" width="172" height="20">
+</a>
+```
+
+The widget fetches only public `results.json` + `history-summary.json` (served from the Pages bundle,
+CORS `*`), shows live status · 30d uptime · Stability, and needs no server. Every embed is a backlink
+that drives discovery → submissions (the flywheel). See `packages/docs/static/widget-demo.html`.
+
+---
+
 ### 🆓 Free Forever
 
 **MIT** (code) + **CC0** (data) — no paywall, no pro features, no sponsors logic. `AGENTS.md §0`
@@ -169,6 +209,8 @@ Deploy: ` .github/workflows/health-check.yml` (03:00 UTC) + `deploy.yml` (Pages)
 ### 🛣️ Roadmap
 
 - **D1-D6 MVP done** — 250 Live (diverse, max 3/host), parser glob+generator+search+themes+playground+PDF+flywheel
+- **v3.6–3.8 done** — **Apipuccino Verified**: semantic spec diff → per-slug changelog → Stability rating → weekly digest
+- **v4.0 (launch)** — promote "Apipuccino Verified" as the headline: Verified badge in the directory, static badge asset, README flywheel copy
 - **Phase 2** — drift UI history graphs + category chips (`build-web.mjs:56` now surfaces drift/death + 30d sparklines)
 - **Phase 3** — community discovery + AI search (still free)
 
