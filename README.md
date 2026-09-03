@@ -8,9 +8,9 @@
 
 [![Live](https://img.shields.io/badge/550%20APIs-verified-brightgreen?style=flat-square)](packages/directory/data/results.json) [![Check](https://img.shields.io/badge/health-nightly-blue?style=flat-square)](#verification-l0-l3) [![MIT](https://img.shields.io/badge/license-MIT-black?style=flat-square)](#free-forever) [![CC0](https://img.shields.io/badge/data-CC0-lightgrey?style=flat-square)](#free-forever) [![Node](https://img.shields.io/badge/node-%3E%3D20-339933?style=flat-square)](#quick-start) [![pnpm](https://img.shields.io/badge/pnpm-9-F69220?style=flat-square)](#quick-start)
 
-**`apipuccino`** (directory) + **`apidocs`** (docs) → one flywheel, zero servers.
+**`apipuccino`** (directory) + **`apidocs`** (docs) + **`sentinel`** (your deps) → one flywheel, zero servers.
 
-[🎯 Browse 550 Live APIs](#browse) · [📚 Demo Docs](./api-docs/) · [⚡ Quick Start](#quick-start) · [🤝 Submit Yours](#submit)
+[🎯 Browse 550 Live APIs](#browse) · [📚 Demo Docs](./api-docs/) · [🛰️ Sentinel](#-apipuccino-sentinel) · [⚡ Quick Start](#quick-start) · [🤝 Submit Yours](#submit)
 
 </div>
 
@@ -26,6 +26,8 @@ Apipuccino checks every API **nightly** (L0-L3, dual-region) and only shows the 
 npx apidocs build  ──►  prompt: submit?  ──►  directory grows  ──►  [View Docs][Badge][Try It]  ──►  more installs
        ▲                                                                                              │
        └──────────────────────────────────  beautiful docs drive discovery  ──────────────────────────┘
+
+**New:** ☕ **Apipuccino Sentinel** turns that same verification inward — pin the upstream APIs *your* app depends on and get dead-API early warnings before your users do. See [🛰️ Sentinel](#-apipuccino-sentinel).
 ```
 
 ---
@@ -42,6 +44,7 @@ npx apidocs build  ──►  prompt: submit?  ──►  directory grows  ─�
 | **One-Command Submit** | manual PR | `npx apidocs submit` |
 | **PDF that works** | heavy | `print.css` default, optional `puppeteer-core` |
 | **Versioned + Timeline** | single | `v1/v2/v3` switcher + sparkline `████░` |
+| **Dead-API Early Warning** | none | **Sentinel**: `sentinel watch` → death/down/drift alerts + stale-cache `fetch` guard for *your* deps |
 
 ---
 
@@ -59,6 +62,60 @@ classified **breaking · non-breaking · additive**, which feeds:
 It's verification, not opinion: pure Node, no external diff service, no new Action minutes
 (diff only runs on slugs that drifted). See `packages/directory/scripts/diff.mjs` and the
 changelog logs in `packages/directory/data/changelog/*.jsonl`.
+
+---
+
+### 🛰️ Apipuccino Sentinel
+
+> The directory answers *"Is this API alive?"* — Sentinel answers *"Will MY app survive the night?"*
+
+The directory's L0-L3 verification is built to watch **public** APIs. Sentinel reuses that exact
+machinery (L0/L1 probe + content-hash + schema-drift + consecutive-failure streaks) and points it
+**inward** at the 3-10 upstream APIs your own app calls. The leap: from a passive badge to an
+**active, must-install utility**.
+
+```bash
+# 1. Pin the APIs you depend on
+npx apidocs sentinel add https://api.advice-slip.com/advice --name "Advice Slip"
+npx apidocs sentinel add https://api.example.com/health --json-path '$.ok'
+
+# 2. Watch them (run nightly in CI via .github/workflows/sentinel-watch.yml)
+npx apidocs sentinel watch            # exit code 1 if any API hits DEATH (>=3 fails) — CI-friendly
+
+# 3. See your dependency risk
+npx apidocs sentinel risk
+# ✓ advice-slip — Stable (live, no drift)
+# ● payments-acme — Evolving (response schema drifted since last check)
+# ☠ legacy-x  — Volatile (dead 3 consecutive checks)
+```
+
+**Detected events:** `death` (3+ consecutive failures), `down` (first failure), `recovered`
+(back to live), `drift` (live but response schema changed). Alerts fire to console + an optional
+webhook (Slack/Discord/custom) — push them to a channel and get paged *before* your users are.
+
+**Runtime guard** — wrap `fetch` so a dead upstream degrades instead of 500-ing:
+
+```js
+import { createGuard, UpstreamDeadError } from "@apipuccino/sentinel/guard";
+import { loadResults, loadCache } from "@apipuccino/sentinel";
+
+const cwd = process.cwd();
+const guard = createGuard({
+  getStatus: async (slug) => (await loadResults(cwd))?.results.find(r => r.slug === slug) ?? null,
+  loadCache: (slug) => loadCache(cwd, slug),
+});
+const getAdvice = guard.for("advice-slip");   // bound to one watched slug
+try {
+  const res = await getAdvice("https://api.advice-slip.com/advice");
+  if (res.headers.get("x-apipuccino-sentinel") === "stale-cache")
+    console.warn("upstream down — serving last-known-good response");
+} catch (e) { if (e instanceof UpstreamDeadError) return fallback(); throw e; }
+```
+
+State lives in `.sentinel/` — `config.json` (**commit this**: your pinned deps + webhook), plus
+local `results.json` / `history/*.jsonl` / `cache/*` (gitignore them). Zero dependencies,
+offline-first, MIT — same laws as the rest of Apipuccino. Full docs in
+[`packages/sentinel/README.md`](packages/sentinel/README.md).
 
 ---
 
@@ -92,6 +149,9 @@ apidocs build -i -o -t --pdf  # input glob, output, theme (default|dark|monokai|
 apidocs serve -o ./api-docs   # preview (npx serve ./api-docs)
 apidocs submit --dry-run      # build → create PR entry in apis.json
 apidocs check --url <url>     # L0 probe your own API
+apidocs sentinel add <url>    # pin a dependency you depend on
+apidocs sentinel watch        # probe your deps, emit alert on death/drift (exit 1 on death)
+apidocs sentinel risk         # Stable/Evolving/Volatile dashboard for your deps
 ```
 </details>
 
@@ -127,6 +187,7 @@ apipuccino/
 ├── packages/docs/src/{cli, parser, generator, search, themes, playground, pdf, utils}
 ├── packages/docs/themes/{default,dark,monokai,nord}.css + print.css
 ├── packages/docs/templates/{base,endpoint,schema}.ejs
+├── packages/sentinel/src/{cli,prober,risk,watch,guard,alerts,store,constants,index}
 ├── packages/shared/types.ts                              # ApiEntry & ProbeResult
 ├── apps/web/pages/index.astro                            # Directory UI
 ├── api-docs/                                             # generated (Pagefind + lunr)
@@ -159,6 +220,27 @@ npx apidocs submit --dry-run
 ```
 
 Every directory entry shows **View Docs · Badge · Try It** — your docs become our distribution.
+
+---
+
+### 📦 Install / Releases
+
+No need to clone the monorepo. Each version tag produces a **single downloadable package** on the
+[Releases page](../../releases) (tarballs built by `.github/workflows/release.yml`):
+
+```bash
+# Option A — one combined package (apidocs + sentinel in a single `apipuccino` bin)
+npm i -g ./apipuccino-X.Y.Z.tgz
+apipuccino build --input ./openapi.yaml --output ./api-docs
+apipuccino sentinel add https://api.example.com/health
+
+# Option B — npm (published best-effort; README commands use these)
+npx apidocs build ...            # @apipuccino/docs
+npx apipuccino-sentinel ...      # @apipuccino/sentinel
+```
+
+Both are MIT, zero-dependency-install for Sentinel, offline-first. `npx apidocs` works straight
+from the README once the tag is published.
 
 ---
 
@@ -198,7 +280,7 @@ Sponsor button is “buy me a coffee”, not “unlock features”.
 
 ```bash
 node packages/directory/scripts/verify.mjs
-pnpm exec vitest run                 # 2 tests — apis.json shape
+pnpm exec vitest run                 # apis.json shape + Sentinel (risk/guard/watch/cli)
 npx playwright test                  # e2e: petstore → build → search
 ```
 
@@ -211,6 +293,7 @@ Deploy: ` .github/workflows/health-check.yml` (03:00 UTC) + `deploy.yml` (Pages)
 - **D1-D6 MVP done** — 250 Live (diverse, max 3/host), parser glob+generator+search+themes+playground+PDF+flywheel
 - **v3.6–3.8 done** — **Apipuccino Verified**: semantic spec diff → per-slug changelog → Stability rating → weekly digest
 - **v4.0 (launch)** — promote "Apipuccino Verified" as the headline: Verified badge in the directory, static badge asset, README flywheel copy
+- **v4.1 (done)** — **☕ Apipuccino Sentinel**: `sentinel add/watch/risk` turns directory verification inward on *your* deps — dead-API early warnings + stale-cache `fetch` guard + webhook alerts (zero deps, offline-first)
 - **Phase 2** — drift UI history graphs + category chips (`build-web.mjs:56` now surfaces drift/death + 30d sparklines)
 - **Phase 3** — community discovery + AI search (still free)
 

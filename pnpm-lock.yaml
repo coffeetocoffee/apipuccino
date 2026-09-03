@@ -41,6 +41,9 @@ importers:
       '@apidevtools/swagger-parser':
         specifier: ^10.0.3
         version: 10.1.1(openapi-types@12.1.3)
+      '@apipuccino/sentinel':
+        specifier: workspace:*
+        version: link:../sentinel
       ajv:
         specifier: ^8.12.0
         version: 8.20.0
@@ -72,6 +75,8 @@ importers:
       typescript:
         specifier: ^5.4.0
         version: 5.9.3
+
+  packages/sentinel: {}
 
   packages/shared: {}
 

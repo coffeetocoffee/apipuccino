@@ -1,0 +1,56 @@
+# Apipuccino — release pipeline.
+# On a semver tag (v*): run tests, build downloadable tarballs (apidocs + sentinel +
+# a single combined `apipuccino` package), attach them to a GitHub Release, and
+# best-effort publish to npm (set NPM_TOKEN + flip NPM_PUBLISH=true) so `npx apidocs`
+# works as advertised. No servers, no cost beyond the free Actions minute.
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm exec vitest run
+
+      - name: Build release packages
+        run: node scripts/prepare-release.mjs
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist-release/*.tgz
+          generate_release_notes: true
+
+      # Optional: publish to npm. Enable by setting NPM_PUBLISH=true and adding an
+      # NPM_TOKEN secret. sentinel is published first (docs depends on it).
+      - name: Publish to npm (best effort)
+        if: ${{ vars.NPM_PUBLISH == 'true' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cd packages/sentinel && npm publish --provenance --access public || true
+          cd ../docs && npm publish --provenance --access public || true

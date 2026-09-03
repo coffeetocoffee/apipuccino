@@ -99,4 +99,18 @@ program.command("check").description("probe your own API using same checker (L0/
   } catch (e) { console.error("✗", e.message); process.exit(1); }
 });
 
+program.command("sentinel").description("dead-API early-warning for YOUR stack (add|watch|status|risk)").allowUnknownOption().argument("[args...]", "sentinel args").action(async (args) => {
+  // Prefer the workspace package; fall back to a relative import so the monorepo works without install.
+  let mod = null;
+  try {
+    mod = await import("@apipuccino/sentinel/src/cli.js");
+  } catch {
+    const sentinelCli = new URL("../../../sentinel/src/cli.js", import.meta.url).href;
+    mod = await import(sentinelCli);
+  }
+  const res = await mod.run(args ?? [], { cwd: process.cwd() });
+  console.log(res.output);
+  if (res.exitCode !== 0) process.exit(res.exitCode);
+});
+
 program.parse();

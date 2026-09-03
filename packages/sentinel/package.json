@@ -1,0 +1,35 @@
+{
+  "name": "@apipuccino/sentinel",
+  "version": "1.0.0",
+  "description": "Apipuccino Sentinel — dead-API early-warning for YOUR stack. Watch the upstream APIs you depend on (L0/L1 + drift), get pre-failure alerts, and degrade gracefully with a stale-cache runtime guard. Zero deps, offline-first, MIT.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "sentinel": "./src/cli.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./guard": "./src/guard.js",
+    "./cli": "./src/cli.js"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "vitest run"
+  },
+  "keywords": [
+    "api-monitoring",
+    "uptime",
+    "drift-detection",
+    "offline-first",
+    "apipuccino"
+  ]
+}

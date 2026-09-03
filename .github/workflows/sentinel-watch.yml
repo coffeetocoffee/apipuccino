@@ -1,0 +1,30 @@
+# Apipuccino Sentinel — nightly watch for YOUR pinned dependencies.
+# Zero-cost (same as the directory health-check): Actions free tier only, no servers.
+# Requires .sentinel/config.json committed (run `npx apidocs sentinel add <url>` first).
+# Fails the job when any watched API hits DEATH (>=3 consecutive failures) — exit code 1.
+name: sentinel-watch
+
+on:
+  schedule:
+    - cron: "30 3 * * *" # 03:30 UTC, after the directory health-check
+  workflow_dispatch:
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Watch pinned dependencies
+        run: pnpm --filter @apipuccino/docs exec apidocs sentinel watch
+      - name: Upload sentinel state
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sentinel-state
+          path: .sentinel/

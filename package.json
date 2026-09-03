@@ -1,7 +1,7 @@
 {
   "name": "apipuccino-platform",
   "private": true,
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Apipuccino Platform — Discover only live APIs. Document them beautifully. Both offline. (COMBINED v2.0 FREE)",
   "license": "MIT",
   "type": "module",
@@ -17,7 +17,8 @@
     "check": "node packages/directory/scripts/check.mjs",
     "verify": "node packages/directory/scripts/verify.mjs",
     "build:docs": "pnpm --filter @apipuccino/docs build",
-    "dev:web": "pnpm --filter @apipuccino/web dev"
+    "dev:web": "pnpm --filter @apipuccino/web dev",
+    "sentinel": "node packages/sentinel/src/cli.js"
   },
   "keywords": [
     "api-directory",
